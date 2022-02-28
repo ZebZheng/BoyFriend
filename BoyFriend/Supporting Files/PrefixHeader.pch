@@ -1,0 +1,58 @@
+//
+//  PrefixHeader.pch
+//  Demon
+//
+//  Created by apple on 2019/1/16.
+//  Copyright © 2019年 BoyFriend. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//常用第三方
+#import "AFHTTPSessionManager.h"
+#import "YYKit.h"
+#import <MJExtension.h>
+#import "MJRefresh.h"
+#import <Masonry/Masonry.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+#import "IQKeyboardManager.h"
+#import "UIImageView+WebCache.h"
+#import "DateTools.h"
+#import <QMUIKit/QMUIKit.h>
+#import <KVOController/KVOController.h>
+//宏
+#import "BFConstantMacros.h"
+#import "BFColorMacros.h"
+#import "BFThirdMacros.h"
+#import "BFNotificationContants.h"
+#import "BFSystemMacro.h"
+#import "BFObjectMacro.h"
+#import "BFHandyMacro.h"
+#import "BFFrameMacro.h"
+#import "BFEmptyMacro.h"
+
+
+
+//工具类
+#import "BFSystemUtils.h"//系统权限判断
+#import "CategoryHeader.h"
+#import "CommonsView.h"
+#import "BFStringTools.h"
+#import "BFTool.h"
+#import "BFUICreator.h"
+#import "BFAttributeStringUtil.h"
+#import "BFCacheTools.h"
+#import "BFPathTools.h"
+#import "BaseSQliteModel.h"
+#import "BaseUserSQliteModel.h"
+
+#import "BaseWebViewController.h"
+#import "BaseNavigationController.h"
+#import "AppCacheSQliteModel.h"
+#import "AppCacheUserSQliteModel.h"
+#import "UserViewModel.h"
+#import "UserInfoModel.h"
+
+
+#endif /* PrefixHeader_pch */
