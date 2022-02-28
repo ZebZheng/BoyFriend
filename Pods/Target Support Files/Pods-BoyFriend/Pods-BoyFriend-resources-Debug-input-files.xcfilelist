@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-BoyFriend/Pods-BoyFriend-resources.sh
+${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle
+${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/QMUIKit/QMUIResources.bundle
+${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle
