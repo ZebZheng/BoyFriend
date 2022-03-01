@@ -10,7 +10,7 @@
  字符串判空
  */
 #ifndef BFStringIsEmpty
-#define BFStringIsEmpty(string)         ([string isKindOfClass:[NSNull class]] || [string isEqualToString:@" "] || string == nil || [string length] < 1 ? YES : NO )
+#define BFStringIsEmpty(string)         ([NSString bf_judgeEmpty:(string)])
 #endif
 
 #ifndef BFStringNotEmpty
