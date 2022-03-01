@@ -11,3 +11,4 @@
 #import "UIView+BFAdd.h"///圆角,边框
 #import "UIView+BFBlock.h"//手势
 #import "UIView+BFEffects.h"///圆角,边框,贝塞尔曲线
+#import "UIView+BFAnimation.h"///动画

@@ -34,18 +34,7 @@
 
 
 
-#pragma mark 动画
-//从中心往四周扩大动画
--(void)bf_centerToAroundWithView:(UIView *)view{
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
-    animation.duration = 0.2;
-    NSMutableArray *values = [NSMutableArray array];
-    [values addObject:[NSValue valueWithCATransform3D: CATransform3DMakeScale(0.1, 0.1, 1.0)]];
-    [values addObject:[NSValue valueWithCATransform3D: CATransform3DMakeScale(0.5, 0.5, 1.0)]];
-    [values addObject:[NSValue valueWithCATransform3D: CATransform3DMakeScale(1.0, 1.0, 1.0)]];
-    animation.values = values;
-    [view.layer addAnimation:animation forKey:nil];
-}
+
 
 
 @end
