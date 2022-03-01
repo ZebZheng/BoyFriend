@@ -100,12 +100,12 @@ return [UIApplication sharedApplication].statusBarFrame.size.height;\
 #define BFIPhoneX                    (BFScreen_Height == 812)
 #endif
 //判断iphone6 放大模式(iphone7、iphone8) 放大模式下 [UIScreen mainScreen].nativeScale == 2.343750
-#ifndef ISiPhone6_Magnify
-#define ISiPhone6_Magnify           (BFIPhone5 && [UIScreen mainScreen].nativeScale > 2.3)
+#ifndef BFISiPhone6_Magnify
+#define BFISiPhone6_Magnify           (BFIPhone5 && [UIScreen mainScreen].nativeScale > 2.3)
 #endif
 //判断iphone6+ 放大模式(iphone7+、iphone8+) 放大模式下 [UIScreen mainScreen].nativeScale == 2.880000
-#ifndef ISiPhone6P_Magnify
-#define ISiPhone6P_Magnify          ([UIScreen mainScreen].nativeScale > 2.8)
+#ifndef BFISiPhone6P_Magnify
+#define BFISiPhone6P_Magnify          ([UIScreen mainScreen].nativeScale > 2.8)
 #endif
 
 

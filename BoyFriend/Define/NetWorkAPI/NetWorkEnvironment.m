@@ -29,7 +29,7 @@
 -(NetWorkEnvironment *)getNetWorkEnvironmentModelWithType:(NSInteger)type{
     NSArray * array = self.environmentArray;
 
-    if(ISEnable_Switch_Environment){
+    if(BFISEnable_Switch_Environment){
         for (NetWorkEnvironment * model in array) {
             if(model.environmentType == type){
                 return model;
@@ -88,7 +88,7 @@
     model2.h5Url = @"";
     model2.lookImageUrl = @"";
     
-    if(ISEnable_Switch_Environment){
+    if(BFISEnable_Switch_Environment){
         return @[model,model1,model2];
     }else{
         return @[model];

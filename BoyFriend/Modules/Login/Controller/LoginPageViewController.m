@@ -47,7 +47,7 @@
 -(void)initializeView{
     self.view.backgroundColor = UIColor.whiteColor;
     //正式和测试库的切换按钮
-    if (ISEnable_Switch_Environment) {
+    if (BFISEnable_Switch_Environment) {
         [self addSwitchoverBtn];
     }
 

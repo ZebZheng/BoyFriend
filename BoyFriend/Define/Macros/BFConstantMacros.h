@@ -32,7 +32,7 @@
 
 
 // 全局 是否启用切换库功能 (YES: 允许， NO：不允许) -允许 登录页面点击 6下 可以切换库
-#define ISEnable_Switch_Environment     (YES)
+#define BFISEnable_Switch_Environment     (YES)
 
 
 
@@ -41,10 +41,10 @@
  *  全局的状态提示语 UniformTip
  */
 // 网络异常，请检查网络
-#define UniformTip_No_Network           (@"网络异常，请检查网络")
+#define BFUniformTip_No_Network           (@"网络异常，请检查网络")
 
 // 服务器无法到达
-#define UniformTip_No_Reach_Service     (@"服务器开小差了，请稍后重试")
+#define BFUniformTip_No_Reach_Service     (@"服务器开小差了，请稍后重试")
 
 
 

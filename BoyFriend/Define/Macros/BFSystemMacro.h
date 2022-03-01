@@ -7,23 +7,23 @@
 
 // 系统版本
 // iPhone5 iPhone5s iPhoneSE
-#ifndef IS_iPhone_55sSE
-    #define IS_iPhone_55sSE ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#ifndef BFIS_iPhone_55sSE
+    #define BFIS_iPhone_55sSE ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #endif
 
 // iPhone6 7 8
-#ifndef IS_iPhone_6789
-    #define IS_iPhone_6789 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? (CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) || CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size)) : NO)
+#ifndef BFIS_iPhone_6789
+    #define BFIS_iPhone_6789 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? (CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) || CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size)) : NO)
 #endif
 
 // iPhone6plus  iPhone7plus iPhone8plus
-#ifndef IS_iPhone678_Plus
-    #define IS_iPhone678_Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? (CGSizeEqualToSize(CGSizeMake(1125, 2001), [[UIScreen mainScreen] currentMode].size) || CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size)) : NO)
+#ifndef BFIS_iPhone678_Plus
+    #define BFIS_iPhone678_Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? (CGSizeEqualToSize(CGSizeMake(1125, 2001), [[UIScreen mainScreen] currentMode].size) || CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size)) : NO)
 #endif
 
 // iPhoneX
-#ifndef IS_iPhoneX
-    #define IS_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#ifndef BFIS_iPhoneX
+    #define BFIS_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 #endif
 
 #pragma mark ---- iOS 版本 定义 --------
@@ -33,32 +33,32 @@
 #endif
 
 //大于多少版本
-#ifndef iOS7OrLater
-#define iOS7OrLater ([BFSYSTEMVERSION floatValue] >= 7.0)
+#ifndef BFIOS7OrLater
+#define BFIOS7OrLater ([BFSYSTEMVERSION floatValue] >= 7.0)
 #endif
-#ifndef iOS8OrLater
-#define iOS8OrLater ([BFSYSTEMVERSION floatValue] >= 8.0)
+#ifndef BFIOS8OrLater
+#define BFIOS8OrLater ([BFSYSTEMVERSION floatValue] >= 8.0)
 #endif
-#ifndef iOS9OrLater
-#define iOS9OrLater ([BFSYSTEMVERSION floatValue] >= 9.0)
+#ifndef BFIOS9OrLater
+#define BFIOS9OrLater ([BFSYSTEMVERSION floatValue] >= 9.0)
 #endif
-#ifndef iOS10OrLater
-#define iOS10OrLater ([BFSYSTEMVERSION floatValue] >= 10.0)
+#ifndef BFIOS10OrLater
+#define BFIOS10OrLater ([BFSYSTEMVERSION floatValue] >= 10.0)
 #endif
-#ifndef iOS11OrLater
-#define iOS11OrLater ([BFSYSTEMVERSION floatValue] >= 11.0)
+#ifndef BFIOS11OrLater
+#define BFIOS11OrLater ([BFSYSTEMVERSION floatValue] >= 11.0)
 #endif
-#ifndef iOS12OrLater
-#define iOS12OrLater ([BFSYSTEMVERSION floatValue] >= 12.0)
+#ifndef BFIOS12OrLater
+#define BFIOS12OrLater ([BFSYSTEMVERSION floatValue] >= 12.0)
 #endif
-#ifndef iOS13OrLater
-#define iOS13OrLater ([BFSYSTEMVERSION floatValue] >= 13.0)
+#ifndef BFIOS13OrLater
+#define BFIOS13OrLater ([BFSYSTEMVERSION floatValue] >= 13.0)
 #endif
-#ifndef iOS14OrLater
-#define iOS14OrLater ([BFSYSTEMVERSION floatValue] >= 14.0)
+#ifndef BFIOS14OrLater
+#define BFIOS14OrLater ([BFSYSTEMVERSION floatValue] >= 14.0)
 #endif
-#ifndef iOS15OrLater
-#define iOS15OrLater ([BFSYSTEMVERSION floatValue] >= 15.0)
+#ifndef BFIOS15OrLater
+#define BFIOS15OrLater ([BFSYSTEMVERSION floatValue] >= 15.0)
 #endif
 
 // 系统版本的判断  < > =
