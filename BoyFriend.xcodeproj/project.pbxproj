@@ -1923,8 +1923,9 @@
 		1843C0F321EECDBA00A7540A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BF;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = ZebZheng;
+				ORGANIZATIONNAME = BoyFriend;
 				TargetAttributes = {
 					1843C0FA21EECDBA00A7540A = {
 						CreatedOnToolsVersion = 9.4.1;

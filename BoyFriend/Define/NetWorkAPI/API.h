@@ -1,6 +1,6 @@
 //
 //  API.h
-//  RealPlayer
+//
 //
 
 #ifndef API_h
