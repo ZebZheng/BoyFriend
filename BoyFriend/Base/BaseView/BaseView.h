@@ -16,10 +16,4 @@
 
 - (void)bf_setupWithData:(id)data;
 
-
-
-#pragma mark 动画
-//从中心往四周扩大动画
--(void)bf_centerToAroundWithView:(UIView *)view;
-
 @end

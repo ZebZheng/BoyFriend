@@ -13,8 +13,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    [self initSubviews];
-    [self makeContraints];
+    [self bf_initSubviews];
+    [self bf_makeContraints];
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -29,15 +29,15 @@
     return self;
 }
 
-- (void)bf_initSubviews{
+- (void)bf_initSubviews {
     
 }
 
-- (void)bf_makeContraints{
+- (void)bf_makeContraints {
     
 }
 
-- (void)bf_setupWithData:(id)datd{
+- (void)bf_setupWithData:(id)datd {
     
 }
 

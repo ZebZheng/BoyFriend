@@ -51,7 +51,7 @@ commonInitImplementationSafe(BFPopShowView) {
 
 - (void)shakeToShow:(UIView *)detailView {
     
-    [self centerToAroundWithView:detailView];
+    [self bf_centerToAroundWithDuration:0.2];
 }
 
 @end
