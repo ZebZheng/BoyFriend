@@ -635,6 +635,7 @@
 		1843C0FD21EECDBA00A7540A /* BoyFriend */ = {
 			isa = PBXGroup;
 			children = (
+				7F9ED97227CCD1F300206F04 /* New Group */,
 				1843C11521EECF3300A7540A /* AppDelegate */,
 				1843C12A21F07A8300A7540A /* Base */,
 				1843C12B21F07AC600A7540A /* Category */,
@@ -1389,6 +1390,13 @@
 				7F01D13127C7947B005A6709 /* NSDate+BFConversion.m */,
 			);
 			path = NSDate;
+			sourceTree = "<group>";
+		};
+		7F9ED97227CCD1F300206F04 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		F00D5A5F27350BA100B5273D /* User */ = {

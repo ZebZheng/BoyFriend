@@ -10,11 +10,10 @@
 
 @interface BaseTableViewCell : UITableViewCell
 
-- (void)initSubviews;
+- (void)bf_initSubviews;
 
-- (void)makeContraints;
+- (void)bf_makeContraints;
 
-- (void)setupWithData:(id)data;
+- (void)bf_setupWithData:(id)data;
 
-+(NSString *)reuseIdentifier;
 @end

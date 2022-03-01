@@ -10,16 +10,16 @@
 
 @interface BaseView : UIView
 
-- (void)initSubviews;
+- (void)bf_initSubviews;
 
-- (void)makeContraints;
+- (void)bf_makeContraints;
 
-- (void)setupWithData:(id)data;
+- (void)bf_setupWithData:(id)data;
 
 
 
 #pragma mark 动画
 //从中心往四周扩大动画
--(void)centerToAroundWithView:(UIView *)view;
+-(void)bf_centerToAroundWithView:(UIView *)view;
 
 @end

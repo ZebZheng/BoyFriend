@@ -14,21 +14,21 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        [self initSubviews];
-        [self makeContraints];
+        [self bf_initSubviews];
+        [self bf_makeContraints];
     }
     return self;
 }
 
-- (void)initSubviews{
+- (void)bf_initSubviews{
     
 }
 
-- (void)makeContraints{
+- (void)bf_makeContraints{
     
 }
 
-- (void)setupWithData:(id)data{
+- (void)bf_setupWithData:(id)data{
     
 }
 
@@ -36,7 +36,7 @@
 
 #pragma mark 动画
 //从中心往四周扩大动画
--(void)centerToAroundWithView:(UIView *)view{
+-(void)bf_centerToAroundWithView:(UIView *)view{
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     animation.duration = 0.2;
     NSMutableArray *values = [NSMutableArray array];

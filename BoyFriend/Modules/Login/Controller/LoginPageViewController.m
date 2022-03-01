@@ -38,6 +38,8 @@
     [self initializeView];
     [self initializeViewData];
     [self bindControlEvent];
+    
+    
 }
 
 #pragma mark - init
