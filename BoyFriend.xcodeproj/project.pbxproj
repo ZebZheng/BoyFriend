@@ -57,7 +57,7 @@
 		18B6800421F8646A004D2638 /* AppDelegate+TopSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6800321F8646A004D2638 /* AppDelegate+TopSet.m */; };
 		18B6800721F86A88004D2638 /* AppDelegate+Zeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6800621F86A88004D2638 /* AppDelegate+Zeb.m */; };
 		18B6800A21F86F6E004D2638 /* AppDelegate+Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6800821F86F6E004D2638 /* AppDelegate+Reachability.m */; };
-		18B6800E21F871F6004D2638 /* MBProgressHUD+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6800D21F871F6004D2638 /* MBProgressHUD+Extension.m */; };
+		18B6800E21F871F6004D2638 /* MBProgressHUD+BFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6800D21F871F6004D2638 /* MBProgressHUD+BFExtension.m */; };
 		18BB875A220041AA00EDAC2A /* BFAttributeStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB8758220041A900EDAC2A /* BFAttributeStringUtil.m */; };
 		18BB87602200586D00EDAC2A /* BFCacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB875E2200586D00EDAC2A /* BFCacheTools.m */; };
 		18BB876322005AC100EDAC2A /* BFPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB876222005AC100EDAC2A /* BFPathTools.m */; };
@@ -306,8 +306,8 @@
 		18B6800621F86A88004D2638 /* AppDelegate+Zeb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Zeb.m"; sourceTree = "<group>"; };
 		18B6800821F86F6E004D2638 /* AppDelegate+Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Reachability.m"; sourceTree = "<group>"; };
 		18B6800921F86F6E004D2638 /* AppDelegate+Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Reachability.h"; sourceTree = "<group>"; };
-		18B6800C21F871F6004D2638 /* MBProgressHUD+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Extension.h"; sourceTree = "<group>"; };
-		18B6800D21F871F6004D2638 /* MBProgressHUD+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Extension.m"; sourceTree = "<group>"; };
+		18B6800C21F871F6004D2638 /* MBProgressHUD+BFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+BFExtension.h"; sourceTree = "<group>"; };
+		18B6800D21F871F6004D2638 /* MBProgressHUD+BFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+BFExtension.m"; sourceTree = "<group>"; };
 		18BB8758220041A900EDAC2A /* BFAttributeStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFAttributeStringUtil.m; sourceTree = "<group>"; };
 		18BB8759220041AA00EDAC2A /* BFAttributeStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFAttributeStringUtil.h; sourceTree = "<group>"; };
 		18BB875D2200586D00EDAC2A /* BFCacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFCacheTools.h; sourceTree = "<group>"; };
@@ -1132,8 +1132,8 @@
 		18B6800B21F871F6004D2638 /* MBProgressHUD+Extension */ = {
 			isa = PBXGroup;
 			children = (
-				18B6800C21F871F6004D2638 /* MBProgressHUD+Extension.h */,
-				18B6800D21F871F6004D2638 /* MBProgressHUD+Extension.m */,
+				18B6800C21F871F6004D2638 /* MBProgressHUD+BFExtension.h */,
+				18B6800D21F871F6004D2638 /* MBProgressHUD+BFExtension.m */,
 			);
 			path = "MBProgressHUD+Extension";
 			sourceTree = "<group>";
@@ -2016,7 +2016,7 @@
 				18B6800721F86A88004D2638 /* AppDelegate+Zeb.m in Sources */,
 				F048602D27C8793300C530E9 /* BaseTableViewController.m in Sources */,
 				7F01D09F27C79038005A6709 /* UIApplication+BFAdd.m in Sources */,
-				18B6800E21F871F6004D2638 /* MBProgressHUD+Extension.m in Sources */,
+				18B6800E21F871F6004D2638 /* MBProgressHUD+BFExtension.m in Sources */,
 				7F01D0C327C7908E005A6709 /* UIImageView+BFAddition.m in Sources */,
 				1843C15D21F1659A00A7540A /* BaseHUDView.m in Sources */,
 				F048603327C8793D00C530E9 /* BaseCollectionViewCell.m in Sources */,

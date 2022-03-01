@@ -6,9 +6,9 @@
 //  Copyright © 2017年 JDragon. All rights reserved.
 //
 
-#import "MBProgressHUD+Extension.h"
+#import "MBProgressHUD+BFExtension.h"
 
-@implementation MBProgressHUD (Extension)
+@implementation MBProgressHUD (BFExtension)
 
 + (UIView *)getTheProgressHUDViewWithIsWindow:(BOOL)isWindow{
     UIView *view;
@@ -71,17 +71,37 @@
         }
     });
 }
++ (void)showTipMessage:(NSString *)message time:(float)time completion:(void (^)(void))completion {
+    [self hideHUD];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        MBProgressHUD *hud = [self createMBProgressHUDviewWithMessage:message isWindiw:NO];
+        hud.mode = MBProgressHUDModeText;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:0.4f animations:^{
+                hud.transform = CGAffineTransformMakeScale(0.8, 0.8);
+            } completion:^(BOOL finished) {
+                //400毫秒延迟
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+                    [hud removeFromSuperview];
+                    if (completion) {
+                        completion();
+                    }
+                });
+            }];
+        });
+    });
+}
 + (void)showTipMessage:(NSString *)message completion:(void (^)(void))completion {
     [self hideHUD];
     dispatch_async(dispatch_get_main_queue(), ^{
         MBProgressHUD *hud = [self createMBProgressHUDviewWithMessage:message isWindiw:NO];
         hud.mode = MBProgressHUDModeText;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(200 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
             [UIView animateWithDuration:0.4f animations:^{
                 hud.transform = CGAffineTransformMakeScale(0.8, 0.8);
             } completion:^(BOOL finished) {
                 //400毫秒延迟
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(400 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
                     [hud removeFromSuperview];
                     if (completion) {
                         completion();
@@ -208,7 +228,7 @@
         }else{
             mbHud.progress = fractionCompleted;
         }
-//        [mbHud hideAnimated:YES];
+        [mbHud hideAnimated:YES];
     });
 }
 

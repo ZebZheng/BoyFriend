@@ -44,7 +44,7 @@
 //#import "NSNotificationCenter+BFMainThread.h"//主线程发通知
 
 /* --------- Other ----------*/
-#import "MBProgressHUD+Extension.h"
+#import "MBProgressHUD+BFExtension.h"
 
 
 

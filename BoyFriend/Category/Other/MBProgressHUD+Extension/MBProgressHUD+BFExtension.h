@@ -8,7 +8,7 @@
 
 #import <MBProgressHUD/MBProgressHUD.h>
 
-@interface MBProgressHUD (Extension)
+@interface MBProgressHUD (BFExtension)
 
 //获取当前窗口
 + (UIView *)getTheProgressHUDViewWithIsWindow:(BOOL)isWindow;
@@ -20,6 +20,7 @@
 + (void)showTipMessageInView:(NSString*)message timer:(float)aTimer;
 + (void)showTipMessage:(NSString*)message isWindow:(BOOL)isWindow timer:(float)aTimer offset:(float)offset;
 + (void)showTipMessage:(NSString *)message completion:(void (^)(void))completion;
++ (void)showTipMessage:(NSString *)message time:(float)time completion:(void (^)(void))completion;
 //显示有菊花加载的message
 + (void)showActivityMessageInWindow:(NSString*)message;
 + (void)showActivityMessageInView:(NSString*)message;
