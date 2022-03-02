@@ -114,6 +114,7 @@
 		7F01D13227C7947B005A6709 /* NSDate+BFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D13027C7947B005A6709 /* NSDate+BFAdd.m */; };
 		7F01D13327C7947B005A6709 /* NSDate+BFConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D13127C7947B005A6709 /* NSDate+BFConversion.m */; };
 		7FB0BD1E27CDB93A004ECB2D /* UIView+BFAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */; };
+		7FBE0CE427CF70EA004A457F /* BFGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */; };
 		A8D6916A3697862307B049D4 /* libPods-BoyFriend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */; };
 		F00D5A6627350BE900B5273D /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F00D5A6527350BE900B5273D /* UserViewModel.m */; };
 		F00D5A6927350BFF00B5273D /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F00D5A6827350BFF00B5273D /* UserInfoModel.m */; };
@@ -427,6 +428,8 @@
 		7F01D13127C7947B005A6709 /* NSDate+BFConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BFConversion.m"; sourceTree = "<group>"; };
 		7FB0BD1C27CDB93A004ECB2D /* UIView+BFAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BFAnimation.h"; sourceTree = "<group>"; };
 		7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BFAnimation.m"; sourceTree = "<group>"; };
+		7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGradientLabel.m; sourceTree = "<group>"; };
+		7FBE0CE327CF70EA004A457F /* BFGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGradientLabel.h; sourceTree = "<group>"; };
 		C4D1379DBA36C7CCEE84EA90 /* Pods-BoyFriend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoyFriend.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoyFriend/Pods-BoyFriend.release.xcconfig"; sourceTree = "<group>"; };
 		F00D5A6427350BE900B5273D /* UserViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewModel.h; sourceTree = "<group>"; };
 		F00D5A6527350BE900B5273D /* UserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewModel.m; sourceTree = "<group>"; };
@@ -1155,6 +1158,8 @@
 		18F38D2E21F1CE340042CF26 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				7FBE0CE327CF70EA004A457F /* BFGradientLabel.h */,
+				7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */,
 				F048605027C8C13200C530E9 /* BFGCDTimer.h */,
 				F048604E27C8C13100C530E9 /* BFGCDTimer.m */,
 				F048604F27C8C13100C530E9 /* BFGradientButton.h */,
@@ -2079,6 +2084,7 @@
 				7F01D10527C79460005A6709 /* NSData+BFConversion.m in Sources */,
 				18F38D2D21F1CB160042CF26 /* DataLibrery.m in Sources */,
 				1843C15521F0857900A7540A /* BaseModel.m in Sources */,
+				7FBE0CE427CF70EA004A457F /* BFGradientLabel.m in Sources */,
 				18B6800A21F86F6E004D2638 /* AppDelegate+Reachability.m in Sources */,
 				F089AA0427329622009A4BDD /* YBIBImageLayout.m in Sources */,
 				7F01D12127C79467005A6709 /* NSString+BFDate.m in Sources */,
