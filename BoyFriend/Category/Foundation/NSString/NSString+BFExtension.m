@@ -10,6 +10,22 @@
 
 @implementation NSString (BFExtension)
 
+///按照中文 2 个字符、英文 1 个字符的方式来计算文本长度
+- (NSUInteger)bf_lengthWhenCountingNonASCIICharacterAsTwo {
+    NSUInteger length = 0;
+    for (NSUInteger i = 0, l = self.length; i < l; i++) {
+        unichar character = [self characterAtIndex:i];
+        if (isascii(character)) {
+            length += 1;
+        } else {
+            length += 2;
+        }
+    }
+    return length;
+}
+
+
+
 - (NSString *)bf_trim {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
