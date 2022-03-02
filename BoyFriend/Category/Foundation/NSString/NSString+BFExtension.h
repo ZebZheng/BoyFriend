@@ -10,6 +10,9 @@
 
 @interface NSString (BFExtension)
 
+///按照中文 2 个字符、英文 1 个字符的方式来计算文本长度
+- (NSUInteger)bf_lengthWhenCountingNonASCIICharacterAsTwo;
+
 /**
  去除头尾空格和换行符
 

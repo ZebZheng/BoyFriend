@@ -7,8 +7,23 @@
 //
 
 #import "MBProgressHUD+BFExtension.h"
+#import "NSString+BFExtension.h"
 
 @implementation MBProgressHUD (BFExtension)
+
+///自动计算秒数
++ (NSTimeInterval)bf_smartDelaySecondsForTipsText:(NSString *)text {
+    NSUInteger length = text.bf_lengthWhenCountingNonASCIICharacterAsTwo;
+    if (length <= 20) {
+        return 1.5;
+    } else if (length <= 40) {
+        return 2.0;
+    } else if (length <= 50) {
+        return 2.5;
+    } else {
+        return 3.0;
+    }
+}
 
 + (UIView *)getTheProgressHUDViewWithIsWindow:(BOOL)isWindow{
     UIView *view;
@@ -20,15 +35,13 @@
     return view;
 }
 
-+ (MBProgressHUD*)createMBProgressHUDviewWithMessage:(NSString*)message isWindiw:(BOOL)isWindow{
-    
++ (MBProgressHUD*)createMBProgressHUDviewWithMessage:(NSString*)message isWindiw:(BOOL)isWindow {
     UIView *view=[self getTheProgressHUDViewWithIsWindow:isWindow];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.label.text=message?message:@"";
     hud.label.numberOfLines=0;
     hud.label.font=[UIFont systemFontOfSize:14];
     hud.removeFromSuperViewOnHide = YES;
-//    hud.dimBackground = NO;
     hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
     hud.bezelView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
     hud.contentColor = [UIColor whiteColor];
@@ -36,30 +49,25 @@
     hud.userInteractionEnabled = NO;
     return hud;
 }
-#pragma mark-------------------- show Tip----------------------------
 
-+ (void)showTipMessageInWindow:(NSString*)message
-{
+#pragma mark-------------------- show Tip----------------------------
++ (void)showTipMessageInWindow:(NSString*)message {
     [self hideHUD];
-    [self showTipMessage:message isWindow:true timer:2];
+    [self showTipMessage:message isWindow:true timer:[self bf_smartDelaySecondsForTipsText: message]];
 }
-+ (void)showTipMessageInView:(NSString*)message
-{
++ (void)showTipMessageInView:(NSString*)message {
     [self hideHUD];
-    [self showTipMessage:message isWindow:false timer:2];
+    [self showTipMessage:message isWindow:false timer:[self bf_smartDelaySecondsForTipsText: message]];
 }
-+ (void)showTipMessageInWindow:(NSString*)message timer:(float)aTimer
-{
++ (void)showTipMessageInWindow:(NSString*)message timer:(float)aTimer {
     [self hideHUD];
     [self showTipMessage:message isWindow:true timer:aTimer];
 }
-+ (void)showTipMessageInView:(NSString*)message timer:(float)aTimer
-{
++ (void)showTipMessageInView:(NSString*)message timer:(float)aTimer {
     [self hideHUD];
     [self showTipMessage:message isWindow:false timer:aTimer];
 }
-+ (void)showTipMessage:(NSString*)message isWindow:(BOOL)isWindow timer:(float)aTimer
-{
++ (void)showTipMessage:(NSString*)message isWindow:(BOOL)isWindow timer:(float)aTimer {
     if (message.length==0 || message==nil) {
         return;
     }
@@ -111,8 +119,7 @@
         });
     });
 }
-+ (void)showTipMessage:(NSString*)message isWindow:(BOOL)isWindow timer:(float)aTimer offset:(float)offset
-{
++ (void)showTipMessage:(NSString*)message isWindow:(BOOL)isWindow timer:(float)aTimer offset:(float)offset {
     dispatch_async(dispatch_get_main_queue(), ^{
         MBProgressHUD *hud = [self createMBProgressHUDviewWithMessage:message isWindiw:isWindow];
         hud.mode = MBProgressHUDModeText;
@@ -123,25 +130,19 @@
     });
 }
 #pragma mark-------------------- show Activity----------------------------
-
-+ (void)showActivityMessageInWindow:(NSString*)message
-{
++ (void)showActivityMessageInWindow:(NSString*)message {
     [self showActivityMessage:message isWindow:true timer:0];
 }
-+ (void)showActivityMessageInView:(NSString*)message
-{
++ (void)showActivityMessageInView:(NSString*)message {
     [self showActivityMessage:message isWindow:false timer:0];
 }
-+ (void)showActivityMessageInWindow:(NSString*)message timer:(float)aTimer
-{
++ (void)showActivityMessageInWindow:(NSString*)message timer:(float)aTimer {
     [self showActivityMessage:message isWindow:true timer:aTimer];
 }
-+ (void)showActivityMessageInView:(NSString*)message timer:(float)aTimer
-{
++ (void)showActivityMessageInView:(NSString*)message timer:(float)aTimer {
     [self showActivityMessage:message isWindow:false timer:aTimer];
 }
-+ (void)showActivityMessage:(NSString*)message isWindow:(BOOL)isWindow timer:(float)aTimer
-{
++ (void)showActivityMessage:(NSString*)message isWindow:(BOOL)isWindow timer:(float)aTimer {
     MBProgressHUD *hud  =  [self createMBProgressHUDviewWithMessage:message isWindiw:isWindow];
     hud.userInteractionEnabled = YES;
     hud.mode = MBProgressHUDModeIndeterminate;
@@ -151,41 +152,31 @@
 }
 #pragma mark-------------------- show Image----------------------------
 
-+ (void)showSuccessMessage:(NSString *)Message
-{
++ (void)showSuccessMessage:(NSString *)Message {
     [self hideHUD];
     [self showCustomIconInWindow:@"mbhud_success" message:Message];
 }
-+ (void)showErrorMessage:(NSString *)Message
-{
++ (void)showErrorMessage:(NSString *)Message {
     [self hideHUD];
     [self showCustomIconInWindow:@"mbhud_error" message:Message];
 }
-+ (void)showInfoMessage:(NSString *)Message
-{
++ (void)showInfoMessage:(NSString *)Message {
     [self hideHUD];
     [self showCustomIconInWindow:@"mbhud_info" message:Message];
 }
-+ (void)showWarnMessage:(NSString *)Message
-{
++ (void)showWarnMessage:(NSString *)Message {
     [self hideHUD];
     [self showCustomIconInWindow:@"mbhud_warn" message:Message];
     
 }
-
-
-
-+ (void)showCustomIconInWindow:(NSString *)iconName message:(NSString *)message
-{
++ (void)showCustomIconInWindow:(NSString *)iconName message:(NSString *)message {
     message=[NSString stringWithFormat:@"  %@  ",message];
     [self showCustomIcon:iconName message:message isWindow:true];
 }
-+ (void)showCustomIconInView:(NSString *)iconName message:(NSString *)message
-{
++ (void)showCustomIconInView:(NSString *)iconName message:(NSString *)message {
     [self showCustomIcon:iconName message:message isWindow:false];
 }
-+ (void)showCustomIcon:(NSString *)iconName message:(NSString *)message isWindow:(BOOL)isWindow
-{
++ (void)showCustomIcon:(NSString *)iconName message:(NSString *)message isWindow:(BOOL)isWindow {
     MBProgressHUD *hud  =  [self createMBProgressHUDviewWithMessage:message isWindiw:isWindow];
     hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:iconName]];
     hud.mode = MBProgressHUDModeCustomView;
@@ -193,16 +184,13 @@
 }
 
 //进度条显示。默认圆圈
-+ (void)showProgress:(float)fractionCompleted
-{
++ (void)showProgress:(float)fractionCompleted {
     [self showProgress:fractionCompleted message:nil];
 }
-+ (void)showProgress:(float)fractionCompleted message:(NSString *)message
-{
++ (void)showProgress:(float)fractionCompleted message:(NSString *)message {
     [self showProgress:fractionCompleted message:message mode:MBProgressHUDModeAnnularDeterminate];
 }
-+ (void)showProgress:(float)fractionCompleted message:(NSString *)message mode:(MBProgressHUDMode)mode
-{
++ (void)showProgress:(float)fractionCompleted message:(NSString *)message mode:(MBProgressHUDMode)mode {
     [self showProgress:fractionCompleted message:message mode:mode toView:nil];
 }
 
@@ -210,8 +198,7 @@
     [self showProgress:fractionCompleted message:nil mode:MBProgressHUDModeAnnularDeterminate toView:view];
 }
 
-+ (void)showProgress:(float)fractionCompleted message:(NSString *)message mode:(MBProgressHUDMode)mode toView:(UIView *)view
-{
++ (void)showProgress:(float)fractionCompleted message:(NSString *)message mode:(MBProgressHUDMode)mode toView:(UIView *)view {
     dispatch_async(dispatch_get_main_queue(), ^{
         MBProgressHUD *mbHud;
         if (view==nil) {
@@ -233,8 +220,7 @@
 }
 
 // 提示后响应某个动作
-+ (void)showMessage:(NSString *)message completion:(void (^)(void))completion
-{
++ (void)showMessage:(NSString *)message completion:(void (^)(void))completion {
     [self hideHUDForView:[self getTheProgressHUDViewWithIsWindow:YES] animated:NO];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self getTheProgressHUDViewWithIsWindow:YES] animated:NO];
     hud.mode = MBProgressHUDModeText;
@@ -255,7 +241,6 @@
             }];
         });
     });
-    
 }
 
 + (void)showMessage:(NSString *)message addToView:(UIView *)view{
@@ -305,16 +290,14 @@
 
 
 //获取当前屏幕显示的viewcontroller
-+(UIViewController *)getCurrentUIVC
-{
++(UIViewController *)getCurrentUIVC {
     UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
     
     UIViewController *currentVC = [self getCurrentVCFrom:rootViewController];
     
     return currentVC;
 }
-+ (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVC
-{
++ (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVC {
     UIViewController *currentVC;
     if ([rootVC presentedViewController]) {
         // 视图是被presented出来的

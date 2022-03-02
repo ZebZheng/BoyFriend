@@ -34,7 +34,7 @@
 		1879522E2202D3660001C437 /* NSDictionary+BFURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879522A2202D3660001C437 /* NSDictionary+BFURL.m */; };
 		1879522F2202D3660001C437 /* NSDictionary+BFXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879522D2202D3660001C437 /* NSDictionary+BFXML.m */; };
 		187952332202D3AF0001C437 /* NSNotificationCenter+BFMainThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 187952322202D3AE0001C437 /* NSNotificationCenter+BFMainThread.m */; };
-		187952372202D4470001C437 /* NSObject+GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 187952362202D4470001C437 /* NSObject+GCD.m */; };
+		187952372202D4470001C437 /* NSObject+BFGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 187952362202D4470001C437 /* NSObject+BFGCD.m */; };
 		1879523A2202D47C0001C437 /* NSObject+BFReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 187952392202D47C0001C437 /* NSObject+BFReflection.m */; };
 		1879523E2202D4C50001C437 /* NSURL+BFParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879523C2202D4C50001C437 /* NSURL+BFParam.m */; };
 		187952422202D52D0001C437 /* NSUserDefaults+BFICloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 187952412202D52C0001C437 /* NSUserDefaults+BFICloudSync.m */; };
@@ -257,8 +257,8 @@
 		1879522D2202D3660001C437 /* NSDictionary+BFXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BFXML.m"; sourceTree = "<group>"; };
 		187952312202D3AE0001C437 /* NSNotificationCenter+BFMainThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+BFMainThread.h"; sourceTree = "<group>"; };
 		187952322202D3AE0001C437 /* NSNotificationCenter+BFMainThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+BFMainThread.m"; sourceTree = "<group>"; };
-		187952352202D4470001C437 /* NSObject+GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GCD.h"; sourceTree = "<group>"; };
-		187952362202D4470001C437 /* NSObject+GCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GCD.m"; sourceTree = "<group>"; };
+		187952352202D4470001C437 /* NSObject+BFGCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BFGCD.h"; sourceTree = "<group>"; };
+		187952362202D4470001C437 /* NSObject+BFGCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BFGCD.m"; sourceTree = "<group>"; };
 		187952382202D47C0001C437 /* NSObject+BFReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BFReflection.h"; sourceTree = "<group>"; };
 		187952392202D47C0001C437 /* NSObject+BFReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BFReflection.m"; sourceTree = "<group>"; };
 		1879523C2202D4C50001C437 /* NSURL+BFParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+BFParam.m"; sourceTree = "<group>"; };
@@ -1037,8 +1037,8 @@
 				7F01D0FB27C79421005A6709 /* NSObject+BFWindow.m */,
 				187952382202D47C0001C437 /* NSObject+BFReflection.h */,
 				187952392202D47C0001C437 /* NSObject+BFReflection.m */,
-				187952352202D4470001C437 /* NSObject+GCD.h */,
-				187952362202D4470001C437 /* NSObject+GCD.m */,
+				187952352202D4470001C437 /* NSObject+BFGCD.h */,
+				187952362202D4470001C437 /* NSObject+BFGCD.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -2061,7 +2061,7 @@
 				187951FA22029F4F0001C437 /* UIColor+BFGradient.m in Sources */,
 				F048602B27C8793300C530E9 /* BaseTableViewCell.m in Sources */,
 				7F01D13227C7947B005A6709 /* NSDate+BFAdd.m in Sources */,
-				187952372202D4470001C437 /* NSObject+GCD.m in Sources */,
+				187952372202D4470001C437 /* NSObject+BFGCD.m in Sources */,
 				1879524A2202E4930001C437 /* NSString+BFExtension.m in Sources */,
 				F089A97627328339009A4BDD /* UIDevice+BFUtils.m in Sources */,
 				1868CE762201A4C2002220BF /* BaseWebViewController.m in Sources */,

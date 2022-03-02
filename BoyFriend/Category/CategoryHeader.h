@@ -42,7 +42,7 @@
 //#import "NSUserDefaults+BFICloudSync.h"//iCloud
 //#import "NSURL+BFParam.h"//参数转字典
 //#import "NSNotificationCenter+BFMainThread.h"//主线程发通知
-
+//#import "NSObject+BFGCD.h"
 /* --------- Other ----------*/
 #import "MBProgressHUD+BFExtension.h"
 
