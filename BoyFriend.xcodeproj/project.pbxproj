@@ -104,11 +104,7 @@
 		7F01D0FD27C79421005A6709 /* NSObject+BFWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0FB27C79421005A6709 /* NSObject+BFWindow.m */; };
 		7F01D10127C7944F005A6709 /* NSDictionary+BFConvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0FF27C7944E005A6709 /* NSDictionary+BFConvent.m */; };
 		7F01D10527C79460005A6709 /* NSData+BFConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D10427C79460005A6709 /* NSData+BFConversion.m */; };
-		7F01D11927C79467005A6709 /* NSString+BFBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D10D27C79467005A6709 /* NSString+BFBase64.m */; };
-		7F01D11A27C79467005A6709 /* NSString+BFGB2312.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D10F27C79467005A6709 /* NSString+BFGB2312.m */; };
-		7F01D11B27C79467005A6709 /* NSString+BFMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D11027C79467005A6709 /* NSString+BFMD5.m */; };
 		7F01D11C27C79467005A6709 /* NSString+BFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D11127C79467005A6709 /* NSString+BFAdd.m */; };
-		7F01D11D27C79467005A6709 /* NSString+BFEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D11227C79467005A6709 /* NSString+BFEncode.m */; };
 		7F01D11E27C79467005A6709 /* NSString+BFHGBTransForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D11327C79467005A6709 /* NSString+BFHGBTransForm.m */; };
 		7F01D11F27C79467005A6709 /* NSString+BFConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D11427C79467005A6709 /* NSString+BFConversion.m */; };
 		7F01D12127C79467005A6709 /* NSString+BFDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D11827C79467005A6709 /* NSString+BFDate.m */; };
@@ -192,6 +188,7 @@
 		F089AA2627329622009A4BDD /* NSBundle+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9F327329622009A4BDD /* NSBundle+BRPickerView.m */; };
 		F089AA2727329622009A4BDD /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9F727329622009A4BDD /* BRAddressModel.m */; };
 		F089AA2827329622009A4BDD /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9FA27329622009A4BDD /* BRAddressPickerView.m */; };
+		F723F61027CF5A53002287CB /* NSString+BFEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -411,20 +408,12 @@
 		7F01D10327C79460005A6709 /* NSData+BFConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BFConversion.h"; sourceTree = "<group>"; };
 		7F01D10427C79460005A6709 /* NSData+BFConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BFConversion.m"; sourceTree = "<group>"; };
 		7F01D10727C79467005A6709 /* NSString+BFHGBTransForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BFHGBTransForm.h"; sourceTree = "<group>"; };
-		7F01D10827C79467005A6709 /* NSString+BFEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BFEncode.h"; sourceTree = "<group>"; };
 		7F01D10927C79467005A6709 /* NSString+BFAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BFAdd.h"; sourceTree = "<group>"; };
-		7F01D10A27C79467005A6709 /* NSString+BFMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BFMD5.h"; sourceTree = "<group>"; };
 		7F01D10B27C79467005A6709 /* NSString+BFConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BFConversion.h"; sourceTree = "<group>"; };
-		7F01D10D27C79467005A6709 /* NSString+BFBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFBase64.m"; sourceTree = "<group>"; };
 		7F01D10E27C79467005A6709 /* NSString+BFDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BFDate.h"; sourceTree = "<group>"; };
-		7F01D10F27C79467005A6709 /* NSString+BFGB2312.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFGB2312.m"; sourceTree = "<group>"; };
-		7F01D11027C79467005A6709 /* NSString+BFMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFMD5.m"; sourceTree = "<group>"; };
 		7F01D11127C79467005A6709 /* NSString+BFAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFAdd.m"; sourceTree = "<group>"; };
-		7F01D11227C79467005A6709 /* NSString+BFEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFEncode.m"; sourceTree = "<group>"; };
 		7F01D11327C79467005A6709 /* NSString+BFHGBTransForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFHGBTransForm.m"; sourceTree = "<group>"; };
 		7F01D11427C79467005A6709 /* NSString+BFConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFConversion.m"; sourceTree = "<group>"; };
-		7F01D11527C79467005A6709 /* NSString+BFBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BFBase64.h"; sourceTree = "<group>"; };
-		7F01D11727C79467005A6709 /* NSString+BFGB2312.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BFGB2312.h"; sourceTree = "<group>"; };
 		7F01D11827C79467005A6709 /* NSString+BFDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFDate.m"; sourceTree = "<group>"; };
 		7F01D12327C7946B005A6709 /* NSArray+BFConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BFConversion.m"; sourceTree = "<group>"; };
 		7F01D12427C7946B005A6709 /* NSArray+BFAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BFAdd.m"; sourceTree = "<group>"; };
@@ -602,6 +591,8 @@
 		F089A9F827329622009A4BDD /* BRAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressPickerView.h; sourceTree = "<group>"; };
 		F089A9F927329622009A4BDD /* BRAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressModel.h; sourceTree = "<group>"; };
 		F089A9FA27329622009A4BDD /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
+		F723F60E27CF5A53002287CB /* NSString+BFEncryption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFEncryption.h"; sourceTree = "<group>"; };
+		F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFEncryption.m"; sourceTree = "<group>"; };
 		FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BoyFriend.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1064,29 +1055,23 @@
 		187952432202DDC90001C437 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
+				187952472202DE5A0001C437 /* NSStringCategoryHeader.h */,
 				7F01D10927C79467005A6709 /* NSString+BFAdd.h */,
 				7F01D11127C79467005A6709 /* NSString+BFAdd.m */,
-				7F01D11527C79467005A6709 /* NSString+BFBase64.h */,
-				7F01D10D27C79467005A6709 /* NSString+BFBase64.m */,
 				7F01D10B27C79467005A6709 /* NSString+BFConversion.h */,
 				7F01D11427C79467005A6709 /* NSString+BFConversion.m */,
 				7F01D10E27C79467005A6709 /* NSString+BFDate.h */,
 				7F01D11827C79467005A6709 /* NSString+BFDate.m */,
-				7F01D10827C79467005A6709 /* NSString+BFEncode.h */,
-				7F01D11227C79467005A6709 /* NSString+BFEncode.m */,
 				187952482202E4930001C437 /* NSString+BFExtension.h */,
 				187952492202E4930001C437 /* NSString+BFExtension.m */,
-				7F01D11727C79467005A6709 /* NSString+BFGB2312.h */,
-				7F01D10F27C79467005A6709 /* NSString+BFGB2312.m */,
 				7F01D10727C79467005A6709 /* NSString+BFHGBTransForm.h */,
 				7F01D11327C79467005A6709 /* NSString+BFHGBTransForm.m */,
 				187952442202DE0D0001C437 /* NSString+BFJudge.h */,
 				187952452202DE0D0001C437 /* NSString+BFJudge.m */,
-				7F01D10A27C79467005A6709 /* NSString+BFMD5.h */,
-				7F01D11027C79467005A6709 /* NSString+BFMD5.m */,
 				1879524C2202EE6C0001C437 /* NSString+BFRemoveEmoji.h */,
 				1879524B2202EE6B0001C437 /* NSString+BFRemoveEmoji.m */,
-				187952472202DE5A0001C437 /* NSStringCategoryHeader.h */,
+				F723F60E27CF5A53002287CB /* NSString+BFEncryption.h */,
+				F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -2011,7 +1996,6 @@
 			files = (
 				F089A97F27328F04009A4BDD /* NSArray+BFLog.m in Sources */,
 				F089A9FE27329622009A4BDD /* YBIBVideoTopBar.m in Sources */,
-				7F01D11B27C79467005A6709 /* NSString+BFMD5.m in Sources */,
 				7F01D0ED27C792C8005A6709 /* UIFont+BFAdd.m in Sources */,
 				1879520E2202C9E10001C437 /* UILabel+BFAttributeTextTapAction.m in Sources */,
 				18B6800721F86A88004D2638 /* AppDelegate+Zeb.m in Sources */,
@@ -2058,7 +2042,6 @@
 				F089A9FD27329622009A4BDD /* YBIBVideoData.m in Sources */,
 				F089A9FF27329622009A4BDD /* YBIBVideoView.m in Sources */,
 				18F38D3C21F1D3B90042CF26 /* UINavigationController+BFFullscreenPopGesture.m in Sources */,
-				7F01D11A27C79467005A6709 /* NSString+BFGB2312.m in Sources */,
 				187951FA22029F4F0001C437 /* UIColor+BFGradient.m in Sources */,
 				F048602B27C8793300C530E9 /* BaseTableViewCell.m in Sources */,
 				7F01D13227C7947B005A6709 /* NSDate+BFAdd.m in Sources */,
@@ -2078,7 +2061,6 @@
 				7F01D09527C7901E005A6709 /* UIImage+BFInit.m in Sources */,
 				7F01D0B427C79071005A6709 /* UIButton+BFAdd.m in Sources */,
 				7F01D0D327C79149005A6709 /* UIControl+BFBlock.m in Sources */,
-				7F01D11927C79467005A6709 /* NSString+BFBase64.m in Sources */,
 				1879522F2202D3660001C437 /* NSDictionary+BFXML.m in Sources */,
 				F089AA2627329622009A4BDD /* NSBundle+BRPickerView.m in Sources */,
 				F089AA1427329622009A4BDD /* YBIBToolViewHandler.m in Sources */,
@@ -2124,6 +2106,7 @@
 				1899099B25CFD20000F82636 /* CommonWebViewController.m in Sources */,
 				18F38D3721F1D1EE0042CF26 /* UIImage+BFColor.m in Sources */,
 				18FF49DB21FB0D5200220D48 /* UIImage+BFWechat.m in Sources */,
+				F723F61027CF5A53002287CB /* NSString+BFEncryption.m in Sources */,
 				187952282202D2200001C437 /* UINavigationController+SafeTransition.m in Sources */,
 				7F01D0B327C79071005A6709 /* UIButton+BFTouch.m in Sources */,
 				18B67FF321F6F4F8004D2638 /* BaseTabBarController.m in Sources */,
@@ -2169,7 +2152,6 @@
 				7F01D0C927C7913F005A6709 /* BFNavigationButton.m in Sources */,
 				18F38D5521F1D5F70042CF26 /* BFTool.m in Sources */,
 				F089AA0827329622009A4BDD /* YBIBImageCache.m in Sources */,
-				7F01D11D27C79467005A6709 /* NSString+BFEncode.m in Sources */,
 				18B67FF221F6F4F8004D2638 /* KBTabbar.m in Sources */,
 				7F01D0B827C79077005A6709 /* UIColor+BFAdd.m in Sources */,
 				F089A98227328F2A009A4BDD /* NSDictionary+Log.m in Sources */,
