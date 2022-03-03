@@ -42,13 +42,16 @@
 }
 /**** 事件绑定 ****/
 -(void)bindControlEvent{
-    
+
 }
 #pragma mark - UI
 
 
 #pragma mark - IBActions/Event Response
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    HomeSectionViewController * vc  =[[HomeSectionViewController alloc] init];
+    BFPushViewController(vc);
+}
 
 #pragma mark - Data
 

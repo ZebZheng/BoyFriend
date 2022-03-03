@@ -37,7 +37,7 @@
     
 }
 
-- (void)bf_setupWithData:(id)datd {
+- (void)bf_setupWithData:(id)data {
     
 }
 

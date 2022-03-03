@@ -19,51 +19,51 @@
  *
  *  @param uriString  请求的Uri字符串
  *  @param parameters 请求的参数
- *  @param success    请求成功的回调
- *  @param failure    请求失败的回调
+ *  @param successBlock    请求成功的回调
+ *  @param failureBlock    请求失败的回调
  */
 - (void)getWithUriString:(NSString *)uriString
-              Parameters:(NSDictionary*)parameters
-                 Success:(void (^)(id responseObject))success
-                 Failure:(void (^)(BaseResponseData *error))failure;
+              parameters:(NSDictionary*)parameters
+            successBlock:(void (^)(id responseObject))successBlock
+            failureBlock:(void (^)(BaseResponseData *error))failureBlock;
 
 /**
  *  发送post请求
  *
  *  @param uriString  请求的Uri字符串
  *  @param parameters 请求的参数
- *  @param success    请求成功的回调
- *  @param failure    请求失败的回调
+ *  @param successBlock    请求成功的回调
+ *  @param failureBlock    请求失败的回调
  */
 - (void)postWithUriString:(NSString *)uriString
-               Parameters:(NSDictionary*)parameters
-                  Success:(void (^)(id responseObject))success
-                  Failure:(void (^)(BaseResponseData *error))failure;
+               parameters:(NSDictionary*)parameters
+             successBlock:(void (^)(id responseObject))successBlock
+             failureBlock:(void (^)(BaseResponseData *error))failureBlock;
 /**
  *  发送put请求
  *
  *  @param uriString  请求的Uri字符串
  *  @param parameters 请求的参数
- *  @param success    请求成功的回调
- *  @param failure    请求失败的回调
+ *  @param successBlock    请求成功的回调
+ *  @param failureBlock    请求失败的回调
  */
 - (void)putWithUriString:(NSString *)uriString
-              Parameters:(NSDictionary*)parameters
-                 Success:(void (^)(id responseObject))success
-                 Failure:(void (^)(BaseResponseData *error))failure;
+              parameters:(NSDictionary*)parameters
+            successBlock:(void (^)(id responseObject))successBlock
+            failureBlock:(void (^)(BaseResponseData *error))failureBlock;
 
 /**
  *  发送DELETE请求
  *
  *  @param uriString  请求的Uri字符串
  *  @param parameters 请求的参数
- *  @param success    请求成功的回调
- *  @param failure    请求失败的回调
+ *  @param successBlock    请求成功的回调
+ *  @param failureBlock    请求失败的回调
  */
 - (void)deleteWithUriString:(NSString *)uriString
-                 Parameters:(NSDictionary*)parameters
-                    Success:(void (^)(id responseObject))success
-                    Failure:(void (^)(BaseResponseData *error))failure;
+                 parameters:(NSDictionary*)parameters
+               successBlock:(void (^)(id responseObject))successBlock
+               failureBlock:(void (^)(BaseResponseData *error))failureBlock;
 
 /**
  *  文件上传(Data)
@@ -73,16 +73,16 @@
  *  @param fileNames     文件类型名称(可传一个字符串 或者一个数组)
  *  @param parametersDic 参数
  *  @param progressBlock 进度
- *  @param success       访问成功block回调
- *  @param failure       访问失败block回调
+ *  @param successBlock       访问成功block回调
+ *  @param failureBlock       访问失败block回调
  */
 - (void)uploadFileWithUriString:(NSString *)uriString
-                          Files:(NSArray  *)files
-                       FileName:(id)fileNames
-                     Parameters:(NSDictionary *)parametersDic
-                  ProgressBlock:(void (^)(NSProgress*progress))progressBlock
-                        Success:(void (^)(id responseObject))success
-                        Failure:(void (^)(BaseResponseData *error))failure;
+                          files:(NSArray  *)files
+                       fileName:(id)fileNames
+                     parameters:(NSDictionary *)parametersDic
+                  progressBlock:(void (^)(NSProgress*progress))progressBlock
+                   successBlock:(void (^)(id responseObject))successBlock
+                   failureBlock:(void (^)(BaseResponseData *error))failureBlock;
 
 
 #pragma mark 文件下载(不支持断点跟离线)
@@ -93,14 +93,14 @@
 @param uriString     uri地址
 @param fileDownloadPath 文件下载到本地指定路径,不传默认下载到 Documents/FileDownload
 @param progressBlock 文件下载进度
-@param success 下载成功
-@param failure 下载失败
+@param successBlock 下载成功
+@param failureBlock 下载失败
 */
 - (void)downloadFileWithUriString:(NSString *)uriString
-                 FileDownloadPath:(NSString *)fileDownloadPath
-                    ProgressBlock:(void (^)(NSProgress*progress))progressBlock
-                          Success:(void (^)(id responseObject))success
-                          Failure:(void (^)(BaseResponseData *error))failure;
+                 fileDownloadPath:(NSString *)fileDownloadPath
+                    progressBlock:(void (^)(NSProgress*progress))progressBlock
+                     successBlock:(void (^)(id responseObject))successBlock
+                     failureBlock:(void (^)(BaseResponseData *error))failureBlock;
 
 /**
  文件下载(不支持断点跟离线)
@@ -110,15 +110,15 @@
  @param uriString     uri地址
  @param fileDownloadPath 文件下载到本地指定路径,不传默认下载到 Documents/FileDownload
  @param progressBlock 文件下载进度
- @param success 下载成功
- @param failure 下载失败
+ @param successBlock 下载成功
+ @param failureBlock 下载失败
  */
 - (void)downloadFileWithServerString:(NSString *)serverString
-                           UriString:(NSString *)uriString
-                    FileDownloadPath:(NSString *)fileDownloadPath
-                       ProgressBlock:(void (^)(NSProgress*progress))progressBlock
-                             Success:(void (^)(id responseObject))success
-                             Failure:(void (^)(BaseResponseData *error))failure;
+                           uriString:(NSString *)uriString
+                    fileDownloadPath:(NSString *)fileDownloadPath
+                       progressBlock:(void (^)(NSProgress*progress))progressBlock
+                        successBlock:(void (^)(id responseObject))successBlock
+                        failureBlock:(void (^)(BaseResponseData *error))failureBlock;
 
 
 #pragma mark - 构建通用参数

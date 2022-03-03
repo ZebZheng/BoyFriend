@@ -29,7 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 请求成功 pageNow:当前页 count:总页
 @property (nonatomic,copy) void (^requestSuccessBlock)(NSInteger pageNow, NSInteger count);
 
-
+/// 空态图相关的展示 ( isShowPlaceHold:YES:显示 NO:移除   placeholderViewType: 空态图类型   isNeedReload:是否有按钮 是否需要刷新操作 )
+@property (nonatomic,copy) void (^placeholderBlock)(BOOL isShowPlaceHold, BFPlaceholderViewType placeholderViewType , BOOL isNeedReload);
 
 
 /// 下拉刷新事件
@@ -52,6 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section;
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 

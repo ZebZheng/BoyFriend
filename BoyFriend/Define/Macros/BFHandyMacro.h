@@ -13,7 +13,7 @@
 /// integer转字符串
 #define BFInteger_To_String(i)              [NSString stringWithFormat:@"%zd",i]
 /// longint转字符串
-#define BFLongInt_To_String(i)              [NSString stringWithFormat:@"%zd",i]
+#define BFLongInt_To_String(i)              [NSString stringWithFormat:@"%ld",i]
 /// double转字符串
 #define BFDouble_To_String(i)               [NSString stringWithFormat:@"%f",i]
 /// 字符串拼接

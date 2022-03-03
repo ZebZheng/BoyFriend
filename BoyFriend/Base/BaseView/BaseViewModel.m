@@ -7,7 +7,6 @@
 //
 
 #import "BaseViewModel.h"
-#import "NetWorkURL.h"
 
 @implementation BaseViewModel
 

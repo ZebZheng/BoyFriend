@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetWorkURL.h"
+
 @class BaseResponseData;
 
 typedef void (^successCallback)(BaseResponseData *result);

@@ -69,6 +69,19 @@
             [self.tableView.mj_footer resetNoMoreData];
         }
     }];
+    [self.tableViewModel setPlaceholderBlock:^(BOOL isShowPlaceHold, BFPlaceholderViewType placeholderViewType, BOOL isNeedReload) {
+        @strongify(self);
+        if (isShowPlaceHold) {
+            [self.tableView bf_showPlaceholderViewWithType:placeholderViewType reloadBlock:^{
+                @strongify(self);
+                if (isNeedReload) {
+                    [self  refreshHeaderAction];
+                }
+            }];
+        }else{
+            [self.tableView bf_removePlaceholderView];
+        }
+    }];
 }
 #pragma mark - UI
 
@@ -100,6 +113,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.tableViewModel tableView:tableView numberOfRowsInSection:section];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self.tableViewModel tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
 //- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
