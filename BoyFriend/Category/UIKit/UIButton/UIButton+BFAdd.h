@@ -22,6 +22,7 @@ typedef NS_ENUM(NSUInteger, BFImagePosition) {
 };
 
 @interface UIButton (BFAdd)
+
 //MARK: - 文本字体大小
 @property (nonatomic, assign) CGFloat bf_titleFont;
 //MARK: - 文本字体大小
@@ -60,6 +61,7 @@ typedef NS_ENUM(NSUInteger, BFImagePosition) {
 - (void)bf_backgroundGradientColorWithType:(BFGradientType)type colors:(NSArray *)colors;
 //MARK: - 渐变背景颜色
 - (void)bf_backgroundGradientColorWithType:(BFGradientType)type size:(CGSize)size colors:(NSArray<UIColor *> *)colors;
+
 @end
 
 

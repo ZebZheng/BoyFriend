@@ -5,6 +5,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIButton (BFInit)
+
 /// 构建->文本-文本颜色
 /// @param title 文本
 /// @param titleColor 文本颜色
@@ -126,6 +127,7 @@
                        corner:(float)cornerRadius
                        target:(id)target
                           action:(SEL)action;
+
 
 @end
 

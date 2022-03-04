@@ -54,6 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 32位MD5加密
 /// @param isUppercase 是否大写
 + (NSString *)bf_MD5_NB32BitEncry:(NSString *)MD5String isUppercase:(BOOL)isUppercase;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -71,7 +71,7 @@
  *  @param uriString     uri地址
  *  @param files         要上传的文件(可上传多个)
  *  @param fileNames     文件类型名称(可传一个字符串 或者一个数组)
- *  @param parametersDic 参数
+ *  @param parameters 参数
  *  @param progressBlock 进度
  *  @param successBlock       访问成功block回调
  *  @param failureBlock       访问失败block回调
@@ -79,7 +79,7 @@
 - (void)uploadFileWithUriString:(NSString *)uriString
                           files:(NSArray  *)files
                        fileName:(id)fileNames
-                     parameters:(NSDictionary *)parametersDic
+                     parameters:(NSDictionary *)parameters
                   progressBlock:(void (^)(NSProgress*progress))progressBlock
                    successBlock:(void (^)(id responseObject))successBlock
                    failureBlock:(void (^)(BaseResponseData *error))failureBlock;

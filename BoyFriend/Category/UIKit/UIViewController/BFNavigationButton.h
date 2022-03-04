@@ -13,6 +13,7 @@
 + (instancetype)buttonWithTitle:(NSString *)title target:(id)target action:(SEL)action;
 + (instancetype)buttonWithTitle:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action;
 + (instancetype)buttonWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action;
+
 @end
 
 @interface BFBarButton : BFNavigationButton

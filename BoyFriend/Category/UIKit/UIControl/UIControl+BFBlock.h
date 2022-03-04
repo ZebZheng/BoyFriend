@@ -9,6 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //MARK: - 事件block
 @interface UIControl (BFBlock)
+
 ///按下
 - (void)touchDown:(void (^)(void))eventBlock;
 ///重复按下
@@ -37,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)editingDidEnd:(void (^)(void))eventBlock;
 ///编辑结束退出
 - (void)editingDidEndOnExit:(void (^)(void))eventBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

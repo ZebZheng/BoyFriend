@@ -331,7 +331,6 @@ static CGRect oldframe;
 
 // 一直变的UUID
 + (NSString *)UUIDString {
-    //UUID 来当消息id
     return [NSString stringWithUUID];
 }
 

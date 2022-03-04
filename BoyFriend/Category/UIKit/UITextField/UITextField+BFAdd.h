@@ -7,6 +7,7 @@
 
 
 @interface UITextField (BFAdd)
+
 /** 占位文字颜色 */
 @property (nonatomic, strong) UIColor * bf_placeholderColor;
 /** 最大显示字符限制(会自动根据该属性截取文本字符长度) */

@@ -12,13 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseCollectionViewCell : UICollectionViewCell
 
-- (void)initSubviews;
+- (void)bf_initSubviews;
 
-- (void)makeContraints;
+- (void)bf_makeContraints;
 
-- (void)setupWithData:(id)data;
+- (void)bf_setupWithData:(id)data;
 
-+(NSString *)reuseIdentifier;
++(NSString *)bf_reuseIdentifier;
 
 
 @end

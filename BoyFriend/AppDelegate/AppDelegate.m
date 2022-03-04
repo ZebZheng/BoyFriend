@@ -83,11 +83,10 @@
 
 }
 
-
-// 获取设备的deviceToken传给SDK
+//---------------获取设备的deviceToken传给SDK---------------
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-    //极光注册deviceToken
-//    [self jPushApplication:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+
+    
 }
 
 //---------------发生内存警告的时候---------------

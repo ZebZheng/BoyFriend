@@ -5,7 +5,9 @@
 
 #import "UITextView+BFAdd.h"
 #import "NSString+BFAdd.h"
+
 @implementation UITextView (BFAdd)
+
 - (void)setBf_promptFont:(UIFont *)promptFont {
     objc_setAssociatedObject(self, &@selector(bf_promptFont), promptFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

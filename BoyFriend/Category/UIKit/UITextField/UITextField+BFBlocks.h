@@ -5,6 +5,7 @@
 
 #import <UIKit/UIKit.h>
 @interface UITextField (BFBlocks)
+
 /// 返回NO不允许编辑。
 @property (copy, nonatomic) BOOL (^bf_shoulBFeginEditingBlock)(UITextField *textField);
 /// 返回YES以允许停止编辑并退出第一响应器状态。NO表示不允许结束编辑会话
@@ -27,4 +28,5 @@
 - (void)setBf_shouldChangeCharactersInRangeBlock:(BOOL (^)(UITextField *textField, NSRange range, NSString *string))shouldChangeCharactersInRangeBlock;
 - (void)setBf_shouldClearBlock:(BOOL (^)(UITextField *textField))shouldClearBlock;
 - (void)setBf_shouldReturnBlock:(BOOL (^)(UITextField *textField))shouldReturnBlock;
+
 @end

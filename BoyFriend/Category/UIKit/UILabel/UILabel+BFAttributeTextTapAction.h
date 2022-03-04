@@ -21,7 +21,7 @@
 @protocol BFAttributeTapActionDelegate <NSObject>
 @optional
 /**
- *  YBAttributeTapActionDelegate
+ *  BFAttributeTapActionDelegate
  *
  *  @param string  点击的字符串
  *  @param range   点击的字符串range

@@ -25,7 +25,7 @@
 + (NSString *)bf_platformString;
 
 /**
- 获取设备型号名称
+ 获取设备型号名称 只查询一次然后缓存
 
  @return 设备型号名称，与 platformString 一致，只查询一次然后缓存
  */

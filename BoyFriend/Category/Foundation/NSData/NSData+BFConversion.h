@@ -8,6 +8,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSData (BFConversion)
+
 ///转成字符串
 - (NSString *)bf_toString;
 

@@ -19,6 +19,7 @@ static const void *UIControlActionBlockArray = &UIControlActionBlockArray;
 
 
 @implementation UIControl (BFActionBlocks)
+
 -(void)bf_handleControlEvents:(UIControlEvents)controlEvents withBlock:(BFUIControlActionBlock)actionBlock {
     NSMutableArray *actionBlocksArray = [self actionBlocksArray];
     
@@ -55,5 +56,6 @@ static const void *UIControlActionBlockArray = &UIControlActionBlockArray;
     }
     return actionBlocksArray;
 }
+
 @end
 

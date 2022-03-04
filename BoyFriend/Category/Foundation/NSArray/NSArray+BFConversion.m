@@ -6,10 +6,13 @@
 #import "NSArray+BFConversion.h"
 
 @implementation NSArray (BFConversion)
+
 - (NSString *)bf_toString {
     return [self bf_toStringBy:@","];
 }
+
 - (NSString *)bf_toStringBy:(NSString *)string {
     return [self componentsJoinedByString:string];
 }
+
 @end

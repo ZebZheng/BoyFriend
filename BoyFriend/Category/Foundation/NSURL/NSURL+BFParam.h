@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSURL (BFParam)
+
 /**
  *  @brief  url参数转字典
  *
@@ -23,4 +24,5 @@
  *  @return 参数值
  */
 - (NSString *)bf_valueForParameter:(NSString *)parameterKey;
+
 @end

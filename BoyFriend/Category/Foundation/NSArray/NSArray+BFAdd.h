@@ -7,8 +7,10 @@
 #import <Foundation/Foundation.h>
 
 @interface NSArray (BFAdd)
+
 ///移除重复
 @property (nonatomic, strong, readonly)NSArray * bf_removeDuplicate;
+
 @end
 
 

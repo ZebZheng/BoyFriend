@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIViewController*)bf_currentViewController;
 //获取KeyWindow
 - (UIWindow *)bf_getKeyWindow;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -6,23 +6,30 @@
 #import "BFNavigationButton.h"
 
 static CGFloat HightlightButtonHighlightedAlpha = 0.49872f;
+
 @interface BFNavigationButton() {
     CGFloat _originalAlpha;
 }
+
 @end
 @implementation BFNavigationButton
+
 + (instancetype)buttonWithTarget:(id)target action:(SEL)action {
     return [self buttonWithImage:nil title:nil color:nil target:target action:action];
 }
+
 + (instancetype)buttonWithTitle:(NSString *)title target:(id)target action:(SEL)action {
     return [self buttonWithTitle:title color:nil target:target action:action];
 }
+
 + (instancetype)buttonWithImage:(UIImage *)image target:(id)target action:(SEL)action {
     return [self buttonWithImage:image title:nil color:nil target:target action:action];
 }
+
 + (instancetype)buttonWithTitle:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action {
     return [self buttonWithImage:nil title:title color:color target:target action:action];
 }
+
 + (instancetype)buttonWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action {
     BFNavigationButton *button = [self buttonWithType:UIButtonTypeCustom];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
@@ -38,6 +45,7 @@ static CGFloat HightlightButtonHighlightedAlpha = 0.49872f;
     [button sizeToFit];
     return button;
 }
+
 + (instancetype)buttonWithType:(UIButtonType)buttonType {
     BFNavigationButton *button = [super buttonWithType:buttonType];
     if (button) {
@@ -45,18 +53,21 @@ static CGFloat HightlightButtonHighlightedAlpha = 0.49872f;
     }
     return button;
 }
+
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         [self setup];
     }
     return self;
 }
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setup];
     }
     return self;
 }
+
 - (void)setup {
     if ([self autoHighligted]) {
         self.adjustsImageWhenHighlighted = NO;
@@ -124,8 +135,8 @@ autoSynchronization(setTitleShadowColor, UIColor)
 @end
 
 @implementation BFBarButton
-- (void)setup
-{
+
+- (void)setup{
     [super setup];
     if ([UIBarButtonItem appearance].tintColor) {
         [self setTintColor:[UIBarButtonItem appearance].tintColor];

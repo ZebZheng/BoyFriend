@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseCollectionViewModel : BaseViewModel
 
+/// 是否需要分页请求
+@property(nonatomic, assign) BOOL isNeedPaging;
 /**** 是否自动预加载下一页功能 ****/
 @property (nonatomic) BOOL isAutoRequestMore;
 /**** 页面数据 ****/
@@ -29,7 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 请求成功 pageNow:当前页 count:总页
 @property (nonatomic,copy) void (^requestSuccessBlock)(NSInteger pageNow, NSInteger count);
 
-
+/// 空态图相关的展示 ( isShowPlaceHold:YES:显示 NO:移除   placeholderViewType: 空态图类型   isNeedReload:是否有按钮 是否需要刷新操作 )
+@property (nonatomic,copy) void (^placeholderBlock)(BOOL isShowPlaceHold, BFPlaceholderViewType placeholderViewType , BOOL isNeedReload);
 
 
 /// 下拉刷新事件

@@ -57,7 +57,7 @@
 - (NSString *)getServerErrorWithCode:(NSInteger )code Info:(NSString *)info {
     NSString * str = info;
     switch (code) {
-        case 0:
+        case Server_Code_0:
             str = @"成功";
             break;
         case Server_Code_Minus1:
@@ -70,7 +70,7 @@
             str = @"";//token 失效先不弹提示语
             break;
         default:
-//            str = info;
+
             break;
     }
     return str;
