@@ -51,17 +51,28 @@
 }
 /**** 事件绑定 ****/
 -(void)bindControlEventB{
+    if (self.tableViewModel != nil) {
+        [self bindControlEventViewModel:self.tableViewModel];
+    }
+}
+#pragma mark - UI
+
+
+#pragma mark - IBActions/Event Response
+-(void)bindControlEventViewModel:(BaseTableViewModel *)tableViewModel{
     @weakify(self);
-    [RACObserve(self.tableViewModel, endRefreshing) subscribeNext:^(id  _Nullable x) {
+    [RACObserve(tableViewModel, endRefreshing) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
     }];
-    [RACObserve(self.tableViewModel, reloadTableView) subscribeNext:^(id  _Nullable x) {
+    [RACObserve(tableViewModel, reloadTableView) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        [self.tableView reloadData];
+        if ([x boolValue]) {
+            [self.tableView reloadData];
+        }
     }];
-    [self.tableViewModel setRequestSuccessBlock:^(NSInteger pageNow, NSInteger count) {
+    [tableViewModel setRequestSuccessBlock:^(NSInteger pageNow, NSInteger count) {
         @strongify(self);
         if (pageNow == count) {
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
@@ -69,11 +80,24 @@
             [self.tableView.mj_footer resetNoMoreData];
         }
     }];
+    [tableViewModel setPlaceholderBlock:^(BOOL isShowPlaceHold, BFPlaceholderViewType placeholderViewType, BOOL isNeedReload) {
+        @strongify(self);
+        if (isShowPlaceHold) {
+            [self.tableView bf_showPlaceholderViewWithType:placeholderViewType reloadBlock:^{
+                @strongify(self);
+                if (isNeedReload) {
+                    [self  refreshHeaderAction];
+                }
+            }];
+        }else{
+            [self.tableView bf_removePlaceholderView];
+        }
+    }];
+    tableViewModel.isAutoRequestMore = self.isAutoRequestMore;
+    tableViewModel.isNeedPaging = self.isNeedPaging;
+    self.tableView.isUseRefreshHeader = self.isUseRefreshHeader;
+    self.tableView.isUseRefreshFooter = self.isUseRefreshFooter;
 }
-#pragma mark - UI
-
-
-#pragma mark - IBActions/Event Response
 
 
 #pragma mark - Data
@@ -102,18 +126,22 @@
     return [self.tableViewModel tableView:tableView numberOfRowsInSection:section];
 }
 
-//- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self.tableViewModel tableView:tableView heightForRowAtIndexPath:indexPath];
+}
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
 //    return [self.tableViewModel tableView:tableView heightForHeaderInSection:section];
 //}
 //
-//- (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-//{
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
 //    return [self.tableViewModel tableView:tableView heightForFooterInSection:section];
 //}
+//
 //-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
 //    return [self.tableViewModel tableView:tableView viewForFooterInSection:section];
 //}
+//
 //-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 //    return [self.tableViewModel tableView:tableView viewForHeaderInSection:section];
 //}
@@ -150,26 +178,6 @@
 
     }
     return _tableView;
-}
-
-- (void)setIsUseRefreshHeader:(BOOL)isUseRefreshHeader{
-    _isUseRefreshHeader = isUseRefreshHeader;
-    self.tableView.isUseRefreshHeader = isUseRefreshHeader;
-}
-- (void)setIsUseRefreshFooter:(BOOL)isUseRefreshFooter{
-    _isUseRefreshFooter = isUseRefreshFooter;
-    self.tableView.isUseRefreshFooter = isUseRefreshFooter;
-}
-- (void)setIsAutoRequestMore:(BOOL)isAutoRequestMore{
-    _isAutoRequestMore = isAutoRequestMore;
-    self.tableViewModel.isAutoRequestMore = isAutoRequestMore;
-}
-
--(BaseTableViewModel *)tableViewModel{
-    if (!_tableViewModel) {
-        _tableViewModel=[[BaseTableViewModel alloc]init];
-    }
-    return _tableViewModel;
 }
 
 

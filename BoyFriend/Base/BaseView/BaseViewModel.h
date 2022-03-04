@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetWorkURL.h"
+
 @class BaseResponseData;
 
 typedef void (^successCallback)(BaseResponseData *result);
@@ -25,7 +27,7 @@ typedef void (^failCallback)(BaseResponseData *result);
 
 #pragma mark - response handler（统一错误处理，统一返回值处理）
 - (void)handleResponse:(id)responseObject
-                  Resp:(Class)ObjType
+                  resp:(Class)ObjType
             completion:(void (^)(BOOL success,BaseResponseData * respData))completion;
 
 /// 消息展示

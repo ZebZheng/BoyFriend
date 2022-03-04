@@ -30,17 +30,17 @@
 
 #pragma mark - Get网络请求
 - (void)getWithUriString:(NSString *)uriString
-              Parameters:(NSDictionary*)parameters
-                 Success:(void (^)(id responseObject))success
-                 Failure:(void (^)(BaseResponseData *error))failure{
-    [self getWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl UriString:uriString Parameters:parameters Success:success Failure:failure];
+              parameters:(NSDictionary*)parameters
+            successBlock:(void (^)(id responseObject))successBlock
+            failureBlock:(void (^)(BaseResponseData *error))failureBlock{
+    [self getWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl uriString:uriString parameters:parameters successBlock:successBlock failureBlock:failureBlock];
 }
 
 - (void)getWithServerString:(NSString *)serverString
-                  UriString:(NSString *)uriString
-                 Parameters:(NSDictionary*)parameters
-                 Success:(void (^)(id responseObject))success
-                 Failure:(void (^)(BaseResponseData *error))failure{
+                  uriString:(NSString *)uriString
+                 parameters:(NSDictionary*)parameters
+               successBlock:(void (^)(id responseObject))successBlock
+               failureBlock:(void (^)(BaseResponseData *error))failureBlock{
 
     NSString * urlString = [serverString stringByAppendingString:uriString];
     parameters = [self buildCommonParameters:parameters];
@@ -65,12 +65,12 @@
             NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:@"message"]];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
 
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
         } else {
-            if (success) {
-                success(dic);
+            if (successBlock) {
+                successBlock(dic);
             }
         }
 
@@ -86,8 +86,8 @@
             result.code = [NSString stringWithFormat:@"%ld",(long)error.code];;
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:error.code Info:message];
 
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
         } else {
             BaseResponseData *result = [[BaseResponseData alloc]init];
@@ -95,8 +95,8 @@
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
             //token是否失效
             [self tokenIsInvalid:code];
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
         }
     }];
@@ -105,17 +105,17 @@
 #pragma mark - Post网络请求
 
 - (void)postWithUriString:(NSString *)uriString
-              Parameters:(NSDictionary*)parameters
-                 Success:(void (^)(id responseObject))success
-                 Failure:(void (^)(BaseResponseData *error))failure{
-    [self postWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl UriString:uriString Parameters:parameters Success:success Failure:failure];
+               parameters:(NSDictionary*)parameters
+             successBlock:(void (^)(id responseObject))successBlock
+             failureBlock:(void (^)(BaseResponseData *error))failureBlock{
+    [self postWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl uriString:uriString parameters:parameters successBlock:successBlock failureBlock:failureBlock];
 }
 
 - (void)postWithServerString:(NSString *)serverString
-                   UriString:(NSString *)uriString
-                  Parameters:(NSDictionary*)parameters
-                     Success:(void (^)(id responseObject))success
-                     Failure:(void (^)(BaseResponseData *error))failure{
+                   uriString:(NSString *)uriString
+                  parameters:(NSDictionary*)parameters
+                successBlock:(void (^)(id responseObject))successBlock
+                failureBlock:(void (^)(BaseResponseData *error))failureBlock{
     NSString * urlString = [serverString stringByAppendingString:uriString];
     parameters = [self buildCommonParameters:parameters];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -139,12 +139,12 @@
             result.code = code;
             NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:@"message"]];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
         } else {
-            if (success) {
-                success(dic);
+            if (successBlock) {
+                successBlock(dic);
             }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -161,8 +161,8 @@
             result.code = [NSString stringWithFormat:@"%ld",(long)error.code];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:error.code Info:message];
 
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
 
         } else {
@@ -171,8 +171,8 @@
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
             //token是否失效
             [self tokenIsInvalid:code];
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
         }
     }];
@@ -182,17 +182,17 @@
 #pragma mark - Put网络请求
 
 - (void)putWithUriString:(NSString *)uriString
-              Parameters:(NSDictionary*)parameters
-                 Success:(void (^)(id responseObject))success
-                 Failure:(void (^)(BaseResponseData *error))failure{
-    [self putWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl UriString:uriString Parameters:parameters Success:success Failure:failure];
+              parameters:(NSDictionary*)parameters
+            successBlock:(void (^)(id responseObject))successBlock
+            failureBlock:(void (^)(BaseResponseData *error))failureBlock{
+    [self putWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl uriString:uriString parameters:parameters successBlock:successBlock failureBlock:failureBlock];
 }
 
 - (void)putWithServerString:(NSString *)serverString
-                  UriString:(NSString *)uriString
-                 Parameters:(NSDictionary*)parameters
-                    Success:(void (^)(id responseObject))success
-                    Failure:(void (^)(BaseResponseData *error))failure{
+                  uriString:(NSString *)uriString
+                 parameters:(NSDictionary*)parameters
+               successBlock:(void (^)(id responseObject))successBlock
+               failureBlock:(void (^)(BaseResponseData *error))failureBlock{
     NSString * urlString = [serverString stringByAppendingString:uriString];
     parameters = [self buildCommonParameters:parameters];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -213,12 +213,12 @@
             result.code = code;
             NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:@"message"]];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
         } else {
-            if (success) {
-                success(dic);
+            if (successBlock) {
+                successBlock(dic);
             }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -235,8 +235,8 @@
             result.code = [NSString stringWithFormat:@"%ld",(long)error.code];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:error.code Info:message];
 
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
 
         } else {
@@ -245,8 +245,8 @@
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
             //token是否失效
             [self tokenIsInvalid:code];
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
         }
     }];
@@ -256,17 +256,17 @@
 #pragma mark - DELETE网络请求
 
 - (void)deleteWithUriString:(NSString *)uriString
-                 Parameters:(NSDictionary*)parameters
-                    Success:(void (^)(id responseObject))success
-                    Failure:(void (^)(BaseResponseData *error))failure{
-    [self deleteWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl UriString:uriString Parameters:parameters Success:success Failure:failure];
+                 parameters:(NSDictionary*)parameters
+               successBlock:(void (^)(id responseObject))successBlock
+               failureBlock:(void (^)(BaseResponseData *error))failureBlock{
+    [self deleteWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl uriString:uriString parameters:parameters successBlock:successBlock failureBlock:failureBlock];
 }
 
 - (void)deleteWithServerString:(NSString *)serverString
-                     UriString:(NSString *)uriString
-                    Parameters:(NSDictionary*)parameters
-                       Success:(void (^)(id responseObject))success
-                       Failure:(void (^)(BaseResponseData *error))failure{
+                     uriString:(NSString *)uriString
+                    parameters:(NSDictionary*)parameters
+                  successBlock:(void (^)(id responseObject))successBlock
+                  failureBlock:(void (^)(BaseResponseData *error))failureBlock{
     NSString * urlString = [serverString stringByAppendingString:uriString];
     parameters = [self buildCommonParameters:parameters];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -286,12 +286,12 @@
             result.code = code;
             NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:@"message"]];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
         } else {
-            if (success) {
-                success(dic);
+            if (successBlock) {
+                successBlock(dic);
             }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -308,8 +308,8 @@
             result.code = [NSString stringWithFormat:@"%ld",(long)error.code];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:error.code Info:message];
 
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
 
         } else {
@@ -318,8 +318,8 @@
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
             //token是否失效
             [self tokenIsInvalid:code];
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
         }
     }];
@@ -329,13 +329,13 @@
 
 #pragma mark 文件上传(Data)
 - (void)uploadFileWithUriString:(NSString *)uriString
-                          Files:(NSArray  *)files
-                       FileName:(id)fileNames
-                     Parameters:(NSDictionary *)parametersDic
-                  ProgressBlock:(void (^)(NSProgress*progress))progressBlock
-                        Success:(void (^)(id responseObject))success
-                        Failure:(void (^)(BaseResponseData *error))failure{
-    [self uploadFileWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl UriString:uriString Files:files FileName:fileNames Parameters:parametersDic ProgressBlock:progressBlock Success:success Failure:failure];
+                          files:(NSArray  *)files
+                       fileName:(id)fileNames
+                     parameters:(NSDictionary *)parametersDic
+                  progressBlock:(void (^)(NSProgress*progress))progressBlock
+                   successBlock:(void (^)(id responseObject))successBlock
+                   failureBlock:(void (^)(BaseResponseData *error))failureBlock{
+    [self uploadFileWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl uriString:uriString files:files fileName:fileNames parameters:parametersDic progressBlock:progressBlock successBlock:successBlock failureBlock:failureBlock];
 }
 /**
  *  文件上传(Data)
@@ -346,17 +346,17 @@
  *  @param fileNames     文件类型名称(可传一个字符串 或者一个数组)
  *  @param parametersDic 参数
  *  @param progressBlock 进度
- *  @param success       访问成功block回调
- *  @param failure       访问失败block回调
+ *  @param successBlock       访问成功block回调
+ *  @param failureBlock       访问失败block回调
  */
 - (void)uploadFileWithServerString:(NSString *)serverString
-                         UriString:(NSString *)uriString
-                             Files:(NSArray  *)files
-                          FileName:(id)fileNames
-                        Parameters:(NSDictionary *)parametersDic
-                     ProgressBlock:(void (^)(NSProgress*progress))progressBlock
-                           Success:(void (^)(id responseObject))success
-                           Failure:(void (^)(BaseResponseData *error))failure{
+                         uriString:(NSString *)uriString
+                             files:(NSArray  *)files
+                          fileName:(id)fileNames
+                        parameters:(NSDictionary *)parametersDic
+                     progressBlock:(void (^)(NSProgress*progress))progressBlock
+                      successBlock:(void (^)(id responseObject))successBlock
+                      failureBlock:(void (^)(BaseResponseData *error))failureBlock{
     NSString * urlString = [serverString stringByAppendingString:uriString];
 
     UIApplication *app=[UIApplication sharedApplication];
@@ -451,12 +451,12 @@
             result.code = code;
             NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:@"message"]];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
         } else {
-            if (success) {
-                success(dic);
+            if (successBlock) {
+                successBlock(dic);
             }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -474,8 +474,8 @@
             result.code = [NSString stringWithFormat:@"%ld",(long)error.code];;
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:error.code Info:message];
 
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
             
         } else {
@@ -484,8 +484,8 @@
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
             //token是否失效
             [self tokenIsInvalid:result.code];
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
         }
     }];
@@ -493,11 +493,11 @@
 
 #pragma mark 文件下载(不支持断点跟离线)
 - (void)downloadFileWithUriString:(NSString *)uriString
-                 FileDownloadPath:(NSString *)fileDownloadPath
-                    ProgressBlock:(void (^)(NSProgress*progress))progressBlock
-                          Success:(void (^)(id responseObject))success
-                          Failure:(void (^)(BaseResponseData *error))failure{
-    [self downloadFileWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl UriString:uriString FileDownloadPath:fileDownloadPath ProgressBlock:progressBlock Success:success Failure:failure];
+                 fileDownloadPath:(NSString *)fileDownloadPath
+                    progressBlock:(void (^)(NSProgress*progress))progressBlock
+                     successBlock:(void (^)(id responseObject))successBlock
+                     failureBlock:(void (^)(BaseResponseData *error))failureBlock{
+    [self downloadFileWithServerString:[NetWorkURL sharedInstance].environmentModel.apiUrl uriString:uriString fileDownloadPath:fileDownloadPath progressBlock:progressBlock successBlock:successBlock failureBlock:failureBlock];
 }
 /**
  文件下载(不支持断点跟离线)
@@ -507,15 +507,15 @@
  @param uriString     uri地址
  @param fileDownloadPath 文件下载到本地指定路径,不传默认下载到 Documents/FileDownload
  @param progressBlock 文件下载进度
- @param success 下载成功
- @param failure 下载失败
+ @param successBlock 下载成功
+ @param failureBlock 下载失败
  */
 - (void)downloadFileWithServerString:(NSString *)serverString
-                           UriString:(NSString *)uriString
-                    FileDownloadPath:(NSString *)fileDownloadPath
-                       ProgressBlock:(void (^)(NSProgress*progress))progressBlock
-                             Success:(void (^)(id responseObject))success
-                             Failure:(void (^)(BaseResponseData *error))failure{
+                           uriString:(NSString *)uriString
+                    fileDownloadPath:(NSString *)fileDownloadPath
+                       progressBlock:(void (^)(NSProgress*progress))progressBlock
+                        successBlock:(void (^)(id responseObject))successBlock
+                        failureBlock:(void (^)(BaseResponseData *error))failureBlock{
     
     NSString * urlString = [serverString stringByAppendingString:uriString];
 
@@ -570,13 +570,13 @@
 
             //token是否失效
             [self tokenIsInvalid:result.code];
-            if (failure) {
-                failure(result);
+            if (failureBlock) {
+                failureBlock(result);
             }
             
         } else {
-            if (success) {
-                success(response);
+            if (successBlock) {
+                successBlock(response);
             }
             BFDEBUG(@"文件下载路径: %@", filePath);
         }

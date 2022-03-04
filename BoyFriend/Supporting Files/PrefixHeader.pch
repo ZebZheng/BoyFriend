@@ -46,6 +46,7 @@
 #import "BFPathTools.h"
 #import "BaseSQliteModel.h"
 #import "BaseUserSQliteModel.h"
+#import "NetWorkHelper.h"
 
 #import "BaseWebViewController.h"
 #import "BaseNavigationController.h"

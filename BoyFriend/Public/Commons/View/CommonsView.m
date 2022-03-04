@@ -103,7 +103,7 @@
  */
 - (UIButton *)backButton {
     if (!_backButton) {
-        _backButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,BFNavBarHeight,BFNavBarHeight)];
+        _backButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,30,BFNavBarHeight)];
         [_backButton setTitleColor:BFRGB_FontColor forState:UIControlStateNormal];
         [_backButton setTitle:@"" forState:UIControlStateNormal];
         [_backButton setImage:BFImageName(@"nav_back_black") forState:UIControlStateNormal];
@@ -120,7 +120,7 @@
 -(UIButton *)closeButton{
     if (!_closeButton) {
         _closeButton=[BFUICreator createButtonWithNormalImage:@"close_back" target:nil action:nil];
-        _closeButton.frame = CGRectMake(0,0,BFNavBarHeight,BFNavBarHeight);
+        _closeButton.frame = CGRectMake(0,0,30,BFNavBarHeight);
 //        _closeButton.imageEdgeInsets=UIEdgeInsetsMake(0, 0, 0, 10);
     }
     return _closeButton;

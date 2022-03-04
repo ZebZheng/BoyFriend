@@ -217,9 +217,9 @@
         
         CommonsView *view = [CommonsView new];
         [view.backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-        view.backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//        view.backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:view.backButton];
-        [self.navigationItem setLeftBarButtonItems:@[item/*,[UIBarButtonItem fixItemSpace:View_Navbar_Items_Fixed_Space]*/]];
+        [self.navigationItem setLeftBarButtonItems:@[item,[UIBarButtonItem fixItemSpace:View_Navbar_Items_Fixed_Space]]];
 
         self.navigationItem.backBarButtonItem = nil;
     }
@@ -263,7 +263,7 @@
             [self.navigationItem setLeftBarButtonItems:@[item]];
         } else {
             [leftbutton addTarget:self action:@selector(leftBarBtnItem_click:) forControlEvents:UIControlEventTouchUpInside];
-            leftbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//            leftbutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
             UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
             [self.navigationItem setLeftBarButtonItems:@[item,[UIBarButtonItem fixItemSpace:View_Navbar_Items_Fixed_Space]]];
         }

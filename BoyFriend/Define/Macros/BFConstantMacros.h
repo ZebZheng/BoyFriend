@@ -11,6 +11,10 @@
 #ifndef BFConstantMacros_h
 #define BFConstantMacros_h
 
+// 全局 是否启用切换库功能 (YES: 允许， NO：不允许) -允许 登录页面点击 6下 可以切换库
+#define BFISEnable_Switch_Environment     (YES)
+
+
 //请求公用Code
 #define BFApi_ClientType @"10"
 //请求公用heade版本
@@ -28,12 +32,6 @@
 #define Mask_View_Alpha     (0.2)
 // 导航栏 items 间距
 #define View_Navbar_Items_Fixed_Space    20
-
-
-
-// 全局 是否启用切换库功能 (YES: 允许， NO：不允许) -允许 登录页面点击 6下 可以切换库
-#define BFISEnable_Switch_Environment     (YES)
-
 
 
 #pragma mark - 全局的状态提示语 UniformTip
