@@ -51,28 +51,27 @@
 }
 /**** 事件绑定 ****/
 -(void)bindControlEventB{
-    if (self.tableViewModel != nil) {
-        [self bindControlEventViewModel:self.tableViewModel];
-    }
+
 }
 #pragma mark - UI
 
 
 #pragma mark - IBActions/Event Response
 -(void)bindControlEventViewModel:(BaseTableViewModel *)tableViewModel{
+    self.tableViewModel = tableViewModel;
     @weakify(self);
-    [RACObserve(tableViewModel, endRefreshing) subscribeNext:^(id  _Nullable x) {
+    [RACObserve(self.tableViewModel, endRefreshing) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
     }];
-    [RACObserve(tableViewModel, reloadTableView) subscribeNext:^(id  _Nullable x) {
+    [RACObserve(self.tableViewModel, reloadTableView) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if ([x boolValue]) {
             [self.tableView reloadData];
         }
     }];
-    [tableViewModel setRequestSuccessBlock:^(NSInteger pageNow, NSInteger count) {
+    [self.tableViewModel setRequestSuccessBlock:^(NSInteger pageNow, NSInteger count) {
         @strongify(self);
         if (pageNow == count) {
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
@@ -80,7 +79,7 @@
             [self.tableView.mj_footer resetNoMoreData];
         }
     }];
-    [tableViewModel setPlaceholderBlock:^(BOOL isShowPlaceHold, BFPlaceholderViewType placeholderViewType, BOOL isNeedReload) {
+    [self.tableViewModel setPlaceholderBlock:^(BOOL isShowPlaceHold, BFPlaceholderViewType placeholderViewType, BOOL isNeedReload) {
         @strongify(self);
         if (isShowPlaceHold) {
             [self.tableView bf_showPlaceholderViewWithType:placeholderViewType reloadBlock:^{
@@ -93,8 +92,8 @@
             [self.tableView bf_removePlaceholderView];
         }
     }];
-    tableViewModel.isAutoRequestMore = self.isAutoRequestMore;
-    tableViewModel.isNeedPaging = self.isNeedPaging;
+    self.tableViewModel.isAutoRequestMore = self.isAutoRequestMore;
+    self.tableViewModel.isNeedPaging = self.isNeedPaging;
     self.tableView.isUseRefreshHeader = self.isUseRefreshHeader;
     self.tableView.isUseRefreshFooter = self.isUseRefreshFooter;
 }

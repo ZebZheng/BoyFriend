@@ -9,6 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface UITextView (BFAdd)
+
 @property (nonatomic, assign,readonly) BOOL bf_addNoti;
 @property (nonatomic, copy) NSString * bf_lastTextStr;
 //MARK: - 编辑中代理block

@@ -15,7 +15,7 @@
 @implementation BaseCollectionViewController
 
 #pragma mark - Lifecycle
--(instancetype)init{
+-(instancetype)init {
     if (self=[super init]) {
         self.scrollDirection=UICollectionViewScrollDirectionVertical;
     }
@@ -26,25 +26,35 @@
     [super viewDidLoad];
     [self initializeViewB];
     [self initializeViewDataB];
-    [self bindControlEventB];
 }
 
 #pragma mark - init
 /**** 视图初始化 ****/
--(void)initializeViewB{
+-(void)initializeViewB {
     self.view.backgroundColor = BFRGB_BgColor;
     [self.view addSubview:self.collectionView];
-    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
-    }];
+    if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
+        [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsZero);
+        }];
+    } else {
+        [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.right.mas_equalTo(self.view);
+            make.bottom.mas_equalTo(self.view.mas_bottomMargin);
+        }];
+    }
+
     
 }
 /**** 数据初始化 ****/
--(void)initializeViewDataB{
+-(void)initializeViewDataB {
     
 }
 /**** 事件绑定 ****/
--(void)bindControlEventB{
+#pragma mark - UI
+
+- (void)bindControlEventViewModel:(BaseCollectionViewModel *)collectionViewModel {
+    self.collectionViewModel = collectionViewModel;
     @weakify(self);
     [RACObserve(self.collectionViewModel, endRefreshing) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
@@ -53,7 +63,9 @@
     }];
     [RACObserve(self.collectionViewModel, reloadCollectionView) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        [self.collectionView reloadData];
+        if ([x boolValue]) {
+            [self.collectionView reloadData];
+        }
     }];
     [self.collectionViewModel setRequestSuccessBlock:^(NSInteger pageNow, NSInteger count) {
         @strongify(self);
@@ -63,21 +75,36 @@
             [self.collectionView.mj_footer resetNoMoreData];
         }
     }];
+    [self.collectionViewModel setPlaceholderBlock:^(BOOL isShowPlaceHold, BFPlaceholderViewType placeholderViewType, BOOL isNeedReload) {
+        @strongify(self);
+        if (isShowPlaceHold) {
+            [self.collectionView bf_showPlaceholderViewWithType:placeholderViewType reloadBlock:^{
+                @strongify(self);
+                if (isNeedReload) {
+                    [self  refreshHeaderAction];
+                }
+            }];
+        }else{
+            [self.collectionView bf_removePlaceholderView];
+        }
+    }];
+    self.collectionViewModel.isAutoRequestMore = self.isAutoRequestMore;
+    self.collectionViewModel.isNeedPaging = self.isNeedPaging;
+    self.collectionView.isUseRefreshHeader = self.isUseRefreshHeader;
+    self.collectionView.isUseRefreshFooter = self.isUseRefreshFooter;
 }
-#pragma mark - UI
-
 
 #pragma mark - IBActions/Event Response
 
 
 #pragma mark - Data
 //下拉刷新事件
--(void)refreshHeaderAction{
+-(void)refreshHeaderAction {
     [self.collectionViewModel refreshHeaderAction];
 }
 
 //上提刷新事件
--(void)refreshFootAction{
+-(void)refreshFootAction {
     [self.collectionViewModel refreshFootAction];
 }
 
@@ -158,20 +185,6 @@
 
     }
     return _collectionView;
-}
-
-
-- (void)setIsUseRefreshHeader:(BOOL)isUseRefreshHeader{
-    _isUseRefreshHeader = isUseRefreshHeader;
-    self.collectionView.isUseRefreshHeader = isUseRefreshHeader;
-}
-- (void)setIsUseRefreshFooter:(BOOL)isUseRefreshFooter{
-    _isUseRefreshFooter = isUseRefreshFooter;
-    self.collectionView.isUseRefreshFooter = isUseRefreshFooter;
-}
-- (void)setIsAutoRequestMore:(BOOL)isAutoRequestMore{
-    _isAutoRequestMore = isAutoRequestMore;
-    self.collectionViewModel.isAutoRequestMore = isAutoRequestMore;
 }
 
 -(BaseCollectionViewModel *)collectionViewModel{

@@ -47,6 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable NSDictionary *)bf_mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect;
 //MARK: - 裁剪图片
 - (nullable UIImage *)bf_cropSquareImageRect:(CGRect)rect;
+
 @end
 
 

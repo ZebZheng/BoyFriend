@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable UIImage *)bf_imageWithColor:(UIColor *)color;
 //MARK: - 颜色生成图片
 + (nullable UIImage *)bf_imageWithColor:(UIColor *)color size:(CGSize)size;
+
 @end
 NS_ASSUME_NONNULL_END
 

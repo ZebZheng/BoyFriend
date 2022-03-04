@@ -8,6 +8,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface UIColor (BFAdd)
+
 //MARK: - 十六进制
 + (UIColor *)bf_hexStr:(NSString *)hexStr alpha:(CGFloat)a;
 //MARK: - 十六进制
@@ -27,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable UIColor *)bf_gradientColorWithType:(BFGradientType)type colors:(NSArray<UIColor *> *)colors;
 //MARK: - 渐变颜色
 + (nullable UIColor *)bf_gradientColorWithType:(BFGradientType)type size:(CGSize)size colors:(NSArray<UIColor *> *)colors;
+
 @end
 NS_ASSUME_NONNULL_END
 

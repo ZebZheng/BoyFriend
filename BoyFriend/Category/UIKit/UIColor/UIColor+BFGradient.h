@@ -22,4 +22,6 @@
  *  @return 渐变颜色
  */
 + (UIColor*)bf_gradientFromColor:(UIColor*)c1 toColor:(UIColor*)c2 isHorizontal:(BOOL)isHorizontal Length:(int)length;
+
+
 @end

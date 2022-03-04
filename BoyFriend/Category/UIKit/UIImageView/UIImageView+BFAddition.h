@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)bf_setImage:(UIImage *)image withStringWaterMark:(NSString *)markString inRect:(CGRect)rect color:(UIColor *)color font:(UIFont *)font;
 //MARK: -  文字水印
 - (void)bf_setImage:(UIImage *)image withStringWaterMark:(NSString *)markString atPoint:(CGPoint)point color:(UIColor *)color font:(UIFont *)font;
+
 @end
 
 NS_ASSUME_NONNULL_END

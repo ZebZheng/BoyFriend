@@ -31,10 +31,10 @@
 /****是否需要分页请求 ****/
 @property(nonatomic, assign) BOOL isNeedPaging;
 
-
+/// 绑定事件  给tableViewModel 赋值
 -(void)bindControlEventViewModel:(BaseTableViewModel *)tableViewModel;
 
-//下拉刷新事件
+///下拉刷新事件
 -(void)refreshHeaderAction;
 
 

@@ -22,4 +22,5 @@
 
 -(BOOL)bf_synchronizeAlsoiCloudSync:(BOOL)sync;
 - (void)bf_removeValueForKey:(NSString *)key iCloudSync:(BOOL)sync;
+
 @end

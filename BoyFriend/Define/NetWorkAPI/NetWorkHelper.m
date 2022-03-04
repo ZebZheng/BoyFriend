@@ -9,6 +9,17 @@
 #import "NetWorkHelper.h"
 #import "AFHTTPSessionManager.h"
 
+#define AppSecret @"aepvtlrml9hfkdomfahsmdpj2qgszoxv6ougbej2l"
+
+
+// 请求结果 对应的 code message
+NSString *const RequestSuccessCode = @"code";
+NSString *const RequestSuccessMessage = @"message";
+
+NSString *const RequestFailureCode = @"code";
+NSString *const RequestFailureMessage = @"message";
+
+
 @interface NetWorkHelper()
 
 @property(nonatomic,strong) AFSecurityPolicy   *securityPolicy;
@@ -53,16 +64,16 @@
 
 
 //    BFDEBUG(@"\n地址:%@\n参数:%@",urlString,parameters);
-    [manager GET:urlString parameters:parameters headers:[self buildHeaderDicParameters] progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:urlString parameters:parameters headers:[self buildHeaderDicParameters:parameters] progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
 //        BFDEBUG(@"获取到的数据:%@",dic);
-        NSString *code =[NSString stringWithFormat:@"%@",[dic objectForKey:@"code"]];
+        NSString *code =[NSString stringWithFormat:@"%@",[dic objectForKey:RequestSuccessCode]];
         if ([self tokenIsInvalid:code]) {
             BaseResponseData *result = [[BaseResponseData alloc]init];
             result.code = code;
-            NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:@"message"]];
+            NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:RequestSuccessMessage]];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
 
             if (failureBlock) {
@@ -78,8 +89,8 @@
         //服务器返回的业务逻辑报文信息
         NSString* errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
         NSDictionary *json = [errResponse mj_JSONObject];
-        NSString *code =[NSString stringWithFormat:@"%@",[json objectForKey:@"code"]];
-        NSString *message =[NSString stringWithFormat:@"%@",[json objectForKey:@"message"]];
+        NSString *code =[NSString stringWithFormat:@"%@",[json objectForKey:RequestFailureCode]];
+        NSString *message =[NSString stringWithFormat:@"%@",[json objectForKey:RequestFailureMessage]];
         
         if (json==nil) {
             BaseResponseData *result = [[BaseResponseData alloc]init];
@@ -128,16 +139,16 @@
     manager.securityPolicy = self.securityPolicy;
     
 //    BFDEBUG(@"\n地址:%@\n参数:%@",urlString,parameters);
-    [manager POST:urlString parameters:parameters headers:[self buildHeaderDicParameters] progress:^(NSProgress * _Nonnull uploadProgress) {
+    [manager POST:urlString parameters:parameters headers:[self buildHeaderDicParameters:parameters] progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
 //        BFDEBUG(@"\n地址:%@\ntoken:%@\n参数:%@获取到的数据:%@",urlString,token,parameters,dic);
-        NSString *code =[NSString stringWithFormat:@"%@",[dic objectForKey:@"code"]];
+        NSString *code =[NSString stringWithFormat:@"%@",[dic objectForKey:RequestSuccessCode]];
         if ([self tokenIsInvalid:code]) {
             BaseResponseData *result = [[BaseResponseData alloc]init];
             result.code = code;
-            NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:@"message"]];
+            NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:RequestSuccessMessage]];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
             if (failureBlock) {
                 failureBlock(result);
@@ -154,8 +165,8 @@
         //服务器返回的业务逻辑报文信息
         NSString* errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
         NSDictionary *json = [errResponse mj_JSONObject];
-        NSString *code =[NSString stringWithFormat:@"%@",[json objectForKey:@"code"]];
-        NSString *message =[NSString stringWithFormat:@"%@",[json objectForKey:@"message"]];
+        NSString *code =[NSString stringWithFormat:@"%@",[json objectForKey:RequestFailureCode]];
+        NSString *message =[NSString stringWithFormat:@"%@",[json objectForKey:RequestFailureMessage]];
         if (json==nil) {
             BaseResponseData *result = [[BaseResponseData alloc]init];
             result.code = [NSString stringWithFormat:@"%ld",(long)error.code];
@@ -204,14 +215,14 @@
     manager.securityPolicy = self.securityPolicy;
    
 //    BFDEBUG(@"\n地址:%@\n参数:%@",urlString,parameters);
-    [manager PUT:urlString parameters:parameters headers:[self buildHeaderDicParameters] success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager PUT:urlString parameters:parameters headers:[self buildHeaderDicParameters:parameters] success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
 //        BFDEBUG(@"\n地址:%@\ntoken:%@\n参数:%@获取到的数据:%@",urlString,token,parameters,dic);
-        NSString *code =[NSString stringWithFormat:@"%@",[dic objectForKey:@"code"]];
+        NSString *code =[NSString stringWithFormat:@"%@",[dic objectForKey:RequestSuccessCode]];
         if ([self tokenIsInvalid:code]) {
             BaseResponseData *result = [[BaseResponseData alloc]init];
             result.code = code;
-            NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:@"message"]];
+            NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:RequestSuccessMessage]];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
             if (failureBlock) {
                 failureBlock(result);
@@ -228,8 +239,8 @@
         //服务器返回的业务逻辑报文信息
         NSString* errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
         NSDictionary *json = [errResponse mj_JSONObject];
-        NSString *code =[NSString stringWithFormat:@"%@",[json objectForKey:@"code"]];
-        NSString *message =[NSString stringWithFormat:@"%@",[json objectForKey:@"message"]];
+        NSString *code =[NSString stringWithFormat:@"%@",[json objectForKey:RequestFailureCode]];
+        NSString *message =[NSString stringWithFormat:@"%@",[json objectForKey:RequestFailureMessage]];
         if (json==nil) {
             BaseResponseData *result = [[BaseResponseData alloc]init];
             result.code = [NSString stringWithFormat:@"%ld",(long)error.code];
@@ -277,14 +288,14 @@
     //设置加密方式
     manager.securityPolicy = self.securityPolicy;
 //    BFDEBUG(@"\n地址:%@\n参数:%@",urlString,parameters);
-    [manager DELETE:urlString parameters:parameters headers:[self buildHeaderDicParameters] success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager DELETE:urlString parameters:parameters headers:[self buildHeaderDicParameters:parameters] success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
 //        BFDEBUG(@"\n地址:%@\ntoken:%@\n参数:%@获取到的数据:%@",urlString,token,parameters,dic);
-        NSString *code =[NSString stringWithFormat:@"%@",[dic objectForKey:@"code"]];
+        NSString *code =[NSString stringWithFormat:@"%@",[dic objectForKey:RequestSuccessCode]];
         if ([self tokenIsInvalid:code]) {
             BaseResponseData *result = [[BaseResponseData alloc]init];
             result.code = code;
-            NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:@"message"]];
+            NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:RequestSuccessMessage]];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
             if (failureBlock) {
                 failureBlock(result);
@@ -301,8 +312,8 @@
         //服务器返回的业务逻辑报文信息
         NSString* errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
         NSDictionary *json = [errResponse mj_JSONObject];
-        NSString *code =[NSString stringWithFormat:@"%@",[json objectForKey:@"code"]];
-        NSString *message =[NSString stringWithFormat:@"%@",[json objectForKey:@"message"]];
+        NSString *code =[NSString stringWithFormat:@"%@",[json objectForKey:RequestFailureCode]];
+        NSString *message =[NSString stringWithFormat:@"%@",[json objectForKey:RequestFailureMessage]];
         if (json==nil) {
             BaseResponseData *result = [[BaseResponseData alloc]init];
             result.code = [NSString stringWithFormat:@"%ld",(long)error.code];
@@ -344,7 +355,7 @@
  *  @param uriString     uri地址
  *  @param files         要上传的文件(可上传多个)
  *  @param fileNames     文件类型名称(可传一个字符串 或者一个数组)
- *  @param parametersDic 参数
+ *  @param parameters 参数
  *  @param progressBlock 进度
  *  @param successBlock       访问成功block回调
  *  @param failureBlock       访问失败block回调
@@ -353,7 +364,7 @@
                          uriString:(NSString *)uriString
                              files:(NSArray  *)files
                           fileName:(id)fileNames
-                        parameters:(NSDictionary *)parametersDic
+                        parameters:(NSDictionary *)parameters
                      progressBlock:(void (^)(NSProgress*progress))progressBlock
                       successBlock:(void (^)(id responseObject))successBlock
                       failureBlock:(void (^)(BaseResponseData *error))failureBlock{
@@ -363,7 +374,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         app.networkActivityIndicatorVisible = YES;
     });
-    parametersDic = [self buildCommonParameters:parametersDic];
+    parameters = [self buildCommonParameters:parameters];
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
@@ -371,8 +382,8 @@
     //https ssl 验证。
     manager.securityPolicy = self.securityPolicy;
     
-    BFDEBUG(@"上传文件\n地址:%@\n参数:%@",urlString,parametersDic);
-    [manager POST:urlString parameters:parametersDic headers:[self buildHeaderDicParameters] constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    BFDEBUG(@"上传文件\n地址:%@\n参数:%@",urlString,parameters);
+    [manager POST:urlString parameters:parameters headers:[self buildHeaderDicParameters:parameters] constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         if (files.count>0 && fileNames !=nil) {
             [files enumerateObjectsUsingBlock:^(id  _Nonnull file, NSUInteger idx, BOOL * _Nonnull stop) {
                 NSString * fileName = @"";
@@ -445,11 +456,11 @@
         });
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
         BFDEBUG(@"上传文件获取到的数据:%@",dic);
-        NSString *code =[NSString stringWithFormat:@"%@",[dic objectForKey:@"code"]];
+        NSString *code =[NSString stringWithFormat:@"%@",[dic objectForKey:RequestSuccessCode]];
         if ([self tokenIsInvalid:code]) {
             BaseResponseData *result = [[BaseResponseData alloc]init];
             result.code = code;
-            NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:@"message"]];
+            NSString * message = [NSString stringWithFormat:@"%@",[dic objectForKey:RequestSuccessMessage]];
             result.info = [[NetWorkURL sharedInstance] getServerErrorWithCode:[code integerValue] Info:message];
             if (failureBlock) {
                 failureBlock(result);
@@ -466,8 +477,8 @@
         //服务器返回的业务逻辑报文信息
         NSString* errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
         NSDictionary *json = [errResponse mj_JSONObject];
-        NSString *code =[NSString stringWithFormat:@"%@",[json objectForKey:@"code"]];
-        NSString *message =[NSString stringWithFormat:@"%@",[json objectForKey:@"message"]];
+        NSString *code =[NSString stringWithFormat:@"%@",[json objectForKey:RequestFailureCode]];
+        NSString *message =[NSString stringWithFormat:@"%@",[json objectForKey:RequestFailureMessage]];
         
         if (json==nil) {
             BaseResponseData *result = [[BaseResponseData alloc]init];
@@ -590,18 +601,27 @@
 
 - (NSMutableDictionary *)buildCommonParameters:(NSDictionary *)parametersDic {
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:parametersDic];
-//    NSString *token = [BFUserDefaults objectForKey:@"token"];
-//    if ([NSString isBlankString:token]) {
-//        token = @"";
-//    }
-//    [dic setObject:token forKey:@"token"];
+
+//    [dic setValue:[self getNowTimeTimestamp] forKey:@"timestamp"];
+
     return dic;
 }
-
+-(NSString *)getNowTimeTimestamp{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"]; // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
+    //设置时区,这个对于时间的处理有时很重要
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];
+    [formatter setTimeZone:timeZone];
+    NSDate *datenow = [NSDate date];//现在时间,你可以输出来看下是什么格式
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
+    return timeSp;
+}
 /**
  * Head信息
  */
--(NSDictionary *)buildHeaderDicParameters{
+-(NSDictionary *)buildHeaderDicParameters:(NSDictionary *)parametersDic{
     NSMutableDictionary *headerDic = [[NSMutableDictionary alloc]init];
     //解决乱码问题
 //    [headerDic setValue:@"application/x-www-form-urlencoded; charset=utf-8" forKey:@"Content-Type"];
@@ -612,8 +632,39 @@
         token = @"";
     }
     [headerDic setValue:token forKey:@"token"];
+    
+//    [headerDic setValue:[self getSignWithCommonParameters:parametersDic] forKey:@"sign"];
+
     return headerDic;
 }
+
+- (NSString *)getSignWithCommonParameters:(NSDictionary *)parametersDic {
+    NSMutableDictionary *mdic=[[NSMutableDictionary alloc]initWithDictionary:parametersDic];
+    NSArray *keyArray = [mdic allKeys];
+    NSArray *sortArray = [keyArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return [obj1 compare:obj2 options:NSNumericSearch];
+    }];
+    NSMutableArray *valueArray = [NSMutableArray array];
+    for (NSString *sortString in sortArray) {
+        [valueArray addObject:[mdic objectForKey:sortString]];
+    }
+    NSMutableArray *signArray = [NSMutableArray array];
+    for (int i = 0; i < sortArray.count; i++) {
+        NSString *keyValueStr = [NSString stringWithFormat:@"%@=%@",sortArray[i],valueArray[i]];
+        [signArray addObject:keyValueStr];
+    }
+    NSString *sign = [signArray componentsJoinedByString:@"&"];
+//    NSString *lowerCaseString2 = sign.lowercaseString;
+    NSString *lowerCaseString2 = sign;
+    lowerCaseString2 = [NSString stringWithFormat:@"%@&key=%@",lowerCaseString2,AppSecret];
+//    NSLogDebug(@"签名前%@",lowerCaseString2);
+    
+    lowerCaseString2=[lowerCaseString2 md5String];
+//    NSLogDebug(@"签名后%@",lowerCaseString2);
+    return lowerCaseString2;
+}
+
+
 #pragma mark - 私有方法
 
 - (AFSecurityPolicy*)customSecurityPolicy {

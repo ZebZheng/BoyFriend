@@ -7,6 +7,7 @@
 #import <UIKit/UIKit.h>
 
 @interface NSString (BFConversion)
+
 /** base64 转 image */
 @property (nonatomic, copy, readonly)UIImage * bf_base64ToImage;
 /// 阿拉伯数字转换成中文

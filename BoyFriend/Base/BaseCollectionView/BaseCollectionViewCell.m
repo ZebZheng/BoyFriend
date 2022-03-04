@@ -12,34 +12,34 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self initSubviews];
-    [self makeContraints];
+    [self bf_initSubviews];
+    [self bf_makeContraints];
 }
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initSubviews];
-        [self makeContraints];
+        [self bf_initSubviews];
+        [self bf_makeContraints];
     }
     
     return self;
 }
 
-- (void)initSubviews{
+- (void)bf_initSubviews{
     
 }
 
-- (void)makeContraints{
+- (void)bf_makeContraints{
     
 }
 
-- (void)setupWithData:(id)datd{
+- (void)bf_setupWithData:(id)datd{
     
 }
 //复用cell复用标识
-+(NSString *)reuseIdentifier{
++(NSString *)bf_reuseIdentifier{
     return NSStringFromClass([self class]);
 }
 

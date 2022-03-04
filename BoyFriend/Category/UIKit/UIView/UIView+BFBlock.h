@@ -5,7 +5,9 @@
 #import <UIKit/UIKit.h>
 
 typedef void (^BFGestureActionBlock)(UIGestureRecognizer * gestureRecoginzer);
+
 @interface UIView (BFBlock)
+
 //MARK: - tap手势
 - (void)bf_addTapActionWithBlock:(BFGestureActionBlock)block;
 //MARK: - 长按手势

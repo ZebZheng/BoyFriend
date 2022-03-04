@@ -32,7 +32,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL isUseRefreshFooter;
 /**** 是否自动预加载下一页功能 ****/
 @property (nonatomic) BOOL isAutoRequestMore;
+/****是否需要分页请求 ****/
+@property(nonatomic, assign) BOOL isNeedPaging;
 
+/// 绑定事件  给collectionViewModel 赋值
+- (void)bindControlEventViewModel:(BaseCollectionViewModel *)collectionViewModel;
+///下拉刷新事件
+-(void)refreshHeaderAction;
 
 @end
 

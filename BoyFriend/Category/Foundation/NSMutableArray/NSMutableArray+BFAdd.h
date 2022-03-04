@@ -7,8 +7,10 @@
 #import <Foundation/Foundation.h>
 
 @interface NSMutableArray (BFAdd)
+
 /** 去重 */
 @property (nonatomic, copy, readonly)NSMutableArray * bf_removeDuplicates;
+
 @end
 
 

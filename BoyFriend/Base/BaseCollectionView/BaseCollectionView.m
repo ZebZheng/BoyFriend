@@ -92,7 +92,7 @@
             BFBlock_Safe_Calls(self.refreshFooterBlock);
         }];
         //隐藏提示语
-        _refreshFooter.stateLabel.hidden=YES;
+//        _refreshFooter.stateLabel.hidden=YES;
     }
     return _refreshFooter;
 }
