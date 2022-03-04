@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseTableViewModel : BaseViewModel
 
+/// 是否需要分页请求
+@property(nonatomic, assign) BOOL isNeedPaging;
 ///  是否自动预加载下一页功能
 @property (nonatomic,assign) BOOL isAutoRequestMore;
 ///  页面数据
@@ -46,9 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section ;
 
-- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
 
-- (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section;
 

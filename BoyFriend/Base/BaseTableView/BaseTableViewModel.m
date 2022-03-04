@@ -74,11 +74,11 @@
     return [self.dataSource[section] count];
 }
 
-- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0.01f;
 }
 
-- (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.01f;
 }
 
@@ -98,7 +98,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
     cell.accessoryType    = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.font = [UIFont systemFontOfSize:15];
-    cell.textLabel.text   = self.dataSource[indexPath.section];
+    cell.textLabel.text   = [NSString stringWithFormat:@"section:%zd-row:%zd",indexPath.section,indexPath.row];
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
