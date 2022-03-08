@@ -7,7 +7,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSArray (BFLog)
+@interface NSDictionary (BFLog)
 
 @end
 

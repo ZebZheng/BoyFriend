@@ -4,6 +4,7 @@
 */
 
 #import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 @interface UIViewController (BFAdd)
 
@@ -125,7 +126,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray<UIViewController *> *)bf_optimizeViewControllers:(NSArray<UIViewController *> *)vcs maxCount:(NSUInteger)count;
 
 /** push */
--(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
+-(void)bf_pushViewController:(UIViewController *)viewController;
+-(void)bf_pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
 
 @end
 

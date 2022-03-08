@@ -1,10 +1,7 @@
-//
-//  UIImage+Name.m
-//  Demon
-//
-//  Created by admin on 2017/10/20.
-//  Copyright © 2017年 BoyFriend. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "UIImage+BFName.h"
 

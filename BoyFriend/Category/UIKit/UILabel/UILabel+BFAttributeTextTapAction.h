@@ -1,9 +1,9 @@
-//
-//  UILabel+BFAttributeTextTapAction.h
-//
-//  Created by LYB on 16/7/1.
-//  Copyright © 2016年 LYB. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
+
+
 //  给文本添加点击事件Block回调 或者 添加点击事件delegate回调
 // block 回调
 /*
@@ -14,7 +14,6 @@
  }];
  
  */
-
 
 #import <UIKit/UIKit.h>
 

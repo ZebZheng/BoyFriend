@@ -6,6 +6,13 @@
 #import "UITextView+BFAdd.h"
 #import "NSString+BFAdd.h"
 
+@interface UITextView ()
+
+@property (nonatomic, assign,readonly) BOOL bf_addNoti;
+@property (nonatomic, copy) NSString * bf_lastTextStr;
+
+@end
+
 @implementation UITextView (BFAdd)
 
 - (void)setBf_promptFont:(UIFont *)promptFont {

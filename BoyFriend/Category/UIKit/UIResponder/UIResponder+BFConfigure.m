@@ -2,13 +2,14 @@
   Created by BF on 2021
   Copyright © 2021年 BF. All rights reserved.
 */
+
 #import "UIResponder+BFConfigure.h"
 #import "BFHandyMacro.h"
 
 @implementation UIResponder (BFConfigure)
 
 //MARK: - 刷新
-- (void)bf_hotReload {
+- (void)bf_openInjection {
 #if DEBUG
     [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
 #endif

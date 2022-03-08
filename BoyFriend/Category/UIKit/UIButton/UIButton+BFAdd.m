@@ -5,6 +5,7 @@
 
 #import "UIButton+BFAdd.h"
 #import <objc/runtime.h>
+
 static const char BFTitleFontSizeKey;
 static const char BFTitleFontKey;
 static const char BFTitleKey;

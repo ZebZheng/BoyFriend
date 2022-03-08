@@ -1,10 +1,7 @@
-//
-//  UIBarButtonItem+Action.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
-//
-//  Created by Jakey on 15/5/22.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 char * const UIBarButtonItemActionBlock = "UIBarButtonItemActionBlock";
 #import "UIBarButtonItem+Action.h"
@@ -12,23 +9,20 @@ char * const UIBarButtonItemActionBlock = "UIBarButtonItemActionBlock";
 
 @implementation UIBarButtonItem (Action)
 
-+ (id)fixItemSpace:(CGFloat)space
-{
++ (id)fixItemSpace:(CGFloat)space {
     UIBarButtonItem *fix = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     fix.width = space;
     return fix;
 }
 
-- (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style actionBlick:(BarButtonActionBlock)actionBlock
-{
+- (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style actionBlick:(BarButtonActionBlock)actionBlock {
     if (self = [self initWithTitle:title style:style target:nil action:nil]) {
         [self setActionBlock:actionBlock];
     }
     return self;
 }
 
-- (id)initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style actionBlick:(BarButtonActionBlock)actionBlock
-{
+- (id)initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style actionBlick:(BarButtonActionBlock)actionBlock {
     if (self = [self initWithImage:image style:style target:nil action:nil]) {
         [self setActionBlock:actionBlock];
     }
@@ -49,8 +43,7 @@ char * const UIBarButtonItemActionBlock = "UIBarButtonItemActionBlock";
     return objc_getAssociatedObject(self, UIBarButtonItemActionBlock);
 }
 
-- (void)setActionBlock:(BarButtonActionBlock)actionBlock
-{
+- (void)setActionBlock:(BarButtonActionBlock)actionBlock {
     
     if (actionBlock != self.actionBlock) {
         [self willChangeValueForKey:@"actionBlock"];

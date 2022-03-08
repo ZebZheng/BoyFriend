@@ -1,14 +1,12 @@
-//
-//  UIImage+Orientation.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
-//
-//  Created by Jakey on 15/1/4.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "UIImage+BFOrientation.h"
 
 @implementation UIImage (BFOrientation)
+
 /**
  *  @brief  修正图片的方向
  *

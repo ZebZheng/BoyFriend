@@ -1,10 +1,7 @@
-//
-//  NSArray+Log.m
-//  Zeus
-//
-//  Created by Apple on 2021/9/2.
-//  Copyright © 2021 apple. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "NSArray+BFLog.h"
 

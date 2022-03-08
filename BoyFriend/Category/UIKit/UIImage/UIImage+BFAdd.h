@@ -19,6 +19,7 @@ typedef enum  {
 
 NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (BFAdd)
+
 /** image conversion base64 */
 @property (nonatomic, copy, readonly,nullable)NSString * bf_base64String;
 

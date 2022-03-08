@@ -1,4 +1,7 @@
-
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "UINavigationController+BFFullscreenPopGesture.h"
 #import <objc/runtime.h>
@@ -11,8 +14,7 @@
 
 @implementation _BFFullscreenPopGestureRecognizerDelegate
 
-- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer
-{
+- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
     // Ignore when no view controller is pushed into the navigation stack.
     if (self.navigationController.viewControllers.count <= 1) {
         return NO;

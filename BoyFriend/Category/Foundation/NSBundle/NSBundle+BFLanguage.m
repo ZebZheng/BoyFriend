@@ -1,4 +1,7 @@
-
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "NSBundle+BFLanguage.h"
 #import <objc/runtime.h>

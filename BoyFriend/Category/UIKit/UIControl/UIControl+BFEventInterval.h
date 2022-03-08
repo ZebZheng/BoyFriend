@@ -7,7 +7,7 @@
 
 @interface UIControl (BFEventInterval)
 
-// 两次事件的间隔时间 (例如按钮 设置不能连续点击)
+/// 两次事件的间隔时间 (例如按钮 设置不能连续点击)
 @property (nonatomic, assign) NSTimeInterval bf_eventInterval;
 
 @end

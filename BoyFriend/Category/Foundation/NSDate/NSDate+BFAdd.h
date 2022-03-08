@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDate (BFAdd)
+
 /** 当前dan时间格式转换 */
 - (NSString *)bf_stringFromDate:(NSString *)formatter;
 /** 时间格式转换 */

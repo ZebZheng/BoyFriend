@@ -1,10 +1,7 @@
-//
-//  UIAlertController+Extensions.h
-//  Demon
-//
-//  Created by BoyFriend on 2018/6/27.
-//  Copyright © 2018年 BoyFriend. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import <UIKit/UIKit.h>
 

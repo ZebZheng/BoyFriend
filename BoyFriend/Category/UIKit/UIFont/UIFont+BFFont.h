@@ -1,10 +1,7 @@
-//
-//  UIFont+MyFont.h
-//  Demon
-//
-//  Created by admin on 2017/9/28.
-//  Copyright © 2017年 BoyFriend. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>

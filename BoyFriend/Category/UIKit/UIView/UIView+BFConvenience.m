@@ -1,9 +1,7 @@
-//
-//  UIView+Convenience.m
-//
-//  Created by Molon on 13/11/12.
-//  Copyright (c) 2013 Molon. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "UIView+BFConvenience.h"
 #import <QuartzCore/QuartzCore.h>

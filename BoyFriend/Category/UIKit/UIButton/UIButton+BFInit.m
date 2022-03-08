@@ -2,9 +2,14 @@
   Created by BF on 2021
   Copyright © 2021年 BF. All rights reserved.
 */
+
+
 #import "UIButton+BFInit.h"
 #import "UIFont+BFAdd.h"
+
+
 @implementation UIButton (BFInit)
+
 /// 构建->文本-文本颜色
 /// @param title 文本
 /// @param titleColor 文本颜色

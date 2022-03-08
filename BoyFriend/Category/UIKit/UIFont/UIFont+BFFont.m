@@ -1,16 +1,13 @@
-//
-//  UIFont+MyFont.m
-//  Demon
-//
-//  Created by admin on 2017/9/28.
-//  Copyright © 2017年 BoyFriend. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "UIFont+BFFont.h"
 
 @implementation UIFont (BFFont)
 
-+(void)load{
++(void)load {
     //获取替换后的类方法
     Method newMethod = class_getClassMethod([self class], @selector(adjustFont:));
     //获取替换前的类方法
@@ -36,7 +33,7 @@
     
 }
 
-+(UIFont *)adjustFont:(CGFloat)fontSize{
++(UIFont *)adjustFont:(CGFloat)fontSize {
     UIFont *newFont=nil;
     newFont = [UIFont adjustFont:fontSize * [UIScreen mainScreen].bounds.size.width/BFYourUIScreen];
     return newFont;
@@ -44,14 +41,14 @@
 
 
 
-+(UIFont *)adjustBoldFont:(CGFloat)fontSize{
++(UIFont *)adjustBoldFont:(CGFloat)fontSize {
     UIFont *newFont=nil;
     newFont = [UIFont adjustBoldFont:fontSize * [UIScreen mainScreen].bounds.size.width/BFYourUIScreen];
     return newFont;
 }
 
 
-+(UIFont *)adjustfontWithName:(NSString *)name size:(CGFloat)fontSize{
++(UIFont *)adjustfontWithName:(NSString *)name size:(CGFloat)fontSize {
     UIFont *newFont=nil;
     newFont = [UIFont adjustfontWithName:name size:fontSize * [UIScreen mainScreen].bounds.size.width/BFYourUIScreen];
     return newFont;

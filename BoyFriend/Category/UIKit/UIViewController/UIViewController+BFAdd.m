@@ -8,6 +8,7 @@
 #import "UIImage+BFInit.h"
 #import "UIButton+BFAdd.h"
 #import <objc/runtime.h>
+
 static const char itemKey;
 static const char ritemKey;
 
@@ -534,7 +535,10 @@ typedef void(^RightNavItemsBlock)(NSInteger);
     return vcArray.copy;
 }
 
--(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+-(void)bf_pushViewController:(UIViewController *)viewController {
+    [self bf_pushViewController:viewController animated:YES];
+}
+-(void)bf_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.navigationController.viewControllers.count > 0 ) {
         viewController.hidesBottomBarWhenPushed = YES;
     }
