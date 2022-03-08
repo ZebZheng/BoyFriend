@@ -1,10 +1,7 @@
-//
-//  NSDictionary+URL.m
-//  IOS-Categories
-//
-//  Created by Jakey on 15/8/7.
-//  Copyright © 2015年 www.skyfox.org. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "NSDictionary+BFURL.h"
 

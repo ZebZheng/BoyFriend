@@ -1,14 +1,12 @@
-//
-//  NSNotificationCenter+MainThread.h
-//  Elly
-//
-//  Created by Milot Shala on 1/12/15.
-//  Copyright (c) 2015 Milot Shala. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import <Foundation/Foundation.h>
 
 @interface NSNotificationCenter (BFMainThread)
+
 /**
  *  @brief  在主线程中发送一条通知
  *

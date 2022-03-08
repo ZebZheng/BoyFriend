@@ -6,6 +6,7 @@
 #import "UIImage+BFCompress.h"
 
 @implementation UIImage (BFCompress)
+
 + (UIImage*)bf_resizableImage:(NSString *)name {
     UIImage *normal = [UIImage imageNamed:name];
     
@@ -13,7 +14,6 @@
     CGFloat imageH = normal.size.height * 0.5;
     return [normal resizableImageWithCapInsets:UIEdgeInsetsMake(imageH, imageW, imageH, imageW)];
 }
-
 
 + (NSData *)bf_compressImage:(UIImage *)image toMaxLength:(NSInteger)maxLength maxWidth:(NSInteger)maxWidth {
     NSAssert(maxLength > 0, @"图片的大小必须大于 0");

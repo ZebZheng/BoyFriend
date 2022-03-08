@@ -6,8 +6,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BFNavigationButton : UIButton
-- (void)setup NS_REQUIRES_SUPER;
 
+- (void)setup NS_REQUIRES_SUPER;
 + (instancetype)buttonWithTarget:(id)target action:(SEL)action;
 + (instancetype)buttonWithImage:(UIImage *)image target:(id)target action:(SEL)action;
 + (instancetype)buttonWithTitle:(NSString *)title target:(id)target action:(SEL)action;

@@ -9,6 +9,7 @@
 #import "NSObject+BFWindow.h"
 
 @implementation UIView (BFAdd)
+
 - (void)bf_roundeWithSize:(CGSize)size conrners:(UIRectCorner)rectCon cornerRadii:(CGFloat)radii {
     UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height) byRoundingCorners:rectCon cornerRadii:CGSizeMake(radii, radii)];
     CAShapeLayer* shape = [[CAShapeLayer alloc] init];

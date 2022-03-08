@@ -1,9 +1,7 @@
-//
-//  NSUserDefaults+iCloudSync.h
-//
-//  Created by Riccardo Paolillo on 09/05/13.
-//  Copyright (c) 2013. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 
 #import "NSUserDefaults+BFICloudSync.h"

@@ -8,6 +8,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (BFCompress)
+
 //MARK: - 压缩上传图片到指定字节
 /// @param image 压缩的图片
 /// @param maxLength 压缩后最大字节大小

@@ -1,12 +1,10 @@
-//
-//  UIImage+Orientation.h
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
-//
-//  Created by Jakey on 15/1/4.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import <UIKit/UIKit.h>
+
 //CGFloat bf_degreesToRadiansForOrientation(CGFloat degrees) {return degrees * M_PI / 180;};
 //CGFloat bf_radiansToDegreesForOrientation(CGFloat radians) {return radians * 180/M_PI;};
 @interface UIImage (Orientation)

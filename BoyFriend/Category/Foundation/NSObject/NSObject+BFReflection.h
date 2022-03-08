@@ -1,14 +1,12 @@
-//
-//  NSObject+Reflection.h
-//  NSObject-Reflection
-//
-//  Created by Jakey on 15/12/22.
-//  Copyright © 2015年 Jakey. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import <Foundation/Foundation.h>
 
 @interface NSObject (BFReflection)
+
 //类名
 - (NSString *)bf_className;
 + (NSString *)bf_className;

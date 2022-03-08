@@ -8,8 +8,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableViewCell (BFInit)
+
 //MARK: - 标识
 + (NSString *)bf_reuseIdentifier;
+
 @end
 
 NS_ASSUME_NONNULL_END

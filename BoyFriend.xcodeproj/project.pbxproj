@@ -142,7 +142,7 @@
 		F089A97627328339009A4BDD /* UIDevice+BFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A97527328339009A4BDD /* UIDevice+BFUtils.m */; };
 		F089A97E27328F04009A4BDD /* NSBundle+BFLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A97927328F04009A4BDD /* NSBundle+BFLanguage.m */; };
 		F089A97F27328F04009A4BDD /* NSArray+BFLog.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A97D27328F04009A4BDD /* NSArray+BFLog.m */; };
-		F089A98227328F2A009A4BDD /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A98027328F2A009A4BDD /* NSDictionary+Log.m */; };
+		F089A98227328F2A009A4BDD /* NSDictionary+BFLog.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A98027328F2A009A4BDD /* NSDictionary+BFLog.m */; };
 		F089A9FB27329622009A4BDD /* BFPopShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A98427329622009A4BDD /* BFPopShowView.m */; };
 		F089A9FC27329622009A4BDD /* YBIBVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A98827329622009A4BDD /* YBIBVideoCell.m */; };
 		F089A9FD27329622009A4BDD /* YBIBVideoData.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A98927329622009A4BDD /* YBIBVideoData.m */; };
@@ -487,8 +487,8 @@
 		F089A97A27328F04009A4BDD /* NSBundle+BFLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+BFLanguage.h"; sourceTree = "<group>"; };
 		F089A97C27328F04009A4BDD /* NSArray+BFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BFLog.h"; sourceTree = "<group>"; };
 		F089A97D27328F04009A4BDD /* NSArray+BFLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BFLog.m"; sourceTree = "<group>"; };
-		F089A98027328F2A009A4BDD /* NSDictionary+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
-		F089A98127328F2A009A4BDD /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
+		F089A98027328F2A009A4BDD /* NSDictionary+BFLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BFLog.m"; sourceTree = "<group>"; };
+		F089A98127328F2A009A4BDD /* NSDictionary+BFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BFLog.h"; sourceTree = "<group>"; };
 		F089A98427329622009A4BDD /* BFPopShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFPopShowView.m; sourceTree = "<group>"; };
 		F089A98527329622009A4BDD /* BFPopShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFPopShowView.h; sourceTree = "<group>"; };
 		F089A98827329622009A4BDD /* YBIBVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBVideoCell.m; sourceTree = "<group>"; };
@@ -1005,8 +1005,8 @@
 			children = (
 				7F01D0FF27C7944E005A6709 /* NSDictionary+BFConvent.m */,
 				7F01D10027C7944E005A6709 /* NSDictionary+BFConvent.h */,
-				F089A98127328F2A009A4BDD /* NSDictionary+Log.h */,
-				F089A98027328F2A009A4BDD /* NSDictionary+Log.m */,
+				F089A98127328F2A009A4BDD /* NSDictionary+BFLog.h */,
+				F089A98027328F2A009A4BDD /* NSDictionary+BFLog.m */,
 				1879522C2202D3660001C437 /* NSDictionary+BFURL.h */,
 				1879522A2202D3660001C437 /* NSDictionary+BFURL.m */,
 				1879522B2202D3660001C437 /* NSDictionary+BFXML.h */,
@@ -2160,7 +2160,7 @@
 				F089AA0827329622009A4BDD /* YBIBImageCache.m in Sources */,
 				18B67FF221F6F4F8004D2638 /* KBTabbar.m in Sources */,
 				7F01D0B827C79077005A6709 /* UIColor+BFAdd.m in Sources */,
-				F089A98227328F2A009A4BDD /* NSDictionary+Log.m in Sources */,
+				F089A98227328F2A009A4BDD /* NSDictionary+BFLog.m in Sources */,
 				7F01D0F827C793C3005A6709 /* UIView+BFAdd.m in Sources */,
 				18B67FF621F6F96B004D2638 /* HomeViewController.m in Sources */,
 				F089A97E27328F04009A4BDD /* NSBundle+BFLanguage.m in Sources */,

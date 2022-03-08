@@ -1,10 +1,7 @@
-//
-//  NSURL+Param.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
-//
-//  Created by Jakey on 14/12/30.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "NSURL+BFParam.h"
 

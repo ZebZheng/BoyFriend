@@ -1,10 +1,7 @@
-//
-//  BFUICotrolHeader.h
-//  Demon
-//
-//  Created by 祎 on 2022/2/24.
-//  Copyright © 2022 BoyFriend. All rights reserved.
-//
+/*
+ Created by BF on 2021
+ Copyright © 2021年 BF. All rights reserved.
+ */
 
 #ifndef BFUICotrolHeader_h
 #define BFUICotrolHeader_h

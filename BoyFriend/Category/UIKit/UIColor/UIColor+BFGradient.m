@@ -1,10 +1,7 @@
-//
-//  UIColor+Gradient.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
-//
-//  Created by Jakey on 14/12/15.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "UIColor+BFGradient.h"
 
@@ -22,8 +19,7 @@
  *
  *  @return 渐变颜色
  */
-+ (UIColor*)bf_gradientFromColor:(UIColor*)c1 toColor:(UIColor*)c2 isHorizontal:(BOOL)isHorizontal Length:(int)length
-{
++ (UIColor*)bf_gradientFromColor:(UIColor*)c1 toColor:(UIColor*)c2 isHorizontal:(BOOL)isHorizontal Length:(int)length {
     CGSize size = CGSizeZero;
     if (isHorizontal) {
         size = CGSizeMake(length, 1);

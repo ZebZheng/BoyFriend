@@ -1,11 +1,7 @@
-
-//
-//  UIButton+Submitting.h
-//  FXCategories
-//
-//  Created by foxsofter on 15/4/2.
-//  Copyright (c) 2015年 foxsofter. All rights reserved.
-//  https://github.com/foxsofter/FXCategories
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import <UIKit/UIKit.h>
 

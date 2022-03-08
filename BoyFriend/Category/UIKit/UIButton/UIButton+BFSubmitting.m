@@ -1,10 +1,7 @@
-//
-//  UIButton+Submitting.m
-//  FXCategories
-//
-//  Created by foxsofter on 15/4/2.
-//  Copyright (c) 2015年 foxsofter. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "UIButton+BFSubmitting.h"
 #import  <objc/runtime.h>
@@ -14,7 +11,6 @@
 @property(nonatomic, strong) UIView *modalView;
 @property(nonatomic, strong) UIActivityIndicatorView *spinnerView;
 @property(nonatomic, strong) UILabel *spinnerTitleLabel;
-
 @end
 
 @implementation UIButton (BFSubmitting)
@@ -70,8 +66,8 @@
     return objc_getAssociatedObject(self, @selector(bf_isSubmitting:));
 }
 
-- (void)setBf_submitting:(NSNumber *)submitting {
-    objc_setAssociatedObject(self, @selector(bf_isSubmitting:), submitting, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setBf_submitting:(NSNumber *)bf_isSubmitting {
+    objc_setAssociatedObject(self, @selector(bf_isSubmitting:), bf_isSubmitting, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
 }
 

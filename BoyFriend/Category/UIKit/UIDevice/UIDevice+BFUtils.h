@@ -1,10 +1,7 @@
-//
-//  UIDevice+BFUtils.h
-//  AwesomeTips
-//
-//  Created by kangzubin on 2018/9/20.
-//  Copyright © 2018 KANGZUBIN. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import <UIKit/UIKit.h>
 

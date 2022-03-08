@@ -1,10 +1,7 @@
-//
-//  UIButtonCategoryHeader.h
-//  Demon
-//
-//  Created by apple on 2019/1/21.
-//  Copyright © 2019年 BoyFriend. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import "UIButton+BFBackgroundColor.h"///背景颜色
 #import "UIButton+BFSubmitting.h"///提交中,防重点击

@@ -1,16 +1,14 @@
-//
-//  UIImage+Color.h
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
-//
-//  Created by Jakey on 14/12/15.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
-//
+/*
+  Created by BF on 2021
+  Copyright © 2021年 BF. All rights reserved.
+*/
 
 #import <UIKit/UIKit.h>
 
 #define stretchImgFromMiddle(img)    [(img) stretchableImageWithLeftCapWidth:(img).size.width / 2 topCapHeight:(img).size.height / 2]
 
 @interface UIImage (BFColor)
+
 /**
  *  重新绘制图片
  *
