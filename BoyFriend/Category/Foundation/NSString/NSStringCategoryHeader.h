@@ -11,3 +11,4 @@
 #import "NSString+BFHGBTransForm.h"///十六进制
 //#import "NSString+BFEncryption.h"//加密
 //#import "NSString+BFRemoveEmoji.h"//表情的处理方法
+#import "NSString+BFLoad.h"//拼接崩溃处理
