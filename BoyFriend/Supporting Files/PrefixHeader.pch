@@ -36,7 +36,7 @@
 
 //工具类
 #import "BFSystemUtils.h"//系统权限判断
-#import "CategoryHeader.h"
+#import "BFCategoryHeader.h"
 #import "CommonsView.h"
 #import "BFStringTools.h"
 #import "BFTool.h"

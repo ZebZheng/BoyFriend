@@ -14,7 +14,7 @@
 ///自动计算秒数
 + (NSTimeInterval)bf_smartDelaySecondsForTipsText:(NSString *)text {
     NSUInteger length = text.bf_lengthWhenCountingNonASCIICharacterAsTwo;
-    if (length <= 20) {
+    if (length <= 16) {
         return 1.5;
     } else if (length <= 40) {
         return 2.0;
