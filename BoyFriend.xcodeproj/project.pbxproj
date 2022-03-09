@@ -190,6 +190,7 @@
 		F089AA2727329622009A4BDD /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9F727329622009A4BDD /* BRAddressModel.m */; };
 		F089AA2827329622009A4BDD /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9FA27329622009A4BDD /* BRAddressPickerView.m */; };
 		F723F61027CF5A53002287CB /* NSString+BFEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */; };
+		F730849427D84F7B00A12404 /* NSString+BFLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = F730849327D84F7B00A12404 /* NSString+BFLoad.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -595,6 +596,8 @@
 		F089A9FA27329622009A4BDD /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
 		F723F60E27CF5A53002287CB /* NSString+BFEncryption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFEncryption.h"; sourceTree = "<group>"; };
 		F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFEncryption.m"; sourceTree = "<group>"; };
+		F730849227D84F7B00A12404 /* NSString+BFLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFLoad.h"; sourceTree = "<group>"; };
+		F730849327D84F7B00A12404 /* NSString+BFLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFLoad.m"; sourceTree = "<group>"; };
 		FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BoyFriend.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1063,6 +1066,8 @@
 				1879524B2202EE6B0001C437 /* NSString+BFRemoveEmoji.m */,
 				F723F60E27CF5A53002287CB /* NSString+BFEncryption.h */,
 				F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */,
+				F730849227D84F7B00A12404 /* NSString+BFLoad.h */,
+				F730849327D84F7B00A12404 /* NSString+BFLoad.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -2122,6 +2127,7 @@
 				7F01D0DC27C79153005A6709 /* UITextField+BFAdd.m in Sources */,
 				1843C16521F167F500A7540A /* UIView+BFPlaceholderView.m in Sources */,
 				F00D5A76273513AF00B5273D /* LoginPageViewController.m in Sources */,
+				F730849427D84F7B00A12404 /* NSString+BFLoad.m in Sources */,
 				F089AA1727329622009A4BDD /* YBIBContainerView.m in Sources */,
 				F048602127C8792200C530E9 /* BaseView.m in Sources */,
 				7F01D09627C7901E005A6709 /* UIImage+BFAdd.m in Sources */,
