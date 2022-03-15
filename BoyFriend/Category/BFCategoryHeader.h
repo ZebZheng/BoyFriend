@@ -20,7 +20,7 @@
 #import "BFUIViewControllerHeader.h"
 #import "UITextView+BFAdd.h"//占位字
 #import "UIResponder+BFConfigure.h"//键盘
-#import "UITableViewCell+BFInit.h"//标识
+#import "UITableView+BFRegister.h"//注册
 //#import "UIApplication+BFAdd.h"//沙河路径-项目信息
 
 /* --------- Foundation ----------*/

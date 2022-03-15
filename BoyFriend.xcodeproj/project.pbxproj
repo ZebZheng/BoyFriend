@@ -79,7 +79,6 @@
 		7F01D09727C7901E005A6709 /* UIImage+BFCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D09427C7901E005A6709 /* UIImage+BFCompress.m */; };
 		7F01D09B27C79030005A6709 /* UILabel+BFInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D09927C79030005A6709 /* UILabel+BFInit.m */; };
 		7F01D09F27C79038005A6709 /* UIApplication+BFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D09D27C79038005A6709 /* UIApplication+BFAdd.m */; };
-		7F01D0A327C79042005A6709 /* UITableViewCell+BFInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0A227C79042005A6709 /* UITableViewCell+BFInit.m */; };
 		7F01D0A727C79069005A6709 /* UIResponder+BFConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0A527C79069005A6709 /* UIResponder+BFConfigure.m */; };
 		7F01D0B127C79071005A6709 /* UIButton+BFCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0AB27C79071005A6709 /* UIButton+BFCountDown.m */; };
 		7F01D0B227C79071005A6709 /* UIButton+BFInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0AD27C79071005A6709 /* UIButton+BFInit.m */; };
@@ -117,6 +116,7 @@
 		7F0A86A727E023CB000B14B7 /* UIViewController+DDPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A86A527E023CB000B14B7 /* UIViewController+DDPopUpViewController.m */; };
 		7FB0BD1E27CDB93A004ECB2D /* UIView+BFAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */; };
 		7FBE0CE427CF70EA004A457F /* BFGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */; };
+		7FD340E427E076BF004A4857 /* UITableView+BFRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD340E327E076BF004A4857 /* UITableView+BFRegister.m */; };
 		A8D6916A3697862307B049D4 /* libPods-BoyFriend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */; };
 		F00D5A6627350BE900B5273D /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F00D5A6527350BE900B5273D /* UserViewModel.m */; };
 		F00D5A6927350BFF00B5273D /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F00D5A6827350BFF00B5273D /* UserInfoModel.m */; };
@@ -358,8 +358,6 @@
 		7F01D09A27C79030005A6709 /* UILabel+BFInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BFInit.h"; sourceTree = "<group>"; };
 		7F01D09D27C79038005A6709 /* UIApplication+BFAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+BFAdd.m"; sourceTree = "<group>"; };
 		7F01D09E27C79038005A6709 /* UIApplication+BFAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+BFAdd.h"; sourceTree = "<group>"; };
-		7F01D0A127C79042005A6709 /* UITableViewCell+BFInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+BFInit.h"; sourceTree = "<group>"; };
-		7F01D0A227C79042005A6709 /* UITableViewCell+BFInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+BFInit.m"; sourceTree = "<group>"; };
 		7F01D0A527C79069005A6709 /* UIResponder+BFConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+BFConfigure.m"; sourceTree = "<group>"; };
 		7F01D0A627C79069005A6709 /* UIResponder+BFConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+BFConfigure.h"; sourceTree = "<group>"; };
 		7F01D0A927C79071005A6709 /* UIButton+BFTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BFTouch.h"; sourceTree = "<group>"; };
@@ -436,6 +434,8 @@
 		7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BFAnimation.m"; sourceTree = "<group>"; };
 		7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGradientLabel.m; sourceTree = "<group>"; };
 		7FBE0CE327CF70EA004A457F /* BFGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGradientLabel.h; sourceTree = "<group>"; };
+		7FD340E227E076BF004A4857 /* UITableView+BFRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+BFRegister.h"; sourceTree = "<group>"; };
+		7FD340E327E076BF004A4857 /* UITableView+BFRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BFRegister.m"; sourceTree = "<group>"; };
 		C4D1379DBA36C7CCEE84EA90 /* Pods-BoyFriend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoyFriend.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoyFriend/Pods-BoyFriend.release.xcconfig"; sourceTree = "<group>"; };
 		F00D5A6427350BE900B5273D /* UserViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewModel.h; sourceTree = "<group>"; };
 		F00D5A6527350BE900B5273D /* UserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewModel.m; sourceTree = "<group>"; };
@@ -853,11 +853,11 @@
 		1843C15F21F1671500A7540A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7FD340E127E07691004A4857 /* UITableView */,
 				7F01D0CB27C79149005A6709 /* UIControl */,
 				7F01D0C427C7913F005A6709 /* UIViewController */,
 				7F01D0B927C79083005A6709 /* UITextView */,
 				7F01D0A427C79069005A6709 /* UIResponder */,
-				7F01D0A027C79042005A6709 /* UITableViewCell */,
 				7F01D09C27C79038005A6709 /* UIApplication */,
 				F089A97327328339009A4BDD /* UIDevice */,
 				187952102202CC380001C437 /* UITextField */,
@@ -1304,15 +1304,6 @@
 			path = UIApplication;
 			sourceTree = "<group>";
 		};
-		7F01D0A027C79042005A6709 /* UITableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				7F01D0A127C79042005A6709 /* UITableViewCell+BFInit.h */,
-				7F01D0A227C79042005A6709 /* UITableViewCell+BFInit.m */,
-			);
-			path = UITableViewCell;
-			sourceTree = "<group>";
-		};
 		7F01D0A427C79069005A6709 /* UIResponder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1423,6 +1414,15 @@
 				1868CE742201A4C2002220BF /* BaseWebViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		7FD340E127E07691004A4857 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				7FD340E227E076BF004A4857 /* UITableView+BFRegister.h */,
+				7FD340E327E076BF004A4857 /* UITableView+BFRegister.m */,
+			);
+			path = UITableView;
 			sourceTree = "<group>";
 		};
 		F00D5A5F27350BA100B5273D /* User */ = {
@@ -2064,7 +2064,6 @@
 				F089AA2527329622009A4BDD /* BRBaseView.m in Sources */,
 				187952072202C85E0001C437 /* UIImage+BFOrientation.m in Sources */,
 				F089AA1E27329622009A4BDD /* BRResultModel.m in Sources */,
-				7F01D0A327C79042005A6709 /* UITableViewCell+BFInit.m in Sources */,
 				F089AA0B27329622009A4BDD /* YBIBToastView.m in Sources */,
 				7F01D0B227C79071005A6709 /* UIButton+BFInit.m in Sources */,
 				18BB876322005AC100EDAC2A /* BFPathTools.m in Sources */,
@@ -2160,6 +2159,7 @@
 				18B67FF321F6F4F8004D2638 /* BaseTabBarController.m in Sources */,
 				F089AA1827329622009A4BDD /* YBIBDataMediator.m in Sources */,
 				18F38D5C21F55E240042CF26 /* BFUICreator.m in Sources */,
+				7FD340E427E076BF004A4857 /* UITableView+BFRegister.m in Sources */,
 				F00D5A6627350BE900B5273D /* UserViewModel.m in Sources */,
 				F089AA1027329622009A4BDD /* YBIBCopywriter.m in Sources */,
 				F0293D442745EF1E000286C4 /* CommonViewModel.m in Sources */,
