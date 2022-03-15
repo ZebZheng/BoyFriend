@@ -1,14 +1,14 @@
 //
-//  NSString+BFLoad.m
+//  NSString+BFSafe.m
 //  BoyFriend
 //
 //  Created by IMAC-1 on 2022/3/9.
 //  Copyright © 2022 BoyFriend. All rights reserved.
 //
 
-#import "NSString+BFLoad.h"
+#import "NSString+BFSafe.h"
 
-@implementation NSString (BFLoad)
+@implementation NSString (BFSafe)
 
 + (void)load {
     static dispatch_once_t onceToken;

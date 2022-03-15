@@ -18,7 +18,7 @@ static const char BFImageKey;
 static const char BFSelectImageKey;
 static const char BFAttributedTextKey;
 static const char BFSelectAttributedTextKey;
-static const char BFTextAlignementKey;
+static const char BFButtonTextAlignementKey;
 
 
 
@@ -26,50 +26,6 @@ static const char BFTextAlignementKey;
 
 - (void)bf_addTargetUpInside:(id)tat action:(SEL)sel {
     [self addTarget:tat action:sel forControlEvents:UIControlEventTouchUpInside];
-}
-
-- (void)bf_imagePosition:(BFImagePosition)postitionStatus spacing:(CGFloat)spacing {
-    CGFloat imageWith = self.imageView.image.size.width;
-    CGFloat imageHeight = self.imageView.image.size.height;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    CGFloat labelWidth = [self.titleLabel.text sizeWithFont:self.titleLabel.font].width;
-    CGFloat labelHeight = [self.titleLabel.text sizeWithFont:self.titleLabel.font].height;
-#pragma clang diagnostic pop
-    
-    CGFloat imageOffsetX = (imageWith + labelWidth) / 2 - imageWith / 2;//image中心移动的x距离
-    CGFloat imageOffsetY = imageHeight / 2 - spacing;//image中心移动的y距离
-    CGFloat labelOffsetX = (imageWith + labelWidth / 2) - (imageWith + labelWidth) / 2;//label中心移动的x距离
-    CGFloat labelOffsetY = labelHeight / 2 + spacing * 2;//label中心移动的y距离
-    
-    switch (postitionStatus) {
-        case BFImagePositionLeft:
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, -spacing/2, 0, spacing/2);
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing/2, 0, -spacing/2);
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            break;
-            
-        case BFImagePositionRight:
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth + spacing/2, 0, -(labelWidth + spacing/2));
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageHeight + spacing/2), 0, imageHeight + spacing/2);
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            break;
-            
-        case BFImagePositionTop:
-            self.imageEdgeInsets = UIEdgeInsetsMake(-imageOffsetY, imageOffsetX, imageOffsetY, -imageOffsetX);
-            self.titleEdgeInsets = UIEdgeInsetsMake(labelOffsetY, -labelOffsetX, -labelOffsetY, labelOffsetX);
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            break;
-            
-        case BFImagePositionBottom:
-            self.imageEdgeInsets = UIEdgeInsetsMake(imageOffsetY, imageOffsetX, -imageOffsetY, -imageOffsetX);
-            self.titleEdgeInsets = UIEdgeInsetsMake(-labelOffsetY, -labelOffsetX, labelOffsetY, labelOffsetX);
-            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            break;
-            
-        default:
-            break;
-    }
 }
 
 ///渐变背景颜色
@@ -83,7 +39,26 @@ static const char BFTextAlignementKey;
     self.backgroundColor = color;
 }
 
+/**
+ *  @brief  使用颜色设置按钮背景
+ *
+ *  @param backgroundColor 背景颜色
+ *  @param state           按钮状态
+ */
+- (void)bf_backgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state {
+    [self setBackgroundImage:[UIButton imageWithColor:backgroundColor] forState:state];
+}
 
++ (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 
 #pragma make ------ runtime ------
@@ -183,21 +158,40 @@ static const char BFTextAlignementKey;
     return objc_getAssociatedObject(self, &BFSelectAttributedTextKey);
 }
 
-- (void)setBf_textAlignement:(BFTextAlignement)textAlignement {
-    objc_setAssociatedObject(self, &BFTextAlignementKey, @(textAlignement), OBJC_ASSOCIATION_ASSIGN);
-    if (textAlignement == BFTextAlignmentLeft) {
+- (void)setBf_textAlignement:(BFButtonTextAlignement)textAlignement {
+    objc_setAssociatedObject(self, &BFButtonTextAlignementKey, @(textAlignement), OBJC_ASSOCIATION_ASSIGN);
+    if (textAlignement == BFButtonTextAlignmentLeft) {
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    } else if (textAlignement == BFTextAlignmentCenter) {
+    } else if (textAlignement == BFButtonTextAlignmentCenter) {
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     } else {
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     }
 }
-- (BFTextAlignement)bf_textAlignement {
-    return [objc_getAssociatedObject(self,&BFTextAlignementKey) integerValue];
+- (BFButtonTextAlignement)bf_textAlignement {
+    return [objc_getAssociatedObject(self,&BFButtonTextAlignementKey) integerValue];
 }
 
+- (UIEdgeInsets)bf_touchAreaInsets {
+    return [objc_getAssociatedObject(self, @selector(bf_touchAreaInsets)) UIEdgeInsetsValue];
+}
 
+/**
+ *  @brief  设置按钮额外热区
+ */
+- (void)setBf_touchAreaInsets:(UIEdgeInsets)bf_touchAreaInsets {
+    NSValue *value = [NSValue valueWithUIEdgeInsets:bf_touchAreaInsets];
+    objc_setAssociatedObject(self, @selector(bf_touchAreaInsets), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    UIEdgeInsets touchAreaInsets = self.bf_touchAreaInsets;
+    CGRect bounds = self.bounds;
+    bounds = CGRectMake(bounds.origin.x - touchAreaInsets.left,
+                        bounds.origin.y - touchAreaInsets.top,
+                        bounds.size.width + touchAreaInsets.left + touchAreaInsets.right,
+                        bounds.size.height + touchAreaInsets.top + touchAreaInsets.bottom);
+    return CGRectContainsPoint(bounds, point);
+}
 
 @end

@@ -69,7 +69,7 @@
 		18F38D5921F55D930042CF26 /* UIView+BFConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F38D5821F55D930042CF26 /* UIView+BFConvenience.m */; };
 		18F38D5C21F55E240042CF26 /* BFUICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F38D5B21F55E240042CF26 /* BFUICreator.m */; };
 		18F38D5F21F592690042CF26 /* UIImage+BFName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F38D5E21F592690042CF26 /* UIImage+BFName.m */; };
-		18F38D6321F593760042CF26 /* UIButton+BFBackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F38D6221F593760042CF26 /* UIButton+BFBackgroundColor.m */; };
+		18F38D6321F593760042CF26 /* UIButton+BFImagePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F38D6221F593760042CF26 /* UIButton+BFImagePosition.m */; };
 		18FF49D121FAE4B600220D48 /* BFKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF49D021FAE4B600220D48 /* BFKeyChain.m */; };
 		18FF49D721FB0AF300220D48 /* NetWorkURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF49D321FB0AF300220D48 /* NetWorkURL.m */; };
 		18FF49D821FB0AF300220D48 /* NetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF49D421FB0AF300220D48 /* NetWorkHelper.m */; };
@@ -82,7 +82,6 @@
 		7F01D0A727C79069005A6709 /* UIResponder+BFConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0A527C79069005A6709 /* UIResponder+BFConfigure.m */; };
 		7F01D0B127C79071005A6709 /* UIButton+BFCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0AB27C79071005A6709 /* UIButton+BFCountDown.m */; };
 		7F01D0B227C79071005A6709 /* UIButton+BFInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0AD27C79071005A6709 /* UIButton+BFInit.m */; };
-		7F01D0B327C79071005A6709 /* UIButton+BFTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0AE27C79071005A6709 /* UIButton+BFTouch.m */; };
 		7F01D0B427C79071005A6709 /* UIButton+BFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0AF27C79071005A6709 /* UIButton+BFAdd.m */; };
 		7F01D0B827C79077005A6709 /* UIColor+BFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0B627C79077005A6709 /* UIColor+BFAdd.m */; };
 		7F01D0BC27C79083005A6709 /* UITextView+BFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D0BB27C79083005A6709 /* UITextView+BFAdd.m */; };
@@ -192,7 +191,7 @@
 		F089AA2727329622009A4BDD /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9F727329622009A4BDD /* BRAddressModel.m */; };
 		F089AA2827329622009A4BDD /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9FA27329622009A4BDD /* BRAddressPickerView.m */; };
 		F723F61027CF5A53002287CB /* NSString+BFEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */; };
-		F730849427D84F7B00A12404 /* NSString+BFLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = F730849327D84F7B00A12404 /* NSString+BFLoad.m */; };
+		F730849427D84F7B00A12404 /* NSString+BFSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = F730849327D84F7B00A12404 /* NSString+BFSafe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -336,8 +335,8 @@
 		18F38D5B21F55E240042CF26 /* BFUICreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFUICreator.m; sourceTree = "<group>"; };
 		18F38D5D21F592690042CF26 /* UIImage+BFName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BFName.h"; sourceTree = "<group>"; };
 		18F38D5E21F592690042CF26 /* UIImage+BFName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BFName.m"; sourceTree = "<group>"; };
-		18F38D6121F593760042CF26 /* UIButton+BFBackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BFBackgroundColor.h"; sourceTree = "<group>"; };
-		18F38D6221F593760042CF26 /* UIButton+BFBackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BFBackgroundColor.m"; sourceTree = "<group>"; };
+		18F38D6121F593760042CF26 /* UIButton+BFImagePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BFImagePosition.h"; sourceTree = "<group>"; };
+		18F38D6221F593760042CF26 /* UIButton+BFImagePosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BFImagePosition.m"; sourceTree = "<group>"; };
 		18F38D6421F5938E0042CF26 /* UIButtonCategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButtonCategoryHeader.h; sourceTree = "<group>"; };
 		18FF49CF21FAE4B600220D48 /* BFKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFKeyChain.h; sourceTree = "<group>"; };
 		18FF49D021FAE4B600220D48 /* BFKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFKeyChain.m; sourceTree = "<group>"; };
@@ -360,12 +359,10 @@
 		7F01D09E27C79038005A6709 /* UIApplication+BFAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+BFAdd.h"; sourceTree = "<group>"; };
 		7F01D0A527C79069005A6709 /* UIResponder+BFConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+BFConfigure.m"; sourceTree = "<group>"; };
 		7F01D0A627C79069005A6709 /* UIResponder+BFConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+BFConfigure.h"; sourceTree = "<group>"; };
-		7F01D0A927C79071005A6709 /* UIButton+BFTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BFTouch.h"; sourceTree = "<group>"; };
 		7F01D0AA27C79071005A6709 /* UIButton+BFInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BFInit.h"; sourceTree = "<group>"; };
 		7F01D0AB27C79071005A6709 /* UIButton+BFCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BFCountDown.m"; sourceTree = "<group>"; };
 		7F01D0AC27C79071005A6709 /* UIButton+BFAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BFAdd.h"; sourceTree = "<group>"; };
 		7F01D0AD27C79071005A6709 /* UIButton+BFInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BFInit.m"; sourceTree = "<group>"; };
-		7F01D0AE27C79071005A6709 /* UIButton+BFTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BFTouch.m"; sourceTree = "<group>"; };
 		7F01D0AF27C79071005A6709 /* UIButton+BFAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BFAdd.m"; sourceTree = "<group>"; };
 		7F01D0B027C79071005A6709 /* UIButton+BFCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BFCountDown.h"; sourceTree = "<group>"; };
 		7F01D0B627C79077005A6709 /* UIColor+BFAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BFAdd.m"; sourceTree = "<group>"; };
@@ -602,8 +599,8 @@
 		F089A9FA27329622009A4BDD /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
 		F723F60E27CF5A53002287CB /* NSString+BFEncryption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFEncryption.h"; sourceTree = "<group>"; };
 		F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFEncryption.m"; sourceTree = "<group>"; };
-		F730849227D84F7B00A12404 /* NSString+BFLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFLoad.h"; sourceTree = "<group>"; };
-		F730849327D84F7B00A12404 /* NSString+BFLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFLoad.m"; sourceTree = "<group>"; };
+		F730849227D84F7B00A12404 /* NSString+BFSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFSafe.h"; sourceTree = "<group>"; };
+		F730849327D84F7B00A12404 /* NSString+BFSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFSafe.m"; sourceTree = "<group>"; };
 		FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BoyFriend.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1073,8 +1070,8 @@
 				1879524B2202EE6B0001C437 /* NSString+BFRemoveEmoji.m */,
 				F723F60E27CF5A53002287CB /* NSString+BFEncryption.h */,
 				F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */,
-				F730849227D84F7B00A12404 /* NSString+BFLoad.h */,
-				F730849327D84F7B00A12404 /* NSString+BFLoad.m */,
+				F730849227D84F7B00A12404 /* NSString+BFSafe.h */,
+				F730849327D84F7B00A12404 /* NSString+BFSafe.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -1249,16 +1246,14 @@
 				18F38D6421F5938E0042CF26 /* UIButtonCategoryHeader.h */,
 				7F01D0AC27C79071005A6709 /* UIButton+BFAdd.h */,
 				7F01D0AF27C79071005A6709 /* UIButton+BFAdd.m */,
-				18F38D6121F593760042CF26 /* UIButton+BFBackgroundColor.h */,
-				18F38D6221F593760042CF26 /* UIButton+BFBackgroundColor.m */,
+				18F38D6121F593760042CF26 /* UIButton+BFImagePosition.h */,
+				18F38D6221F593760042CF26 /* UIButton+BFImagePosition.m */,
 				7F01D0B027C79071005A6709 /* UIButton+BFCountDown.h */,
 				7F01D0AB27C79071005A6709 /* UIButton+BFCountDown.m */,
 				7F01D0AA27C79071005A6709 /* UIButton+BFInit.h */,
 				7F01D0AD27C79071005A6709 /* UIButton+BFInit.m */,
 				187951EF220299D10001C437 /* UIButton+BFSubmitting.h */,
 				187951F1220299D10001C437 /* UIButton+BFSubmitting.m */,
-				7F01D0A927C79071005A6709 /* UIButton+BFTouch.h */,
-				7F01D0AE27C79071005A6709 /* UIButton+BFTouch.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -2050,7 +2045,7 @@
 				F089AA2727329622009A4BDD /* BRAddressModel.m in Sources */,
 				F089A9FB27329622009A4BDD /* BFPopShowView.m in Sources */,
 				7F01D0BC27C79083005A6709 /* UITextView+BFAdd.m in Sources */,
-				18F38D6321F593760042CF26 /* UIButton+BFBackgroundColor.m in Sources */,
+				18F38D6321F593760042CF26 /* UIButton+BFImagePosition.m in Sources */,
 				18B67FF921F6F98F004D2638 /* ListViewController.m in Sources */,
 				7F01D0D427C79149005A6709 /* UIControl+BFEventInterval.m in Sources */,
 				F048605527C8C13200C530E9 /* BFGradientButton.m in Sources */,
@@ -2146,7 +2141,7 @@
 				7F01D0DC27C79153005A6709 /* UITextField+BFAdd.m in Sources */,
 				1843C16521F167F500A7540A /* UIView+BFPlaceholderView.m in Sources */,
 				F00D5A76273513AF00B5273D /* LoginPageViewController.m in Sources */,
-				F730849427D84F7B00A12404 /* NSString+BFLoad.m in Sources */,
+				F730849427D84F7B00A12404 /* NSString+BFSafe.m in Sources */,
 				F089AA1727329622009A4BDD /* YBIBContainerView.m in Sources */,
 				F048602127C8792200C530E9 /* BaseView.m in Sources */,
 				7F01D09627C7901E005A6709 /* UIImage+BFAdd.m in Sources */,
@@ -2155,7 +2150,6 @@
 				18FF49DB21FB0D5200220D48 /* UIImage+BFWechat.m in Sources */,
 				F723F61027CF5A53002287CB /* NSString+BFEncryption.m in Sources */,
 				187952282202D2200001C437 /* UINavigationController+SafeTransition.m in Sources */,
-				7F01D0B327C79071005A6709 /* UIButton+BFTouch.m in Sources */,
 				18B67FF321F6F4F8004D2638 /* BaseTabBarController.m in Sources */,
 				F089AA1827329622009A4BDD /* YBIBDataMediator.m in Sources */,
 				18F38D5C21F55E240042CF26 /* BFUICreator.m in Sources */,
