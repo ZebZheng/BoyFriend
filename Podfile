@@ -8,11 +8,11 @@ target 'BoyFriend' do
     pod 'AFNetworking','4.0.1'
     pod 'Bugly' #腾讯崩溃统计SDK
     pod 'DateTools','2.0.0'#日期工具库
-    pod 'FLEX','~> 4.6.0', :configurations => ['Debug']#调试神器(模拟器按s,会出现视图层级关系)
+    pod 'FLEX','~> 4.6.1', :configurations => ['Debug']#调试神器(模拟器按s,会出现视图层级关系)
     pod 'IQKeyboardManager','6.5.6'
     pod 'JPFPSStatus','0.1.1'#FPS显示
     pod 'KVOController','1.2.0'
-    pod 'LKDBHelper','2.5.7'#sqlite ORM
+    pod 'LKDBHelper','2.5.8'#sqlite ORM
     pod 'Masonry','1.1.0'#布局框架
     pod 'MBProgressHUD','1.2.0'
     pod 'MJRefresh','3.7.2'
@@ -20,7 +20,8 @@ target 'BoyFriend' do
     pod 'QMUIKit' #功能说明 https://qmuiteam.com/ios/documents/
     pod 'ReactiveObjC','3.1.1' #函数响应式编程框架
     pod 'SDWebImage','5.12.1'
-    pod 'TZImagePickerController','3.6.6'#相册图片选择
+    pod 'SDWebImageWebPCoder','0.8.4'#SD支持webp格式(添加完 configSDWebImage 要设置)
+    pod 'TZImagePickerController','3.7.6'#相册图片选择
     pod 'WebViewJavascriptBridge','6.0.3'#更快的支持JS调用OC,OC调用JS
     pod 'YYKit','1.0.9'
 #    pod 'JPush','4.4.0'#极光推送

@@ -9,6 +9,8 @@
 #import "AppDelegate+TopSet.h"
 #import "BFKeyChain.h"
 #import "SDImageCache.h"
+#import <SDImageWebPCoder.h>
+#import <SDImageCodersManager.h>
 
 #if __has_include(<Bugly/Bugly.h>)
 #import <Bugly/Bugly.h>
@@ -83,6 +85,10 @@
     //硬盘存储最大空间(硬盘存储  最大时间 默认值是7天 -1 没有过期)
     [SDImageCacheConfig defaultCacheConfig].maxDiskSize = 1024 * 1024 * 100; // 100M  // 0 不限制大小
     [SDImageCacheConfig defaultCacheConfig].maxDiskAge = 7;//7天   // -1 没有过期
+    
+    //SD支持webp格式 要添加一个附属库 pod 'SDWebImageWebPCoder'
+    SDImageWebPCoder *webPCoder = [SDImageWebPCoder sharedCoder];
+    [[SDImageCodersManager sharedManager] addCoder:webPCoder];
 }
 
 #pragma mark - Config iOS 11.0

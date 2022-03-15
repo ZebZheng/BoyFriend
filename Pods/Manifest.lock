@@ -23,9 +23,18 @@ PODS:
   - IQKeyboardManager (6.5.6)
   - JPFPSStatus (0.1.1)
   - KVOController (1.2.0)
-  - LKDBHelper (2.5.7):
-    - LKDBHelper/standard (= 2.5.7)
-  - LKDBHelper/standard (2.5.7):
+  - libwebp (1.2.1):
+    - libwebp/demux (= 1.2.1)
+    - libwebp/mux (= 1.2.1)
+    - libwebp/webp (= 1.2.1)
+  - libwebp/demux (1.2.1):
+    - libwebp/webp
+  - libwebp/mux (1.2.1):
+    - libwebp/demux
+  - libwebp/webp (1.2.1)
+  - LKDBHelper (2.5.8):
+    - LKDBHelper/standard (= 2.5.8)
+  - LKDBHelper/standard (2.5.8):
     - FMDB
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
@@ -346,7 +355,10 @@ PODS:
   - SDWebImage (5.12.1):
     - SDWebImage/Core (= 5.12.1)
   - SDWebImage/Core (5.12.1)
-  - TZImagePickerController (3.6.6)
+  - SDWebImageWebPCoder (0.8.4):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.10)
+  - TZImagePickerController (3.7.6)
   - WebViewJavascriptBridge (6.0.3)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -356,11 +368,11 @@ DEPENDENCIES:
   - AFNetworking (= 4.0.1)
   - Bugly
   - DateTools (= 2.0.0)
-  - FLEX (~> 4.6.0)
+  - FLEX (~> 4.6.1)
   - IQKeyboardManager (= 6.5.6)
   - JPFPSStatus (= 0.1.1)
   - KVOController (= 1.2.0)
-  - LKDBHelper (= 2.5.7)
+  - LKDBHelper (= 2.5.8)
   - Masonry (= 1.1.0)
   - MBProgressHUD (= 1.2.0)
   - MJExtension (= 3.3.0)
@@ -368,7 +380,8 @@ DEPENDENCIES:
   - QMUIKit
   - ReactiveObjC (= 3.1.1)
   - SDWebImage (= 5.12.1)
-  - TZImagePickerController (= 3.6.6)
+  - SDWebImageWebPCoder (= 0.8.4)
+  - TZImagePickerController (= 3.7.6)
   - WebViewJavascriptBridge (= 6.0.3)
   - YYKit (= 1.0.9)
 
@@ -382,6 +395,7 @@ SPEC REPOS:
     - IQKeyboardManager
     - JPFPSStatus
     - KVOController
+    - libwebp
     - LKDBHelper
     - Masonry
     - MBProgressHUD
@@ -390,6 +404,7 @@ SPEC REPOS:
     - QMUIKit
     - ReactiveObjC
     - SDWebImage
+    - SDWebImageWebPCoder
     - TZImagePickerController
     - WebViewJavascriptBridge
     - YYKit
@@ -403,7 +418,8 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   JPFPSStatus: 03f32aa3d4d7d0c5bf56f6f3e7cf8b7280a5f52c
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
-  LKDBHelper: e853b4408ffa1a5cc1c39346c45b4204db83e10a
+  libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
+  LKDBHelper: 0ad97c7f5c73a11d583af2c4bbdd5f1c446c68d4
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: 01704cca2b60a214c10761b6491eab74069d68a9
@@ -411,10 +427,11 @@ SPEC CHECKSUMS:
   QMUIKit: 67888be9aa0ee0b12b8a219fcea2eec900afd841
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
-  TZImagePickerController: edf61b8e87f26e3e445aa50eb66254bd7f4859db
+  SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
+  TZImagePickerController: fb446ac06ae9c217bc849185646a68465bcd0dd4
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 8df458beb8022bebe5e62614bb204ac876caa218
+PODFILE CHECKSUM: 70096238503ad5949dc8f6bde034fa3fdf241769
 
 COCOAPODS: 1.11.2
