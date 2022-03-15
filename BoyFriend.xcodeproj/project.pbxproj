@@ -113,6 +113,8 @@
 		7F01D12C27C79470005A6709 /* NSMutableArray+BFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D12B27C79470005A6709 /* NSMutableArray+BFAdd.m */; };
 		7F01D13227C7947B005A6709 /* NSDate+BFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D13027C7947B005A6709 /* NSDate+BFAdd.m */; };
 		7F01D13327C7947B005A6709 /* NSDate+BFConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D13127C7947B005A6709 /* NSDate+BFConversion.m */; };
+		7F0A86A627E023CB000B14B7 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A86A227E023CB000B14B7 /* UIViewController+MJPopupViewController.m */; };
+		7F0A86A727E023CB000B14B7 /* UIViewController+DDPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A86A527E023CB000B14B7 /* UIViewController+DDPopUpViewController.m */; };
 		7FB0BD1E27CDB93A004ECB2D /* UIView+BFAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */; };
 		7FBE0CE427CF70EA004A457F /* BFGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */; };
 		A8D6916A3697862307B049D4 /* libPods-BoyFriend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */; };
@@ -426,6 +428,10 @@
 		7F01D12F27C7947B005A6709 /* NSDate+BFAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BFAdd.h"; sourceTree = "<group>"; };
 		7F01D13027C7947B005A6709 /* NSDate+BFAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BFAdd.m"; sourceTree = "<group>"; };
 		7F01D13127C7947B005A6709 /* NSDate+BFConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BFConversion.m"; sourceTree = "<group>"; };
+		7F0A86A227E023CB000B14B7 /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
+		7F0A86A327E023CB000B14B7 /* UIViewController+DDPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DDPopUpViewController.h"; sourceTree = "<group>"; };
+		7F0A86A427E023CB000B14B7 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
+		7F0A86A527E023CB000B14B7 /* UIViewController+DDPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DDPopUpViewController.m"; sourceTree = "<group>"; };
 		7FB0BD1C27CDB93A004ECB2D /* UIView+BFAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BFAnimation.h"; sourceTree = "<group>"; };
 		7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BFAnimation.m"; sourceTree = "<group>"; };
 		7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGradientLabel.m; sourceTree = "<group>"; };
@@ -726,6 +732,7 @@
 		1843C12E21F07C7F00A7540A /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				7F0A86A127E023BF000B14B7 /* Popup */,
 				186DDA0421FECCB3000B6EDB /* AdvertiseHelper */,
 				F089A9DF27329622009A4BDD /* BRPickerView */,
 				F089A98327329622009A4BDD /* PopAnimationView */,
@@ -1377,6 +1384,17 @@
 				7F01D13127C7947B005A6709 /* NSDate+BFConversion.m */,
 			);
 			path = NSDate;
+			sourceTree = "<group>";
+		};
+		7F0A86A127E023BF000B14B7 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				7F0A86A327E023CB000B14B7 /* UIViewController+DDPopUpViewController.h */,
+				7F0A86A527E023CB000B14B7 /* UIViewController+DDPopUpViewController.m */,
+				7F0A86A427E023CB000B14B7 /* UIViewController+MJPopupViewController.h */,
+				7F0A86A227E023CB000B14B7 /* UIViewController+MJPopupViewController.m */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		7F6891BD27D84149009B480B /* Model */ = {
@@ -2080,6 +2098,7 @@
 				1868CE5B22017138002220BF /* BaseSQliteModel.m in Sources */,
 				F089AA1627329622009A4BDD /* YBIBScreenRotationHandler.m in Sources */,
 				F089AA1F27329622009A4BDD /* BRStringPickerView.m in Sources */,
+				7F0A86A727E023CB000B14B7 /* UIViewController+DDPopUpViewController.m in Sources */,
 				187951F5220299D20001C437 /* UIButton+BFSubmitting.m in Sources */,
 				7F01D09527C7901E005A6709 /* UIImage+BFInit.m in Sources */,
 				7F01D0B427C79071005A6709 /* UIButton+BFAdd.m in Sources */,
@@ -2111,6 +2130,7 @@
 				F089AA1327329622009A4BDD /* YBIBTopView.m in Sources */,
 				7F01D0D227C79149005A6709 /* UIControl+BFActionBlocks.m in Sources */,
 				7F01D11F27C79467005A6709 /* NSString+BFConversion.m in Sources */,
+				7F0A86A627E023CB000B14B7 /* UIViewController+MJPopupViewController.m in Sources */,
 				7F01D0F927C793C3005A6709 /* UIView+BFBlock.m in Sources */,
 				189909A225CFE8CC00F82636 /* AppCacheSQliteModel.m in Sources */,
 				F089AA1A27329622009A4BDD /* YBIBCollectionViewLayout.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "UIControl+BFActionBlocks.h"
 #import "UIControl+BFBlock.h"///点击事件block
-#import "UIControl+BFEventInterval.h"///点击延迟出发,暂只有button
+#import "UIControl+BFEventInterval.h"///点击延迟触发,暂只有button
 
 
 
