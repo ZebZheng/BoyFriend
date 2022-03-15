@@ -732,7 +732,7 @@
 		1843C12E21F07C7F00A7540A /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
-				7F0A86A127E023BF000B14B7 /* Popup */,
+				7F0A86A127E023BF000B14B7 /* PopupViewController */,
 				186DDA0421FECCB3000B6EDB /* AdvertiseHelper */,
 				F089A9DF27329622009A4BDD /* BRPickerView */,
 				F089A98327329622009A4BDD /* PopAnimationView */,
@@ -1386,7 +1386,7 @@
 			path = NSDate;
 			sourceTree = "<group>";
 		};
-		7F0A86A127E023BF000B14B7 /* Popup */ = {
+		7F0A86A127E023BF000B14B7 /* PopupViewController */ = {
 			isa = PBXGroup;
 			children = (
 				7F0A86A327E023CB000B14B7 /* UIViewController+DDPopUpViewController.h */,
@@ -1394,7 +1394,7 @@
 				7F0A86A427E023CB000B14B7 /* UIViewController+MJPopupViewController.h */,
 				7F0A86A227E023CB000B14B7 /* UIViewController+MJPopupViewController.m */,
 			);
-			path = Popup;
+			path = PopupViewController;
 			sourceTree = "<group>";
 		};
 		7F6891BD27D84149009B480B /* Model */ = {
