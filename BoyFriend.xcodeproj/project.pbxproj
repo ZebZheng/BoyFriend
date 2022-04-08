@@ -113,6 +113,7 @@
 		7F01D13327C7947B005A6709 /* NSDate+BFConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D13127C7947B005A6709 /* NSDate+BFConversion.m */; };
 		7F0A86A627E023CB000B14B7 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A86A227E023CB000B14B7 /* UIViewController+MJPopupViewController.m */; };
 		7F0A86A727E023CB000B14B7 /* UIViewController+DDPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A86A527E023CB000B14B7 /* UIViewController+DDPopUpViewController.m */; };
+		7F2D2B3B28003F5C0090C24C /* NSString+BFAttributedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D2B3A28003F5C0090C24C /* NSString+BFAttributedAuto.m */; };
 		7FB0BD1E27CDB93A004ECB2D /* UIView+BFAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */; };
 		7FBE0CE427CF70EA004A457F /* BFGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */; };
 		7FD340E427E076BF004A4857 /* UITableView+BFRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD340E327E076BF004A4857 /* UITableView+BFRegister.m */; };
@@ -427,6 +428,8 @@
 		7F0A86A327E023CB000B14B7 /* UIViewController+DDPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DDPopUpViewController.h"; sourceTree = "<group>"; };
 		7F0A86A427E023CB000B14B7 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
 		7F0A86A527E023CB000B14B7 /* UIViewController+DDPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DDPopUpViewController.m"; sourceTree = "<group>"; };
+		7F2D2B3928003F5C0090C24C /* NSString+BFAttributedAuto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFAttributedAuto.h"; sourceTree = "<group>"; };
+		7F2D2B3A28003F5C0090C24C /* NSString+BFAttributedAuto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFAttributedAuto.m"; sourceTree = "<group>"; };
 		7FB0BD1C27CDB93A004ECB2D /* UIView+BFAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BFAnimation.h"; sourceTree = "<group>"; };
 		7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BFAnimation.m"; sourceTree = "<group>"; };
 		7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGradientLabel.m; sourceTree = "<group>"; };
@@ -1072,6 +1075,8 @@
 				F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */,
 				F730849227D84F7B00A12404 /* NSString+BFSafe.h */,
 				F730849327D84F7B00A12404 /* NSString+BFSafe.m */,
+				7F2D2B3928003F5C0090C24C /* NSString+BFAttributedAuto.h */,
+				7F2D2B3A28003F5C0090C24C /* NSString+BFAttributedAuto.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -2070,6 +2075,7 @@
 				18BB875A220041AA00EDAC2A /* BFAttributeStringUtil.m in Sources */,
 				F089AA2427329622009A4BDD /* BRPickerStyle.m in Sources */,
 				F089AA1127329622009A4BDD /* YBIBUtilities.m in Sources */,
+				7F2D2B3B28003F5C0090C24C /* NSString+BFAttributedAuto.m in Sources */,
 				1879523A2202D47C0001C437 /* NSObject+BFReflection.m in Sources */,
 				F00D5A6E2735123900B5273D /* AppDelegate+Custom.m in Sources */,
 				187952332202D3AF0001C437 /* NSNotificationCenter+BFMainThread.m in Sources */,

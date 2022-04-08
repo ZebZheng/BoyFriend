@@ -12,3 +12,4 @@
 //#import "NSString+BFEncryption.h"//加密
 //#import "NSString+BFRemoveEmoji.h"//表情的处理方法
 #import "NSString+BFSafe.h"//拼接崩溃处理
+#import "NSString+BFAttributedAuto.h"//富文本适配
