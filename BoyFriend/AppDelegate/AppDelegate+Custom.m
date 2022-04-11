@@ -35,7 +35,7 @@
     
 //    if (!_loginPageVC) {
         self.loginPageVC = nil;
-        self.loginPageVC = [LoginPageViewController new];
+        self.loginPageVC = [BFLoginViewController new];
         BaseNavigationController *navigationVC = [[BaseNavigationController alloc]initWithRootViewController:self.loginPageVC];
         [self changeRootViewController:navigationVC];
         self.tabBarVC = nil;

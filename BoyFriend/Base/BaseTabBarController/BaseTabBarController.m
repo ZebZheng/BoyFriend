@@ -7,10 +7,10 @@
 //
 
 #import "BaseTabBarController.h"
-#import "HomeViewController.h"
-#import "ListViewController.h"
-#import "MessageViewController.h"
-#import "MineViewController.h"
+#import "BFHomeViewController.h"
+#import "BFListSegmentedViewController.h"
+#import "BFMessageViewController.h"
+#import "BFMineViewController.h"
 
 #import "KBTabbar.h"
 
@@ -47,13 +47,13 @@
 }
 
 - (void)setupTabBarController {
-    HomeViewController *homeVC = [[HomeViewController alloc] init];
+    BFHomeViewController *homeVC = [[BFHomeViewController alloc] init];
     [self addChildVc:homeVC title:@"首页" image:@"xm1" selectedImage:@"xm2"];
-    ListViewController *listVC = [[ListViewController alloc] init];
+    BFListSegmentedViewController *listVC = [[BFListSegmentedViewController alloc] init];
     [self addChildVc:listVC title:@"列表" image:@"gz1" selectedImage:@"gz2"];
-    MessageViewController *messageVC = [[MessageViewController alloc] init];
+    BFMessageViewController *messageVC = [[BFMessageViewController alloc] init];
     [self addChildVc:messageVC title:@"消息" image:@"xx1" selectedImage:@"xx2"];
-    MineViewController *profileVC = [[MineViewController alloc] init];
+    BFMineViewController *profileVC = [[BFMineViewController alloc] init];
     [self addChildVc:profileVC title:@"我的" image:@"wd1" selectedImage:@"wd2"];
     [DataLibrery shareInstance].homeVCCode = 0;
     [DataLibrery shareInstance].listVCCode = 1;
@@ -136,7 +136,7 @@
 #pragma mark - UITabBarDelegate
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UINavigationController *)viewController{
-    BOOL isDisVC = [viewController.topViewController isKindOfClass:[MessageViewController class]];
+    BOOL isDisVC = [viewController.topViewController isKindOfClass:[BFMessageViewController class]];
     if (isDisVC) {
         BFDEBUG(@"你点击了TabBar第三个");
         [self setBadgeValue:@""];

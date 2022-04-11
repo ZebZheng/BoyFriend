@@ -21,6 +21,8 @@
 #import "DateTools.h"
 #import <QMUIKit/QMUIKit.h>
 #import <KVOController/KVOController.h>
+#import <SDCycleScrollView/SDCycleScrollView.h>
+
 //宏
 #import "BFConstantMacros.h"
 #import "BFColorMacros.h"

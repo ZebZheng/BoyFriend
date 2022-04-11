@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseTabBarController.h"
-#import "LoginPageViewController.h"
+#import "BFLoginViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (nonatomic, strong) LoginPageViewController *loginPageVC;
+@property (nonatomic, strong) BFLoginViewController *loginPageVC;
 @property (nonatomic, strong) BaseTabBarController *tabBarVC;
 
 

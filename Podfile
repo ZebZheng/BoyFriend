@@ -11,6 +11,7 @@ target 'BoyFriend' do
     pod 'FLEX','~> 4.6.1', :configurations => ['Debug']#调试神器(模拟器按s,会出现视图层级关系)
     pod 'IQKeyboardManager','6.5.6'
     pod 'JPFPSStatus','0.1.1'#FPS显示
+    pod 'JXCategoryView','1.5.9'
     pod 'KVOController','1.2.0'
     pod 'LKDBHelper','2.5.8'#sqlite ORM
     pod 'Masonry','1.1.0'#布局框架
@@ -21,6 +22,7 @@ target 'BoyFriend' do
     pod 'ReactiveObjC','3.1.1' #函数响应式编程框架
     pod 'SDWebImage','5.12.1'
     pod 'SDWebImageWebPCoder','0.8.4'#SD支持webp格式(添加完 configSDWebImage 要设置)
+    pod 'SDCycleScrollView','1.82'#图片轮播
     pod 'TZImagePickerController','3.7.6'#相册图片选择
     pod 'WebViewJavascriptBridge','6.0.3'#更快的支持JS调用OC,OC调用JS
     pod 'YYKit','1.0.9'
@@ -28,7 +30,6 @@ target 'BoyFriend' do
 #    pod 'JCore', '3.1.0-noidfa'
 #    pod 'JLRoutes','2.1'#路由跳转
 #    pod 'FSCalendar','2.8.2'#日历控件
-#    pod 'SDCycleScrollView','1.82'#图片轮播
 #    pod 'UMengAnalytics-NO-IDFA','4.2.5'#友盟统计无IDFA版SDK
 #    pod 'LBXScan','2.5.1'#二维码扫描
 #    pod 'WeChat_SDK_iOS'#微信支付SDK

@@ -22,6 +22,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - IQKeyboardManager (6.5.6)
   - JPFPSStatus (0.1.1)
+  - JXCategoryView (1.5.9)
   - KVOController (1.2.0)
   - libwebp (1.2.1):
     - libwebp/demux (= 1.2.1)
@@ -352,6 +353,8 @@ PODS:
   - QMUIKit/QMUIResources (4.3.0)
   - QMUIKit/QMUIWeakObjectContainer (4.3.0)
   - ReactiveObjC (3.1.1)
+  - SDCycleScrollView (1.82):
+    - SDWebImage (>= 5.0.0)
   - SDWebImage (5.12.1):
     - SDWebImage/Core (= 5.12.1)
   - SDWebImage/Core (5.12.1)
@@ -371,6 +374,7 @@ DEPENDENCIES:
   - FLEX (~> 4.6.1)
   - IQKeyboardManager (= 6.5.6)
   - JPFPSStatus (= 0.1.1)
+  - JXCategoryView (= 1.5.9)
   - KVOController (= 1.2.0)
   - LKDBHelper (= 2.5.8)
   - Masonry (= 1.1.0)
@@ -379,6 +383,7 @@ DEPENDENCIES:
   - MJRefresh (= 3.7.2)
   - QMUIKit
   - ReactiveObjC (= 3.1.1)
+  - SDCycleScrollView (= 1.82)
   - SDWebImage (= 5.12.1)
   - SDWebImageWebPCoder (= 0.8.4)
   - TZImagePickerController (= 3.7.6)
@@ -394,6 +399,7 @@ SPEC REPOS:
     - FMDB
     - IQKeyboardManager
     - JPFPSStatus
+    - JXCategoryView
     - KVOController
     - libwebp
     - LKDBHelper
@@ -403,6 +409,7 @@ SPEC REPOS:
     - MJRefresh
     - QMUIKit
     - ReactiveObjC
+    - SDCycleScrollView
     - SDWebImage
     - SDWebImageWebPCoder
     - TZImagePickerController
@@ -417,6 +424,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   JPFPSStatus: 03f32aa3d4d7d0c5bf56f6f3e7cf8b7280a5f52c
+  JXCategoryView: 2ef9ecfd3735158d009ce02d1f29811aa822da65
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
   LKDBHelper: 0ad97c7f5c73a11d583af2c4bbdd5f1c446c68d4
@@ -426,12 +434,13 @@ SPEC CHECKSUMS:
   MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
   QMUIKit: 67888be9aa0ee0b12b8a219fcea2eec900afd841
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
   SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
   TZImagePickerController: fb446ac06ae9c217bc849185646a68465bcd0dd4
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 70096238503ad5949dc8f6bde034fa3fdf241769
+PODFILE CHECKSUM: cfcba95864b25ab68f04dfd4f29c81981645163f
 
 COCOAPODS: 1.11.2
