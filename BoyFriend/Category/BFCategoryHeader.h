@@ -31,6 +31,7 @@
 #import "NSData+BFConversion.h"//转换
 #import "NSArray+BFConversion.h"//转换
 #import "NSArray+BFAdd.h"//去重
+#import "NSArray+BFSafe.h"//安全
 #import "NSBundle+BFLanguage.h"//系统语言
 #import "NSObject+BFWindow.h"//控制器
 #import "NSDictionary+BFConvent.h"//转换
