@@ -156,7 +156,7 @@
 
     [self registerDefaultSimulatorShortcutWithKey:UIKeyInputLeftArrow modifiers:0 action:^{
         if (self.isHidden) {
-            [self trybf_backViewController];
+            [self tryGoBack];
         } else {
             [self.explorerViewController handleLeftArrowKeyPressed];
         }
@@ -225,7 +225,7 @@
     return scrollView;
 }
 
-- (void)trybf_backViewController {
+- (void)tryGoBack {
     UINavigationController *navigationController = nil;
     UIViewController *topViewController = self.topViewController;
     if ([topViewController isKindOfClass:[UINavigationController class]]) {

@@ -623,6 +623,8 @@ NSString *const RequestFailureMessage = @"message";
  */
 -(NSDictionary *)buildHeaderDicParameters:(NSDictionary *)parametersDic{
     NSMutableDictionary *headerDic = [[NSMutableDictionary alloc]init];
+    [headerDic setValue:[NSString stringWithFormat:@"%@", [[NSLocale preferredLanguages] componentsJoinedByString:@", "]] forKey:@"Accept-Language"];
+
     //解决乱码问题
 //    [headerDic setValue:@"application/x-www-form-urlencoded; charset=utf-8" forKey:@"Content-Type"];
     [headerDic setValue:[DataLibrery shareInstance].os_version forKey:@"os_version"];

@@ -48,6 +48,10 @@
 #define BFCurrentLanguage  ([[NSLocale preferredLanguages] objectAtIndex:0])
 #endif
 
+//手机别名： 用户定义的名称
+#ifndef BFUserPhoneName
+#define BFUserPhoneName  [[UIDevice currentDevice] name]
+#endif
 
 
 
