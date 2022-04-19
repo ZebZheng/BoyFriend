@@ -1423,27 +1423,7 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		F00D5A6F2735138100B5273D /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				F048603D27C8AFF600C530E9 /* Model */,
-				F048603F27C8AFF600C530E9 /* View */,
-				F048603E27C8AFF600C530E9 /* ViewModel */,
-				F00D5A712735138E00B5273D /* Controller */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		F00D5A712735138E00B5273D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F00D5A74273513AF00B5273D /* LoginPageViewController.h */,
-				F00D5A75273513AF00B5273D /* LoginPageViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F01C2D7227D1F4E1005B5923 /* BaseCollectionView */ = {
+		F01C2D7227D1F4E1005B5923 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				F01C2D7327D1F4E1005B5923 /* BaseCollectionView.h */,
@@ -2157,8 +2137,7 @@
 				F089A9FB27329622009A4BDD /* BFPopShowView.m in Sources */,
 				7F01D0BC27C79083005A6709 /* UITextView+BFAdd.m in Sources */,
 				18F38D6321F593760042CF26 /* UIButton+BFImagePosition.m in Sources */,
-				18B67FF921F6F98F004D2638 /* ListViewController.m in Sources */,
-				18F38D6321F593760042CF26 /* UIButton+BFBackgroundColor.m in Sources */,
+				18F38D6321F593760042CF26 /* UIButton+BFImagePosition.m in Sources */,
 				7F01D0D427C79149005A6709 /* UIControl+BFEventInterval.m in Sources */,
 				F083B81B2803F8B2009C7233 /* BFLoginView.m in Sources */,
 				F083B85A2803FC7F009C7233 /* BFMessageView.m in Sources */,
@@ -2269,7 +2248,6 @@
 				1843C12621EECFE800A7540A /* main.m in Sources */,
 				7F01D0DC27C79153005A6709 /* UITextField+BFAdd.m in Sources */,
 				1843C16521F167F500A7540A /* UIView+BFPlaceholderView.m in Sources */,
-				F00D5A76273513AF00B5273D /* LoginPageViewController.m in Sources */,
 				F730849427D84F7B00A12404 /* NSString+BFSafe.m in Sources */,
 				F089AA1727329622009A4BDD /* YBIBContainerView.m in Sources */,
 				F048602127C8792200C530E9 /* BaseView.m in Sources */,
@@ -2475,6 +2453,81 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DateTools\"",
+					"-l\"FLEX\"",
+					"-l\"FMDB\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"JPFPSStatus\"",
+					"-l\"JXCategoryView\"",
+					"-l\"KVOController\"",
+					"-l\"LKDBHelper\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"QMUIKit\"",
+					"-l\"ReactiveObjC\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"SDWebImageWebPCoder\"",
+					"-l\"TZImagePickerController\"",
+					"-l\"WebViewJavascriptBridge\"",
+					"-l\"YYKit\"",
+					"-l\"c++\"",
+					"-l\"libwebp\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"Bugly\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreServices\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"PhotosUI\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SceneKit\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"WebP\"",
+					"-Xlinker",
+					"-interposable",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.z.boyfriend;
 				PRODUCT_NAME = "$(TARGET_NAME)";

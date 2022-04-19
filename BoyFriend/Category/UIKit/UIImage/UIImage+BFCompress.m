@@ -62,5 +62,4 @@
     }
     return CGSizeMake(newWidth, newHeight);
 }
-
 @end
