@@ -30,6 +30,71 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable UIImage *)bf_imageFromSize:(CGSize)size Colors:(NSArray<UIColor *> *)colors byGradientType:(BFGradientType)gradientType;
 
 
++ (nullable UIImage *)bf_imageWithColor:(UIColor *)color
+                                   size:(CGSize)size
+                                 radius:(CGFloat)radius;
+
+//MARK: - 用给定的角大小圆角一个新图像。
+/// @param radius 圆角半径
+/// @param corners 圆角位置
++ (nullable UIImage *)bf_imageWithColor:(UIColor *)color
+                                   size:(CGSize)size
+                                 radius:(CGFloat)radius
+                                corners:(UIRectCorner)corners;
+
+//MARK: - 用给定的角大小圆角一个新图像。
+/// @param radius 圆角半径
+/// @param borderWidth 边框线的宽度
+/// @param borderColor 边框线的颜色
++ (nullable UIImage *)bf_imageWithColor:(UIColor *)color
+                                   size:(CGSize)size
+                                 radius:(CGFloat)radius
+                            borderWidth:(CGFloat)borderWidth
+                            borderColor:(UIColor *)borderColor;
+
+//MARK: - 用给定的角大小圆角一个新图像。
+/// @param radius 圆角半径
+/// @param corners 圆角位置
+/// @param borderWidth 边框线的宽度
+/// @param borderColor 边框线的颜色
+/// @param borderLineJoin 边界线
++ (nullable UIImage *)bf_imageWithColor:(UIColor *)color
+                                   size:(CGSize)size
+                                 radius:(CGFloat)radius
+                                corners:(UIRectCorner)corners
+                            borderWidth:(CGFloat)borderWidth
+                            borderColor:(nullable UIColor *)borderColor
+                         borderLineJoin:(CGLineJoin)borderLineJoin;
+
+/**
+ 用给定的角大小圆角一个新图像。
+ 
+ @param radius       圆角半径
+ */
+- (UIImage *)bf_imageByRoundCornerRadius:(CGFloat)radius;
+
+/**
+ 用给定的角大小圆角一个新图像。
+ 
+ @param radius       圆角半径
+ 
+ @param corners      圆角位置
+ */
+- (nullable UIImage *)bf_imageByRoundCornerRadius:(CGFloat)radius
+                                          corners:(UIRectCorner)corners;
+
+/**
+ 用给定的角大小圆角一个新图像。
+ 
+ @param radius       圆角半径
+ 
+ @param borderWidth  边框线的宽度
+ 
+ @param borderColor  边框线的颜色
+ */
+- (UIImage *)bf_imageByRoundCornerRadius:(CGFloat)radius
+                             borderWidth:(CGFloat)borderWidth
+                             borderColor:(UIColor *)borderColor;
 //MARK: - 用给定的角大小圆角一个新图像。
 /// @param radius 圆角半径
 /// @param corners 圆角位置

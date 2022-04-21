@@ -13,7 +13,7 @@
     NSString * image64 = [imagedata base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     return image64;
 }
-
+///渐变
 + (nullable UIImage *)bf_imageFromSize:(CGSize)size Colors:(NSArray<UIColor *> *)colors byGradientType:(BFGradientType)gradientType {
     NSMutableArray *ar = [NSMutableArray array];
     for(UIColor *c in colors) {
@@ -54,6 +54,52 @@
     UIGraphicsEndImageContext();
     return image;
 }
+
+
+#pragma mark - 用给定的角大小圆角一个新图像
++ (nullable UIImage *)bf_imageWithColor:(UIColor *)color
+                                   size:(CGSize)size
+                                 radius:(CGFloat)radius {
+    return [UIImage bf_imageWithColor:color size:size radius:radius corners:UIRectCornerAllCorners borderWidth:0 borderColor:nil borderLineJoin:(kCGLineJoinRound)];
+}
+
++ (nullable UIImage *)bf_imageWithColor:(UIColor *)color
+                                   size:(CGSize)size
+                                 radius:(CGFloat)radius
+                                corners:(UIRectCorner)corners {
+    return [[UIImage imageWithColor:color size:size] bf_imageByRoundCornerRadius:radius corners:corners borderWidth:0 borderColor:nil borderLineJoin:(kCGLineJoinRound)];
+}
++ (nullable UIImage *)bf_imageWithColor:(UIColor *)color
+                                   size:(CGSize)size
+                                 radius:(CGFloat)radius
+                            borderWidth:(CGFloat)borderWidth
+                            borderColor:(UIColor *)borderColor {
+    return [[UIImage imageWithColor:color size:size] bf_imageByRoundCornerRadius:radius corners:UIRectCornerAllCorners borderWidth:borderWidth borderColor:borderColor borderLineJoin:(kCGLineJoinRound)];
+}
++ (nullable UIImage *)bf_imageWithColor:(UIColor *)color
+                                   size:(CGSize)size
+                                 radius:(CGFloat)radius
+                                corners:(UIRectCorner)corners
+                            borderWidth:(CGFloat)borderWidth
+                            borderColor:(nullable UIColor *)borderColor
+                         borderLineJoin:(CGLineJoin)borderLineJoin {
+    return [[UIImage imageWithColor:color size:size] bf_imageByRoundCornerRadius:radius corners:corners borderWidth:borderWidth borderColor:borderColor borderLineJoin:(borderLineJoin)];
+}
+
+- (UIImage *)bf_imageByRoundCornerRadius:(CGFloat)radius {
+    return [self bf_imageByRoundCornerRadius:radius corners:UIRectCornerAllCorners borderWidth:0 borderColor:nil borderLineJoin:(kCGLineJoinRound)];
+}
+- (nullable UIImage *)bf_imageByRoundCornerRadius:(CGFloat)radius
+                                          corners:(UIRectCorner)corners {
+    return [self bf_imageByRoundCornerRadius:radius corners:corners borderWidth:0 borderColor:nil borderLineJoin:(kCGLineJoinRound)];
+}
+- (UIImage *)bf_imageByRoundCornerRadius:(CGFloat)radius
+                             borderWidth:(CGFloat)borderWidth
+                             borderColor:(UIColor *)borderColor {
+    return [self bf_imageByRoundCornerRadius:radius corners:UIRectCornerAllCorners borderWidth:borderWidth borderColor:borderColor borderLineJoin:(kCGLineJoinRound)];
+}
+
+
 - (nullable UIImage *)bf_imageByRoundCornerRadius:(CGFloat)radius
                               corners:(UIRectCorner)corners
                           borderWidth:(CGFloat)borderWidth
