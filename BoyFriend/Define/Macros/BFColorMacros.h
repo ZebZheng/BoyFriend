@@ -20,6 +20,7 @@
 #define BFRGB_A(r,g,b,a)           [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 #define BFRGB(r,g,b)              BFRGB_A(r,g,b,1.0f)
 
+#define BFHexColor(_hex_)             [UIColor bf_hexStr:((__bridge NSString *)CFSTR(#_hex_))]
 
 //app主题色
 #define BFTheme_Color      BFRGBHEX(0x0080FF)

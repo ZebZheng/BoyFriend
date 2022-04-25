@@ -109,6 +109,7 @@
 		7F0A86A627E023CB000B14B7 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A86A227E023CB000B14B7 /* UIViewController+MJPopupViewController.m */; };
 		7F0A86A727E023CB000B14B7 /* UIViewController+DDPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A86A527E023CB000B14B7 /* UIViewController+DDPopUpViewController.m */; };
 		7F2D2B3B28003F5C0090C24C /* NSString+BFAttributedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D2B3A28003F5C0090C24C /* NSString+BFAttributedAuto.m */; };
+		7F9DE70B28169F4C00D267B6 /* DBStrokeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DE70A28169F4C00D267B6 /* DBStrokeLabel.m */; };
 		7FA78F712803DB3C00478A3D /* NSArray+BFSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA78F702803DB3C00478A3D /* NSArray+BFSafe.m */; };
 		7FB0BD1E27CDB93A004ECB2D /* UIView+BFAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */; };
 		7FBE0CE427CF70EA004A457F /* BFGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */; };
@@ -437,6 +438,8 @@
 		7F0A86A527E023CB000B14B7 /* UIViewController+DDPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DDPopUpViewController.m"; sourceTree = "<group>"; };
 		7F2D2B3928003F5C0090C24C /* NSString+BFAttributedAuto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFAttributedAuto.h"; sourceTree = "<group>"; };
 		7F2D2B3A28003F5C0090C24C /* NSString+BFAttributedAuto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFAttributedAuto.m"; sourceTree = "<group>"; };
+		7F9DE70928169F4C00D267B6 /* BFStrokeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFStrokeLabel.h; sourceTree = "<group>"; };
+		7F9DE70A28169F4C00D267B6 /* DBStrokeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStrokeLabel.m; sourceTree = "<group>"; };
 		7FA78F6F2803DB3C00478A3D /* NSArray+BFSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BFSafe.h"; sourceTree = "<group>"; };
 		7FA78F702803DB3C00478A3D /* NSArray+BFSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BFSafe.m"; sourceTree = "<group>"; };
 		7FB0BD1C27CDB93A004ECB2D /* UIView+BFAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BFAnimation.h"; sourceTree = "<group>"; };
@@ -1129,8 +1132,7 @@
 		18F38D2E21F1CE340042CF26 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				7FBE0CE327CF70EA004A457F /* BFGradientLabel.h */,
-				7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */,
+				7F9DE70C28169F5400D267B6 /* Label */,
 				F048605027C8C13200C530E9 /* BFGCDTimer.h */,
 				F048604E27C8C13100C530E9 /* BFGCDTimer.m */,
 				F048604F27C8C13100C530E9 /* BFGradientButton.h */,
@@ -1383,6 +1385,17 @@
 				1868CE742201A4C2002220BF /* BaseWebViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		7F9DE70C28169F5400D267B6 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				7F9DE70928169F4C00D267B6 /* BFStrokeLabel.h */,
+				7F9DE70A28169F4C00D267B6 /* DBStrokeLabel.m */,
+				7FBE0CE327CF70EA004A457F /* BFGradientLabel.h */,
+				7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 		7FD340E127E07691004A4857 /* UITableView */ = {
@@ -2285,6 +2298,7 @@
 				1868CE7222019E07002220BF /* UIAlertController+Extensions.m in Sources */,
 				187952002202C5F80001C437 /* UIFont+BFFont.m in Sources */,
 				F0293D3B2745EAEF000286C4 /* NetWorkEnvironment.m in Sources */,
+				7F9DE70B28169F4C00D267B6 /* DBStrokeLabel.m in Sources */,
 				1879523E2202D4C50001C437 /* NSURL+BFParam.m in Sources */,
 				F089AA1C27329622009A4BDD /* NSObject+YBImageBrowser.m in Sources */,
 				18FF49D121FAE4B600220D48 /* BFKeyChain.m in Sources */,
