@@ -40,7 +40,7 @@
 - (double)bf_doubleWithIndex:(NSUInteger)index;
 
 - (NSDate *)bf_dateWithIndex:(NSUInteger)index dateFormat:(NSString *)dateFormat;
-//CG
+
 - (CGFloat)bf_CGFloatWithIndex:(NSUInteger)index;
 
 - (CGPoint)bf_pointWithIndex:(NSUInteger)index;

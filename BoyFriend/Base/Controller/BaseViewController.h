@@ -68,4 +68,8 @@
  */
 -(void)setUnReadNum:(NSInteger)num obejctAtindex:(NSInteger)index;
 
+
+
+
+
 @end

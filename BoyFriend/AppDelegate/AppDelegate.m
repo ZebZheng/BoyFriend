@@ -34,6 +34,9 @@
 
     [self zebApplication:application didFinishLaunchingWithOptions:launchOptions];
     
+    [self bf_openInjection];
+    
+    
     return YES;
 }
 

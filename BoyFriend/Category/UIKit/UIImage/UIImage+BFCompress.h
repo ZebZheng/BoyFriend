@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 //MARK: - 对指定图片进行拉伸
 + (UIImage*)bf_resizableImage:(NSString *)name;
 
+
 @end
 
 NS_ASSUME_NONNULL_END
