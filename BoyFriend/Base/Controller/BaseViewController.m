@@ -28,6 +28,9 @@
     
     if (self = [super init]) {
         self.modalPresentationStyle = UIModalPresentationFullScreen;
+#if DEBUG
+    BFBIND_MSG(@"INJECTION_BUNDLE_NOTIFICATION", @selector(injectionNotification:));
+#endif
     }
     return self;
 }
@@ -67,6 +70,8 @@
 }
 
 #pragma mark - Private methods
+
+
 #pragma mark - 获取定位数据
 
 /**
@@ -291,6 +296,14 @@
 -(void)rightBarBtnItem_click:(id)sender{
     if ([self respondsToSelector:@selector(rightBarBtnItem_click:)]) {
         [self rightBarBtnItem_click:sender];
+    }
+}
+
+#pragma mark 通知
+- (void)injectionNotification:(NSNotification *)notification {
+    BFDEBUG(@"injectionNotification_notification: %@", notification);
+    if (self.isViewLoaded && self.view.window) {
+        [self viewDidLoad];
     }
 }
 

@@ -135,4 +135,13 @@
         [self addSubview:tmpView];
     }
 }
+
+- (void)setBf_backgroundImage:(UIImage *)bf_backgroundImage {
+    objc_setAssociatedObject(self, &@selector(bf_backgroundImage), bf_backgroundImage, OBJC_ASSOCIATION_RETAIN);
+    self.backgroundColor = [UIColor colorWithPatternImage:bf_backgroundImage];
+}
+- (UIImage *)bf_backgroundImage {
+    return objc_getAssociatedObject(self, &@selector(bf_backgroundImage));
+}
+
 @end

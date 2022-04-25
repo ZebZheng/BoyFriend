@@ -13,7 +13,7 @@
     NSString * image64 = [imagedata base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     return image64;
 }
-
+///渐变
 + (nullable UIImage *)bf_imageFromSize:(CGSize)size Colors:(NSArray<UIColor *> *)colors byGradientType:(BFGradientType)gradientType {
     NSMutableArray *ar = [NSMutableArray array];
     for(UIColor *c in colors) {
@@ -53,6 +53,20 @@
     CGColorSpaceRelease(colorSpace);
     UIGraphicsEndImageContext();
     return image;
+}
+
+
+- (UIImage *)bf_imageByRoundCornerRadius:(CGFloat)radius {
+    return [self bf_imageByRoundCornerRadius:radius corners:UIRectCornerAllCorners borderWidth:0 borderColor:nil borderLineJoin:(kCGLineJoinRound)];
+}
+- (nullable UIImage *)bf_imageByRoundCornerRadius:(CGFloat)radius
+                                          corners:(UIRectCorner)corners {
+    return [self bf_imageByRoundCornerRadius:radius corners:corners borderWidth:0 borderColor:nil borderLineJoin:(kCGLineJoinRound)];
+}
+- (UIImage *)bf_imageByRoundCornerRadius:(CGFloat)radius
+                             borderWidth:(CGFloat)borderWidth
+                             borderColor:(UIColor *)borderColor {
+    return [self bf_imageByRoundCornerRadius:radius corners:UIRectCornerAllCorners borderWidth:borderWidth borderColor:borderColor borderLineJoin:(kCGLineJoinRound)];
 }
 - (nullable UIImage *)bf_imageByRoundCornerRadius:(CGFloat)radius
                               corners:(UIRectCorner)corners
@@ -102,7 +116,6 @@
     UIGraphicsEndImageContext();
     return image;
 }
-
 
 /// 获取图片、区域的主色
 + (nullable NSDictionary *)bf_mostColor:(UIImage *)image scale:(CGFloat)scale rect:(CGRect)rect {
@@ -189,4 +202,10 @@
     UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
     return newImage;
 }
+
+
+
+
+
+
 @end

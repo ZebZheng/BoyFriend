@@ -8,17 +8,10 @@
 #import "UIView+BFAdd.h"
 
 NS_ASSUME_NONNULL_BEGIN
-typedef NS_ENUM(NSUInteger, BFTextAlignement) {
-    BFTextAlignmentLeft,
-    BFTextAlignmentCenter,
-    BFTextAlignmentRight
-};
-
-typedef NS_ENUM(NSUInteger, BFImagePosition) {
-    BFImagePositionLeft = 0,              //图片在左，文字在右，默认
-    BFImagePositionRight = 1,             //图片在右，文字在左
-    BFImagePositionTop = 2,               //图片在上，文字在下
-    BFImagePositionBottom = 3,            //图片在下，文字在上
+typedef NS_ENUM(NSUInteger, BFButtonTextAlignement) {
+    BFButtonTextAlignmentLeft,
+    BFButtonTextAlignmentCenter,
+    BFButtonTextAlignmentRight
 };
 
 @interface UIButton (BFAdd)
@@ -28,7 +21,7 @@ typedef NS_ENUM(NSUInteger, BFImagePosition) {
 //MARK: - 文本字体大小
 @property (nonatomic, assign) UIFont * bf_font;
 //MARK: - 文本对齐
-@property (nonatomic, assign) BFTextAlignement bf_textAlignement;
+@property (nonatomic, assign) BFButtonTextAlignement bf_textAlignement;
 
 //MARK: - 文本
 @property (nonatomic, copy) NSString * bf_titleText;
@@ -52,11 +45,20 @@ typedef NS_ENUM(NSUInteger, BFImagePosition) {
 //MARK: - 选中富文本
 @property (nonatomic, copy) NSAttributedString * bf_selectAttributedText;
 
+//MARK: - 设置按钮额外点击区域
+@property (nonatomic, assign) UIEdgeInsets bf_touchAreaInsets;
+
+/**
+ *  @brief  使用颜色设置按钮背景
+ *
+ *  @param backgroundColor 背景颜色
+ *  @param state           按钮状态
+ */
+- (void)bf_backgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state;
+
 //MARK: - 点击事件
 - (void)bf_addTargetUpInside:(nullable id)tat action:(nonnull SEL)sel;
 
-//MARK: - 图文位置
-- (void)bf_imagePosition:(BFImagePosition)postitionStatus spacing:(CGFloat)spacing;
 //MARK: - 渐变背景颜色
 - (void)bf_backgroundGradientColorWithType:(BFGradientType)type colors:(NSArray *)colors;
 //MARK: - 渐变背景颜色
