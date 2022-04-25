@@ -7,6 +7,9 @@
 
 @interface UIView (BFConvenience)
 
+/// 背景图片(以图片设置背景色)
+@property(nonatomic, strong) UIImage *bf_backgroundImage;
+
 //提供自动布局后的View宽高及坐标值
 @property (nonatomic, assign, readonly) CGPoint bf_layoutPoint;
 @property (nonatomic, assign, readonly) CGSize bf_layoutSize;
