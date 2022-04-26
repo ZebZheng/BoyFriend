@@ -209,6 +209,7 @@
 		F089AA2627329622009A4BDD /* NSBundle+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9F327329622009A4BDD /* NSBundle+BRPickerView.m */; };
 		F089AA2727329622009A4BDD /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9F727329622009A4BDD /* BRAddressModel.m */; };
 		F089AA2827329622009A4BDD /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9FA27329622009A4BDD /* BRAddressPickerView.m */; };
+		F0B0E4BA28179BB40076A5CF /* Model.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0B0E4B928179BB40076A5CF /* Model.xcassets */; };
 		F723F61027CF5A53002287CB /* NSString+BFEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */; };
 		F730849427D84F7B00A12404 /* NSString+BFSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = F730849327D84F7B00A12404 /* NSString+BFSafe.m */; };
 /* End PBXBuildFile section */
@@ -654,6 +655,7 @@
 		F089A9F827329622009A4BDD /* BRAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressPickerView.h; sourceTree = "<group>"; };
 		F089A9F927329622009A4BDD /* BRAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddressModel.h; sourceTree = "<group>"; };
 		F089A9FA27329622009A4BDD /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
+		F0B0E4B928179BB40076A5CF /* Model.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Model.xcassets; sourceTree = "<group>"; };
 		F723F60E27CF5A53002287CB /* NSString+BFEncryption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFEncryption.h"; sourceTree = "<group>"; };
 		F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFEncryption.m"; sourceTree = "<group>"; };
 		F730849227D84F7B00A12404 /* NSString+BFSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFSafe.h"; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 			children = (
 				1843C11B21EECFE700A7540A /* Assets.xcassets */,
 				18B6800021F70193004D2638 /* Public.xcassets */,
+				F0B0E4B928179BB40076A5CF /* Model.xcassets */,
 				1843C11A21EECFE700A7540A /* Info.plist */,
 				1843C12121EECFE800A7540A /* main.m */,
 				1843C12721EEFD4100A7540A /* PrefixHeader.pch */,
@@ -2084,6 +2087,7 @@
 				1843C12321EECFE800A7540A /* Assets.xcassets in Resources */,
 				F089AA0127329622009A4BDD /* YBImageBrowserVideo.bundle in Resources */,
 				F089AA2327329622009A4BDD /* BRPickerView.bundle in Resources */,
+				F0B0E4BA28179BB40076A5CF /* Model.xcassets in Resources */,
 				18B6800121F70193004D2638 /* Public.xcassets in Resources */,
 				F089AA1D27329622009A4BDD /* YBImageBrowser.bundle in Resources */,
 			);
