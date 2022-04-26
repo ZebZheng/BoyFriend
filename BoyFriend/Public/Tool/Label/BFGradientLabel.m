@@ -13,7 +13,7 @@
    
     // 画文字(不做显示用 主要作用是设置layer的mask)
     CGContextRef context = UIGraphicsGetCurrentContext();
-    [self.textColor jset];
+    [self.textColor set];
     [self.text drawWithRect:rect options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : self.font} context:NULL];
     
     // 坐标 (只对设置后的画到context起作用 之前画的文字不起作用)
