@@ -79,6 +79,23 @@ NS_ASSUME_NONNULL_BEGIN
                                    borderColor:(nullable UIColor *)borderColor
                                 borderLineJoin:(CGLineJoin)borderLineJoin;
 
+/**
+ *  得到图片的缩略图(默认不变形)
+ *  @param size  想得到的缩略图尺寸
+ *
+ *  @return 新生成的图片
+ */
+-(UIImage *)bf_thumbnailImageWithSize:(CGSize)size;
+
+/**
+ *  得到图片的缩略图
+ *  @param size  想得到的缩略图尺寸
+ *  @param scale scale为YES：原图会根据size进行拉伸-会变形，scale为NO：原图会根据size进行填充-不会变形
+ *
+ *  @return 新生成的图片
+ */
+-(UIImage *)bf_thumbnailImageWithSize:(CGSize)size scale:(BOOL)scale;
+
 
 @end
 
