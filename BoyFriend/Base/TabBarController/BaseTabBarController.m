@@ -8,9 +8,10 @@
 
 #import "BaseTabBarController.h"
 #import "BFHomeViewController.h"
-#import "BFListSegmentedViewController.h"
+#import "BFListViewController.h"
 #import "BFMessageViewController.h"
 #import "BFMineViewController.h"
+#import "BFListModuleViewController.h"
 
 #import "KBTabbar.h"
 
@@ -48,8 +49,8 @@
 
 - (void)setupTabBarController {
     BFHomeViewController *homeVC = [[BFHomeViewController alloc] init];
-    [self addChildVc:homeVC title:@"首页" image:@"xm1" selectedImage:@"xm2"];
-    BFListSegmentedViewController *listVC = [[BFListSegmentedViewController alloc] init];
+    [self addChildVc:homeVC title:@"首页" image:@"fx1" selectedImage:@"fx2"];
+    BFListViewController *listVC = [[BFListViewController alloc] init];
     [self addChildVc:listVC title:@"列表" image:@"gz1" selectedImage:@"gz2"];
     BFMessageViewController *messageVC = [[BFMessageViewController alloc] init];
     [self addChildVc:messageVC title:@"消息" image:@"xx1" selectedImage:@"xx2"];
@@ -60,7 +61,9 @@
     [DataLibrery shareInstance].messageVCCode = 2;
     [DataLibrery shareInstance].mineVCCode = 3;
 
-
+    
+    BFListModuleViewController *listModule = [[BFListModuleViewController alloc] init];
+    [self addChildVc:listModule title:@"模块" image:@"xm1" selectedImage:@"xm2"];
 }
 
 -(void)initTabbarItemsAttributes{

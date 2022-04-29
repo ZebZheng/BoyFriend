@@ -1,8 +1,8 @@
 //
-//  BFListSegmentedViewController.h
+//  BFSDCycleScrollViewViewController.h
 //  BoyFriend
 //
-//  Created by IMAC-2 on 2022/4/11.
+//  Created by IMAC-2 on 2022/4/27.
 //  Copyright © 2022 BoyFriend. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BFListSegmentedViewController : BaseViewController
+@interface BFSDCycleScrollViewViewController : BaseViewController
 
 @end
 

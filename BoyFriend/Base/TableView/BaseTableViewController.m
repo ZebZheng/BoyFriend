@@ -148,10 +148,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [self.tableViewModel tableView:tableView cellForRowAtIndexPath:indexPath];
 }
+
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableViewModel tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.tableViewModel tableView:tableView didSelectRowAtIndexPath:indexPath];
+}
 #pragma mark - Getter Setter
 - (BaseTableView *)tableView {
     if (!_tableView) {

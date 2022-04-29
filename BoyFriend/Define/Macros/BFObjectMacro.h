@@ -53,6 +53,9 @@
 #define BFUserPhoneName  [[UIDevice currentDevice] name]
 #endif
 
-
+//获取当前手机所属国家代码
+#ifndef BFLocaleCountryCode
+#define BFLocaleCountryCode  ([[NSLocale currentLocale] objectForKey:NSLocaleCountryCode])
+#endif
 
 #endif /* BFObjectMacro_h */
