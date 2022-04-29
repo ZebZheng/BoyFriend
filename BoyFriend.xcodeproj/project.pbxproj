@@ -26,7 +26,6 @@
 		187952002202C5F80001C437 /* UIFont+BFFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 187951FE2202C5F80001C437 /* UIFont+BFFont.m */; };
 		187952042202C7220001C437 /* UIImage+BFAnimatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 187952032202C7220001C437 /* UIImage+BFAnimatedGIF.m */; };
 		187952072202C85E0001C437 /* UIImage+BFOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 187952052202C85E0001C437 /* UIImage+BFOrientation.m */; };
-		1879520E2202C9E10001C437 /* UILabel+BFAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879520D2202C9E10001C437 /* UILabel+BFAttributeTextTapAction.m */; };
 		187952172202CC580001C437 /* UITextField+Select.m in Sources */ = {isa = PBXBuildFile; fileRef = 187952122202CC580001C437 /* UITextField+Select.m */; };
 		187952272202D2200001C437 /* NSObjectSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 187952242202D2200001C437 /* NSObjectSafe.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		187952282202D2200001C437 /* UINavigationController+SafeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 187952262202D2200001C437 /* UINavigationController+SafeTransition.m */; };
@@ -210,6 +209,7 @@
 		F089AA2727329622009A4BDD /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9F727329622009A4BDD /* BRAddressModel.m */; };
 		F089AA2827329622009A4BDD /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F089A9FA27329622009A4BDD /* BRAddressPickerView.m */; };
 		F723F61027CF5A53002287CB /* NSString+BFEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */; };
+		F72C71D4281BE83800EBAF9C /* UILabel+BFAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F72C71D3281BE83800EBAF9C /* UILabel+BFAttributeTextTapAction.m */; };
 		F730849427D84F7B00A12404 /* NSString+BFSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = F730849327D84F7B00A12404 /* NSString+BFSafe.m */; };
 /* End PBXBuildFile section */
 
@@ -259,8 +259,6 @@
 		187952032202C7220001C437 /* UIImage+BFAnimatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BFAnimatedGIF.m"; sourceTree = "<group>"; };
 		187952052202C85E0001C437 /* UIImage+BFOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BFOrientation.m"; sourceTree = "<group>"; };
 		187952062202C85E0001C437 /* UIImage+BFOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BFOrientation.h"; sourceTree = "<group>"; };
-		1879520C2202C9E10001C437 /* UILabel+BFAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BFAttributeTextTapAction.h"; sourceTree = "<group>"; };
-		1879520D2202C9E10001C437 /* UILabel+BFAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BFAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		1879520F2202C9EE0001C437 /* UILabelCategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILabelCategoryHeader.h; sourceTree = "<group>"; };
 		187952122202CC580001C437 /* UITextField+Select.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Select.m"; sourceTree = "<group>"; };
 		187952132202CC580001C437 /* UITextField+Select.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Select.h"; sourceTree = "<group>"; };
@@ -656,6 +654,8 @@
 		F089A9FA27329622009A4BDD /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
 		F723F60E27CF5A53002287CB /* NSString+BFEncryption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFEncryption.h"; sourceTree = "<group>"; };
 		F723F60F27CF5A53002287CB /* NSString+BFEncryption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFEncryption.m"; sourceTree = "<group>"; };
+		F72C71D2281BE83800EBAF9C /* UILabel+BFAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BFAttributeTextTapAction.h"; sourceTree = "<group>"; };
+		F72C71D3281BE83800EBAF9C /* UILabel+BFAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BFAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		F730849227D84F7B00A12404 /* NSString+BFSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFSafe.h"; sourceTree = "<group>"; };
 		F730849327D84F7B00A12404 /* NSString+BFSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFSafe.m"; sourceTree = "<group>"; };
 		FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BoyFriend.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -935,11 +935,11 @@
 		1879520B2202C9CB0001C437 /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
+				F72C71D2281BE83800EBAF9C /* UILabel+BFAttributeTextTapAction.h */,
+				F72C71D3281BE83800EBAF9C /* UILabel+BFAttributeTextTapAction.m */,
 				1879520F2202C9EE0001C437 /* UILabelCategoryHeader.h */,
 				7F01D09A27C79030005A6709 /* UILabel+BFInit.h */,
 				7F01D09927C79030005A6709 /* UILabel+BFInit.m */,
-				1879520C2202C9E10001C437 /* UILabel+BFAttributeTextTapAction.h */,
-				1879520D2202C9E10001C437 /* UILabel+BFAttributeTextTapAction.m */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -2137,7 +2137,6 @@
 				F089A97F27328F04009A4BDD /* NSArray+BFLog.m in Sources */,
 				F089A9FE27329622009A4BDD /* YBIBVideoTopBar.m in Sources */,
 				7F01D0ED27C792C8005A6709 /* UIFont+BFAdd.m in Sources */,
-				1879520E2202C9E10001C437 /* UILabel+BFAttributeTextTapAction.m in Sources */,
 				18B6800721F86A88004D2638 /* AppDelegate+Zeb.m in Sources */,
 				F048602D27C8793300C530E9 /* BaseTableViewController.m in Sources */,
 				7F01D09F27C79038005A6709 /* UIApplication+BFAdd.m in Sources */,
@@ -2209,6 +2208,7 @@
 				F089AA1527329622009A4BDD /* YBIBSheetView.m in Sources */,
 				F089AA0D27329622009A4BDD /* YBIBAuxiliaryViewHandler.m in Sources */,
 				1868CE5B22017138002220BF /* BaseSQliteModel.m in Sources */,
+				F72C71D4281BE83800EBAF9C /* UILabel+BFAttributeTextTapAction.m in Sources */,
 				F089AA1627329622009A4BDD /* YBIBScreenRotationHandler.m in Sources */,
 				F089AA1F27329622009A4BDD /* BRStringPickerView.m in Sources */,
 				7F0A86A727E023CB000B14B7 /* UIViewController+DDPopUpViewController.m in Sources */,

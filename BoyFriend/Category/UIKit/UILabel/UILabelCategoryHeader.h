@@ -5,3 +5,4 @@
 
 #import "UILabel+BFAttributeTextTapAction.h"//某些文字可点击
 #import "UILabel+BFInit.h"///构造器
+#import "UILabel+BFAttributeTextTapAction.h"
