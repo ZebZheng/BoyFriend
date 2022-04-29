@@ -1,24 +1,23 @@
 //
-//  BFListViewController.m
+//  BFJXCategoryViewController.m
 //  BoyFriend
 //
-//  Created by IMAC-2 on 2022/4/11.
+//  Created by IMAC-2 on 2022/4/27.
 //  Copyright © 2022 BoyFriend. All rights reserved.
 //
 
-#import "BFListViewController.h"
-#import "BFListView.h"
-#import "BFListViewModel.h"
+#import "BFJXCategoryViewController.h"
+#import "BFJXCategoryView.h"
+#import "BFJXCategoryViewModel.h"
 
+@interface BFJXCategoryViewController ()
 
-@interface BFListViewController ()
-
-@property (nonatomic,strong) BFListView *productView;
-@property (nonatomic,strong) BFListViewModel *productViewModel;
+@property (nonatomic,strong) BFJXCategoryView *productView;
+@property (nonatomic,strong) BFJXCategoryViewModel *productViewModel;
 
 @end
 
-@implementation BFListViewController
+@implementation BFJXCategoryViewController
 #pragma mark - Lifecycle
 -(instancetype)init{
     if (self=[super init]) {
@@ -26,6 +25,7 @@
     }
     return self;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initializeView];
@@ -37,12 +37,12 @@
 #pragma mark - init
 /**** 视图初始化 ****/
 -(void)initializeView{
-//    self.view.backgroundColor = BFRandomColor;
+    self.view.backgroundColor = BFRandomColor;
 
 }
 /**** 数据初始化 ****/
 -(void)initializeViewData{
-
+    
 }
 /**** 事件绑定 ****/
 -(void)bindControlEvent{
@@ -63,7 +63,9 @@
 
 
 #pragma mark - Protocol / delegat
-
+- (UIView *)listView {
+    return self.view;
+}
 
 #pragma mark - Notification
 
@@ -72,15 +74,15 @@
 
 
 #pragma mark - Getter
-- (BFListView *)productView {
+- (BFJXCategoryView *)productView {
     if (!_productView) {
-        _productView = [BFListView.alloc init];
+        _productView = [BFJXCategoryView.alloc init];
     }
     return _productView;
 }
-- (BFListViewModel *)productViewModel {
+- (BFJXCategoryViewModel *)productViewModel {
     if (!_productViewModel) {
-        _productViewModel = BFListViewModel.alloc.init;
+        _productViewModel = BFJXCategoryViewModel.alloc.init;
     }
     return _productViewModel;
 }

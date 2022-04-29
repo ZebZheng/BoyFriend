@@ -7,11 +7,10 @@
 //
 
 #import "BaseViewController.h"
-#import "JXCategoryView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BFListViewController : BaseViewController<JXCategoryListContentViewDelegate>
+@interface BFListViewController : BaseViewController
 
 @end
 
