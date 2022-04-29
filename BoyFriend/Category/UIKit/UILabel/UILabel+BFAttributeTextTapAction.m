@@ -1,12 +1,22 @@
-/*
-  Created by BF on 2021
-  Copyright © 2021年 BF. All rights reserved.
-*/
+//
+//  UILabel+BFAttributeTextTapAction.m
+//
+//  Created by LBF on 16/7/1.
+//  Copyright © 2016年 LBF. All rights reserved.
+//
 
 #import "UILabel+BFAttributeTextTapAction.h"
 #import <objc/runtime.h>
 #import <CoreText/CoreText.h>
 #import <Foundation/Foundation.h>
+
+@interface BFAttributeModel : NSObject
+
+@property (nonatomic, copy) NSString *str;
+
+@property (nonatomic) NSRange range;
+
+@end
 
 @implementation BFAttributeModel
 
@@ -46,12 +56,12 @@
     objc_setAssociatedObject(self, @selector(isTapAction), @(isTapAction), OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (void (^)(NSString *, NSRange, NSInteger))tapBlock
+- (void (^)(UILabel *, NSString *, NSRange, NSInteger))tapBlock
 {
     return objc_getAssociatedObject(self, _cmd);
 }
 
-- (void)setTapBlock:(void (^)(NSString *, NSRange, NSInteger))tapBlock
+- (void)setTapBlock:(void (^)(UILabel *, NSString *, NSRange, NSInteger))tapBlock
 {
     objc_setAssociatedObject(self, @selector(tapBlock), tapBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
@@ -59,6 +69,11 @@
 - (id<BFAttributeTapActionDelegate>)delegate
 {
     return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setDelegate:(id<BFAttributeTapActionDelegate>)delegate
+{
+    objc_setAssociatedObject(self, @selector(delegate), delegate, OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (BOOL)enabledTapEffect
@@ -72,6 +87,36 @@
     self.isTapEffect = enabledTapEffect;
 }
 
+- (BOOL)enlargeTapArea
+{
+    NSNumber * number = objc_getAssociatedObject(self, _cmd);
+    if (!number) {
+        number = @(YES);
+        objc_setAssociatedObject(self, _cmd, number, OBJC_ASSOCIATION_ASSIGN);
+    }
+    return [number boolValue];
+}
+
+- (void)setEnlargeTapArea:(BOOL)enlargeTapArea
+{
+    objc_setAssociatedObject(self, @selector(enlargeTapArea), @(enlargeTapArea), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (UIColor *)tapHighlightedColor
+{
+    UIColor * color = objc_getAssociatedObject(self, _cmd);
+    if (!color) {
+        color = [UIColor lightGrayColor];
+        objc_setAssociatedObject(self, _cmd, color, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return color;
+}
+
+- (void)setTapHighlightedColor:(UIColor *)tapHighlightedColor
+{
+    objc_setAssociatedObject(self, @selector(tapHighlightedColor), tapHighlightedColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (BOOL)isTapEffect
 {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
@@ -82,35 +127,66 @@
     objc_setAssociatedObject(self, @selector(isTapEffect), @(isTapEffect), OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (void)setDelegate:(id<BFAttributeTapActionDelegate>)delegate
-{
-    objc_setAssociatedObject(self, @selector(delegate), delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
 #pragma mark - mainFunction
-- (void)yb_addAttributeTapActionWithStrings:(NSArray <NSString *> *)strings tapClicked:(void (^) (NSString *string , NSRange range , NSInteger index))tapClick
+- (void)bf_addAttributeTapActionWithStrings:(NSArray <NSString *> *)strings tapClicked:(void (^) (UILabel * label, NSString *string, NSRange range, NSInteger index))tapClick
 {
-    [self yb_getRangesWithStrings:strings];
+    [self bf_removeAttributeTapActions];
+    [self bf_getRangesWithStrings:strings];
+    self.userInteractionEnabled = YES;
     
     if (self.tapBlock != tapClick) {
         self.tapBlock = tapClick;
     }
 }
 
-- (void)yb_addAttributeTapActionWithStrings:(NSArray <NSString *> *)strings
+- (void)bf_addAttributeTapActionWithStrings:(NSArray <NSString *> *)strings
                                    delegate:(id <BFAttributeTapActionDelegate> )delegate
 {
-    [self yb_getRangesWithStrings:strings];
+    [self bf_removeAttributeTapActions];
+    [self bf_getRangesWithStrings:strings];
+    self.userInteractionEnabled = YES;
     
     if (self.delegate != delegate) {
         self.delegate = delegate;
     }
 }
 
+- (void)bf_addAttributeTapActionWithRanges:(NSArray<NSString *> *)ranges tapClicked:(void (^)(UILabel *, NSString *, NSRange, NSInteger))tapClick
+{
+    [self bf_removeAttributeTapActions];
+    [self bf_getRangesWithRanges:ranges];
+    self.userInteractionEnabled = YES;
+    
+    if (self.tapBlock != tapClick) {
+        self.tapBlock = tapClick;
+    }
+}
+
+- (void)bf_addAttributeTapActionWithRanges:(NSArray<NSString *> *)ranges delegate:(id<BFAttributeTapActionDelegate>)delegate
+{
+    [self bf_removeAttributeTapActions];
+    [self bf_getRangesWithRanges:ranges];
+    self.userInteractionEnabled = YES;
+    
+    if (self.delegate != delegate) {
+        self.delegate = delegate;
+    }
+}
+
+- (void)bf_removeAttributeTapActions
+{
+    self.tapBlock = nil;
+    self.delegate = nil;
+    self.effectDic = nil;
+    self.isTapAction = NO;
+    self.attributeStrings = [NSMutableArray array];
+}
+
 #pragma mark - touchAction
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     if (!self.isTapAction) {
+        [super touchesBegan:touches withEvent:event];
         return;
     }
     
@@ -124,74 +200,94 @@
     
     __weak typeof(self) weakSelf = self;
     
-    [self yb_getTapFrameWithTouchPoint:point result:^(NSString *string, NSRange range, NSInteger index) {
+    BOOL ret = [self bf_getTapFrameWithTouchPoint:point result:^(NSString *string, NSRange range, NSInteger index) {
         
-        if (weakSelf.tapBlock) {
-            weakSelf.tapBlock (string , range , index);
-        }
-        
-        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(bf_attributeTapReturnString:range:index:)]) {
-            [weakSelf.delegate bf_attributeTapReturnString:string range:range index:index];
-        }
-        
-        if (self.isTapEffect) {
+        if (weakSelf.isTapEffect) {
             
-            [self yb_saveEffectDicWithRange:range];
+            [weakSelf bf_saveEffectDicWithRange:range];
             
-            [self yb_tapEffectWithStatus:YES];
+            [weakSelf bf_tapEffectWithStatus:YES];
         }
         
     }];
+    if (!ret) {
+        [super touchesBegan:touches withEvent:event];
+    }
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    
-    if (self.isTapAction) {
-        if ([self yb_getTapFrameWithTouchPoint:point result:nil]) {
-            return self;
-        }
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    if (!self.isTapAction) {
+        [super touchesEnded:touches withEvent:event];
+        return;
     }
-    return [super hitTest:point withEvent:event];
+    if (self.isTapEffect) {
+        [self performSelectorOnMainThread:@selector(bf_tapEffectWithStatus:) withObject:nil waitUntilDone:NO];
+    }
+    
+    UITouch *touch = [touches anyObject];
+    
+    CGPoint point = [touch locationInView:self];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    BOOL ret = [self bf_getTapFrameWithTouchPoint:point result:^(NSString *string, NSRange range, NSInteger index) {
+        if (weakSelf.tapBlock) {
+            weakSelf.tapBlock (weakSelf, string, range, index);
+        }
+        
+        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(bf_tapAttributeInLabel:string:range:index:)]) {
+            [weakSelf.delegate bf_tapAttributeInLabel:weakSelf string:string range:range index:index];
+        }
+    }];
+    if (!ret) {
+        [super touchesEnded:touches withEvent:event];
+    }
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    if (!self.isTapAction) {
+        [super touchesCancelled:touches withEvent:event];
+        return;
+    }
+    if (self.isTapEffect) {
+        [self performSelectorOnMainThread:@selector(bf_tapEffectWithStatus:) withObject:nil waitUntilDone:NO];
+    }
+    UITouch *touch = [touches anyObject];
+    
+    CGPoint point = [touch locationInView:self];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    BOOL ret = [self bf_getTapFrameWithTouchPoint:point result:^(NSString *string, NSRange range, NSInteger index) {
+        if (weakSelf.tapBlock) {
+            weakSelf.tapBlock (weakSelf, string, range, index);
+        }
+        
+        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(bf_tapAttributeInLabel:string:range:index:)]) {
+            [weakSelf.delegate bf_tapAttributeInLabel:weakSelf string:string range:range index:index];
+        }
+    }];
+    if (!ret) {
+        [super touchesCancelled:touches withEvent:event];
+    }
 }
 
 #pragma mark - getTapFrame
-- (BOOL)yb_getTapFrameWithTouchPoint:(CGPoint)point result:(void (^) (NSString *string , NSRange range , NSInteger index))resultBlock
+- (BOOL)bf_getTapFrameWithTouchPoint:(CGPoint)point result:(void (^) (NSString *string , NSRange range , NSInteger index))resultBlock
 {
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)self.attributedText);
     
     CGMutablePathRef Path = CGPathCreateMutable();
     
-    CGPathAddRect(Path, NULL, CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height));
+    CGPathAddRect(Path, NULL, CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height + 20));
     
     CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), Path, NULL);
     
-    CFRange range = CTFrameGetVisibleStringRange(frame);
-    
-    if (self.attributedText.length > range.length) {
-        
-        UIFont *font ;
-        
-        if ([self.attributedText attribute:NSFontAttributeName atIndex:0 effectiveRange:nil]) {
-            
-            font = [self.attributedText attribute:NSFontAttributeName atIndex:0 effectiveRange:nil];
-            
-        }else if (self.font){
-            font = self.font;
-            
-        }else {
-            font = [UIFont systemFontOfSize:17];
-        }
-        
-        CGPathRelease(Path);
-        
-        Path = CGPathCreateMutable();
-        
-        CGPathAddRect(Path, NULL, CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height + font.lineHeight));
-        
-        frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), Path, NULL);
-    }
-    
     CFArrayRef lines = CTFrameGetLines(frame);
+    
+    CGFloat total_height =  [self bf_textSizeWithAttributedString:self.attributedText width:self.bounds.size.width numberOfLines:0].height;
     
     if (!lines) {
         CFRelease(frame);
@@ -206,36 +302,25 @@
     
     CTFrameGetLineOrigins(frame, CFRangeMake(0, 0), origins);
     
-    CGAffineTransform transform = [self yb_transformForCoreText];
-    
-    CGFloat verticalOffset = 0;
+    CGAffineTransform transform = [self bf_transformForCoreText];
     
     for (CFIndex i = 0; i < count; i++) {
         CGPoint linePoint = origins[i];
         
         CTLineRef line = CFArrayGetValueAtIndex(lines, i);
         
-        CGRect flippedRect = [self yb_getLineBounds:line point:linePoint];
+        CGRect flippedRect = [self bf_getLineBounds:line point:linePoint];
         
         CGRect rect = CGRectApplyAffineTransform(flippedRect, transform);
         
-        rect = CGRectInset(rect, 0, 0);
+        CGFloat lineOutSpace = (self.bounds.size.height - total_height) / 2;
         
-        rect = CGRectOffset(rect, 0, verticalOffset);
+        rect.origin.y = lineOutSpace + [self bf_getLineOrign:line];
         
-        NSParagraphStyle *style = [self.attributedText attribute:NSParagraphStyleAttributeName atIndex:0 effectiveRange:nil];
-        
-        CGFloat lineSpace;
-        
-        if (style) {
-            lineSpace = style.lineSpacing;
-        }else {
-            lineSpace = 0;
+        if (self.enlargeTapArea) {
+            rect.origin.y -= 5;
+            rect.size.height += 10;
         }
-        
-        CGFloat lineOutSpace = (self.bounds.size.height - lineSpace * (count - 1) -rect.size.height * count) / 2;
-        
-        rect.origin.y = lineOutSpace + rect.size.height * i + lineSpace * i;
         
         if (CGRectContainsPoint(rect, point)) {
             
@@ -276,42 +361,55 @@
     return NO;
 }
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    if (self.isTapEffect) {
-        
-        [self performSelectorOnMainThread:@selector(yb_tapEffectWithStatus:) withObject:nil waitUntilDone:NO];
-        
-    }
-}
-
-- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    if (self.isTapEffect) {
-
-        [self performSelectorOnMainThread:@selector(yb_tapEffectWithStatus:) withObject:nil waitUntilDone:NO];
-        
-    }
-}
-
-- (CGAffineTransform)yb_transformForCoreText
+- (CGAffineTransform)bf_transformForCoreText
 {
     return CGAffineTransformScale(CGAffineTransformMakeTranslation(0, self.bounds.size.height), 1.f, -1.f);
 }
 
-- (CGRect)yb_getLineBounds:(CTLineRef)line point:(CGPoint)point
+- (CGRect)bf_getLineBounds:(CTLineRef)line point:(CGPoint)point
 {
     CGFloat ascent = 0.0f;
     CGFloat descent = 0.0f;
     CGFloat leading = 0.0f;
     CGFloat width = (CGFloat)CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
-    CGFloat height = ascent + fabs(descent) + leading;
+    CGFloat height = 0.0f;
     
+    CFRange range = CTLineGetStringRange(line);
+    NSAttributedString * attributedString = [self.attributedText attributedSubstringFromRange:NSMakeRange(range.location, range.length)];
+    if ([attributedString.string hasSuffix:@"\n"] && attributedString.string.length > 1) {
+        attributedString = [attributedString attributedSubstringFromRange:NSMakeRange(0, attributedString.length - 1)];
+    }
+    height = [self bf_textSizeWithAttributedString:attributedString width:self.bounds.size.width numberOfLines:0].height;
     return CGRectMake(point.x, point.y , width, height);
 }
 
+- (CGFloat)bf_getLineOrign:(CTLineRef)line
+{
+    CFRange range = CTLineGetStringRange(line);
+    if (range.location == 0) {
+        return 0.;
+    }else {
+        NSAttributedString * attributedString = [self.attributedText attributedSubstringFromRange:NSMakeRange(0, range.location)];
+        if ([attributedString.string hasSuffix:@"\n"] && attributedString.string.length > 1) {
+            attributedString = [attributedString attributedSubstringFromRange:NSMakeRange(0, attributedString.length - 1)];
+        }
+        return [self bf_textSizeWithAttributedString:attributedString width:self.bounds.size.width numberOfLines:0].height;
+    }
+}
+
+- (CGSize)bf_textSizeWithAttributedString:(NSAttributedString *)attributedString width:(float)width numberOfLines:(NSInteger)numberOfLines
+{
+    @autoreleasepool {
+        UILabel *sizeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        sizeLabel.numberOfLines = numberOfLines;
+        sizeLabel.attributedText = attributedString;
+        CGSize fitSize = [sizeLabel sizeThatFits:CGSizeMake(width, MAXFLOAT)];
+        return fitSize;
+    }
+}
+
 #pragma mark - tapEffect
-- (void)yb_tapEffectWithStatus:(BOOL)status
+- (void)bf_tapEffectWithStatus:(BOOL)status
 {
     if (self.isTapEffect) {
         NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
@@ -321,7 +419,7 @@
         NSRange range = NSRangeFromString([[self.effectDic allKeys] firstObject]);
         
         if (status) {
-            [subAtt addAttribute:NSBackgroundColorAttributeName value:[UIColor lightGrayColor] range:NSMakeRange(0, subAtt.string.length)];
+            [subAtt addAttribute:NSBackgroundColorAttributeName value:self.tapHighlightedColor range:NSMakeRange(0, subAtt.string.length)];
             
             [attStr replaceCharactersInRange:range withAttributedString:subAtt];
         }else {
@@ -332,7 +430,7 @@
     }
 }
 
-- (void)yb_saveEffectDicWithRange:(NSRange)range
+- (void)bf_saveEffectDicWithRange:(NSRange)range
 {
     self.effectDic = [NSMutableDictionary dictionary];
     
@@ -342,21 +440,16 @@
 }
 
 #pragma mark - getRange
-- (void)yb_getRangesWithStrings:(NSArray <NSString *>  *)strings
+- (void)bf_getRangesWithStrings:(NSArray <NSString *>  *)strings
 {
     if (self.attributedText == nil) {
         self.isTapAction = NO;
         return;
     }
- 
     self.isTapAction = YES;
-    
     self.isTapEffect = YES;
-    
     __block  NSString *totalStr = self.attributedText.string;
-    
     self.attributeStrings = [NSMutableArray array];
-    
     __weak typeof(self) weakSelf = self;
     
     [strings enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -365,14 +458,11 @@
         
         if (range.length != 0) {
             
-            totalStr = [totalStr stringByReplacingCharactersInRange:range withString:[weakSelf yb_getStringWithRange:range]];
+            totalStr = [totalStr stringByReplacingCharactersInRange:range withString:[weakSelf bf_getStringWithRange:range]];
             
             BFAttributeModel *model = [BFAttributeModel new];
-            
             model.range = range;
-            
             model.str = obj;
-            
             [weakSelf.attributeStrings addObject:model];
             
         }
@@ -380,12 +470,128 @@
     }];
 }
 
-- (NSString *)yb_getStringWithRange:(NSRange)range
+- (void)bf_getRangesWithRanges:(NSArray <NSString *>  *)ranges
+{
+    if (self.attributedText == nil) {
+        self.isTapAction = NO;
+        return;
+    }
+    
+    self.isTapAction = YES;
+    self.isTapEffect = YES;
+    __block  NSString *totalStr = self.attributedText.string;
+    self.attributeStrings = [NSMutableArray array];
+    __weak typeof(self) weakSelf = self;
+    
+    [ranges enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSRange range = NSRangeFromString(obj);
+        NSAssert(totalStr.length >= range.location + range.length, @"NSRange(%ld,%ld) is out of bounds",range.location,range.length);
+        NSString * string = [totalStr substringWithRange:range];
+        
+        BFAttributeModel *model = [BFAttributeModel new];
+        model.range = range;
+        model.str = string;
+        [weakSelf.attributeStrings addObject:model];
+    }];
+}
+
+- (NSString *)bf_getStringWithRange:(NSRange)range
 {
     NSMutableString *string = [NSMutableString string];
     
     for (int i = 0; i < range.length ; i++) {
         
+        [string appendString:@" "];
+    }
+    return string;
+}
+
+#pragma mark - KVO
+- (void)bf_addObserver
+{
+    [self addObserver:self forKeyPath:@"attributedText" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+}
+
+- (void)bf_removeObserver
+{
+    id info = self.observationInfo;
+    NSString * key = @"attributedText";
+    NSArray *array = [info valueForKey:@"_observances"];
+    for (id objc in array) {
+        id Properties = [objc valueForKeyPath:@"_property"];
+        NSString *keyPath = [Properties valueForKeyPath:@"_keyPath"];
+        if ([key isEqualToString:keyPath]) {
+            [self removeObserver:self forKeyPath:@"attributedText" context:nil];
+        }
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"attributedText"]) {
+        if (self.isTapAction) {
+            if (![change[NSKeyValueChangeNewKey] isEqual: change[NSKeyValueChangeOldKey]]) {
+               
+            }
+        }
+    }
+}
+
+- (NSMutableAttributedString *)bf_createAttributeWith:(id)sender
+                                               string:(NSString *)string
+                                          lineSpacing:(CGFloat)lineSpacing
+                                            orginFont:(UIFont *)orginFont
+                                           orginColor:(UIColor *)orginColor
+                                        attributeFont:(UIFont *)attributeFont
+                                       attributeColor:(UIColor *)attributeColor {
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:lineSpacing]; //设置行间距
+    [paragraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
+    [paragraphStyle setAlignment:NSTextAlignmentCenter];
+    [paragraphStyle setLineBreakMode:NSLineBreakByCharWrapping];
+    return [self bf_createAttributeWith:sender style:paragraphStyle string:string lineSpacing:lineSpacing orginFont:orginFont orginColor:orginColor attributeFont:attributeFont attributeColor:attributeColor];
+}
+
+- (NSMutableAttributedString *)bf_createAttributeWith:(id)sender
+                                                style:(NSMutableParagraphStyle *)style
+                                               string:(NSString *)string
+                                          lineSpacing:(CGFloat)lineSpacing
+                                            orginFont:(UIFont *)orginFont
+                                           orginColor:(UIColor *)orginColor
+                                        attributeFont:(UIFont *)attributeFont
+                                       attributeColor:(UIColor *)attributeColor {
+    __block  NSMutableAttributedString *totalStr = [[NSMutableAttributedString alloc] initWithString:string];
+    [totalStr addAttribute:NSFontAttributeName value:orginFont range:NSMakeRange(0, string.length)];
+    [totalStr addAttribute:NSForegroundColorAttributeName value:orginColor range:NSMakeRange(0, string.length)];
+    [totalStr addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, [totalStr length])];
+    
+    if ([sender isKindOfClass:[NSArray class]]) {
+        
+        __block NSString *oringinStr = string;
+        __weak typeof(self) weakSelf = self;
+        
+        [sender enumerateObjectsUsingBlock:^(NSString *  _Nonnull str, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            NSRange range = [oringinStr rangeOfString:str];
+            [totalStr addAttribute:NSFontAttributeName value:attributeFont range:range];
+            [totalStr addAttribute:NSForegroundColorAttributeName value:attributeColor range:range];
+            oringinStr = [oringinStr stringByReplacingCharactersInRange:range withString:[weakSelf getStringWithRange:range]];
+        }];
+        
+    }else if ([sender isKindOfClass:[NSString class]]) {
+        
+        NSRange range = [string rangeOfString:sender];
+        
+        [totalStr addAttribute:NSFontAttributeName value:attributeFont range:range];
+        [totalStr addAttribute:NSForegroundColorAttributeName value:attributeColor range:range];
+    }
+    return totalStr;
+}
+
+- (NSString *)getStringWithRange:(NSRange)range
+{
+    NSMutableString *string = [NSMutableString string];
+    for (int i = 0; i < range.length ; i++) {
         [string appendString:@" "];
     }
     return string;

@@ -205,7 +205,56 @@
 
 
 
+/**
+ *  得到图片的缩略图(默认不变形)
+ *  @param size  想得到的缩略图尺寸
+ *
+ *  @return 新生成的图片
+ */
+-(UIImage *)bf_thumbnailImageWithSize:(CGSize)size {
+    return [self bf_thumbnailImageWithSize:size scale:NO];
+}
 
+/**
+ *  得到图片的缩略图
+ *  @param size  想得到的缩略图尺寸
+ *  @param scale scale为YES：原图会根据size进行拉伸-会变形，scale为NO：原图会根据size进行填充-不会变形
+ *
+ *  @return 新生成的图片
+ */
+-(UIImage *)bf_thumbnailImageWithSize:(CGSize)size scale:(BOOL)scale {
+    UIImage * image = self;
+    UIGraphicsBeginImageContextWithOptions(size, NO, image.scale);
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    
+    if (!scale) {
+        CGFloat bili_imageWH = image.size.width/image.size.height;
+        CGFloat bili_SizeWH  = size.width/size.height;
+        
+        if (bili_imageWH > bili_SizeWH) {
+            CGFloat bili_SizeH_imageH = size.height/image.size.height;
+            CGFloat height = image.size.height*bili_SizeH_imageH;
+            CGFloat width = height * bili_imageWH;
+            CGFloat x = -(width - size.width)/2;
+            CGFloat y = 0;
+            rect = CGRectMake(x, y, width, height);
+        }else{
+            CGFloat bili_SizeW_imageW = size.width/image.size.width;
+            CGFloat width = image.size.width * bili_SizeW_imageW;
+            CGFloat height = width / bili_imageWH;
+            CGFloat x = 0;
+            CGFloat y = -(height - size.height)/2;
+            rect = CGRectMake(x, y, width, height);
+        }
+    }
+    [[UIColor clearColor] set];
+    UIRectFill(rect);
+    [image drawInRect:rect];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
 
 
 @end
