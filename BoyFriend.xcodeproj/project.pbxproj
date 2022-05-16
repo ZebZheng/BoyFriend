@@ -110,6 +110,7 @@
 		7F2D2B3B28003F5C0090C24C /* NSString+BFAttributedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D2B3A28003F5C0090C24C /* NSString+BFAttributedAuto.m */; };
 		7F9DE70B28169F4C00D267B6 /* DBStrokeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DE70A28169F4C00D267B6 /* DBStrokeLabel.m */; };
 		7FA78F712803DB3C00478A3D /* NSArray+BFSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA78F702803DB3C00478A3D /* NSArray+BFSafe.m */; };
+		7FADDE2428324B1100DA47C8 /* NSString+BFMutableAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FADDE2328324B1100DA47C8 /* NSString+BFMutableAttributedString.m */; };
 		7FB0BD1E27CDB93A004ECB2D /* UIView+BFAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */; };
 		7FBE0CE427CF70EA004A457F /* BFGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */; };
 		7FD340E427E076BF004A4857 /* UITableView+BFRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD340E327E076BF004A4857 /* UITableView+BFRegister.m */; };
@@ -456,6 +457,8 @@
 		7F9DE70A28169F4C00D267B6 /* DBStrokeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStrokeLabel.m; sourceTree = "<group>"; };
 		7FA78F6F2803DB3C00478A3D /* NSArray+BFSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BFSafe.h"; sourceTree = "<group>"; };
 		7FA78F702803DB3C00478A3D /* NSArray+BFSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BFSafe.m"; sourceTree = "<group>"; };
+		7FADDE2228324B1100DA47C8 /* NSString+BFMutableAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BFMutableAttributedString.h"; sourceTree = "<group>"; };
+		7FADDE2328324B1100DA47C8 /* NSString+BFMutableAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFMutableAttributedString.m"; sourceTree = "<group>"; };
 		7FB0BD1C27CDB93A004ECB2D /* UIView+BFAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BFAnimation.h"; sourceTree = "<group>"; };
 		7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BFAnimation.m"; sourceTree = "<group>"; };
 		7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGradientLabel.m; sourceTree = "<group>"; };
@@ -1078,6 +1081,8 @@
 			isa = PBXGroup;
 			children = (
 				187952472202DE5A0001C437 /* NSStringCategoryHeader.h */,
+				7FADDE2228324B1100DA47C8 /* NSString+BFMutableAttributedString.h */,
+				7FADDE2328324B1100DA47C8 /* NSString+BFMutableAttributedString.m */,
 				7F01D10927C79467005A6709 /* NSString+BFAdd.h */,
 				7F01D11127C79467005A6709 /* NSString+BFAdd.m */,
 				7F01D10B27C79467005A6709 /* NSString+BFConversion.h */,
@@ -2544,6 +2549,7 @@
 				18F38D5521F1D5F70042CF26 /* BFTool.m in Sources */,
 				F089AA0827329622009A4BDD /* YBIBImageCache.m in Sources */,
 				18B67FF221F6F4F8004D2638 /* KBTabbar.m in Sources */,
+				7FADDE2428324B1100DA47C8 /* NSString+BFMutableAttributedString.m in Sources */,
 				7F01D0B827C79077005A6709 /* UIColor+BFAdd.m in Sources */,
 				F089A98227328F2A009A4BDD /* NSDictionary+BFLog.m in Sources */,
 				7F01D0F827C793C3005A6709 /* UIView+BFAdd.m in Sources */,
