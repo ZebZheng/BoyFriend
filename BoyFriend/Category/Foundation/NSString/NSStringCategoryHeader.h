@@ -13,3 +13,4 @@
 //#import "NSString+BFRemoveEmoji.h"//表情的处理方法
 #import "NSString+BFSafe.h"//拼接崩溃处理
 #import "NSString+BFAttributedAuto.h"//富文本适配
+#import "NSString+BFMutableAttributedString.h"///富文本
