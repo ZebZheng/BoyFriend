@@ -107,6 +107,7 @@
 		7F01D13327C7947B005A6709 /* NSDate+BFConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D13127C7947B005A6709 /* NSDate+BFConversion.m */; };
 		7F0A86A627E023CB000B14B7 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A86A227E023CB000B14B7 /* UIViewController+MJPopupViewController.m */; };
 		7F0A86A727E023CB000B14B7 /* UIViewController+DDPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A86A527E023CB000B14B7 /* UIViewController+DDPopUpViewController.m */; };
+		7F0CCD0F28333AF800B79C08 /* WKWebView+BFAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0CCD0E28333AF800B79C08 /* WKWebView+BFAdapter.m */; };
 		7F2D2B3B28003F5C0090C24C /* NSString+BFAttributedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D2B3A28003F5C0090C24C /* NSString+BFAttributedAuto.m */; };
 		7F9DE70B28169F4C00D267B6 /* DBStrokeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DE70A28169F4C00D267B6 /* DBStrokeLabel.m */; };
 		7FA78F712803DB3C00478A3D /* NSArray+BFSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA78F702803DB3C00478A3D /* NSArray+BFSafe.m */; };
@@ -451,6 +452,8 @@
 		7F0A86A327E023CB000B14B7 /* UIViewController+DDPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DDPopUpViewController.h"; sourceTree = "<group>"; };
 		7F0A86A427E023CB000B14B7 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
 		7F0A86A527E023CB000B14B7 /* UIViewController+DDPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DDPopUpViewController.m"; sourceTree = "<group>"; };
+		7F0CCD0D28333AF800B79C08 /* WKWebView+BFAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+BFAdapter.h"; sourceTree = "<group>"; };
+		7F0CCD0E28333AF800B79C08 /* WKWebView+BFAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+BFAdapter.m"; sourceTree = "<group>"; };
 		7F2D2B3928003F5C0090C24C /* NSString+BFAttributedAuto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFAttributedAuto.h"; sourceTree = "<group>"; };
 		7F2D2B3A28003F5C0090C24C /* NSString+BFAttributedAuto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFAttributedAuto.m"; sourceTree = "<group>"; };
 		7F9DE70928169F4C00D267B6 /* BFStrokeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFStrokeLabel.h; sourceTree = "<group>"; };
@@ -877,6 +880,7 @@
 		1843C15F21F1671500A7540A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7F0CCD0C2833395A00B79C08 /* WKWebView */,
 				7FD340E127E07691004A4857 /* UITableView */,
 				7F01D0CB27C79149005A6709 /* UIControl */,
 				7F01D0C427C7913F005A6709 /* UIViewController */,
@@ -1411,6 +1415,15 @@
 				7F0A86A227E023CB000B14B7 /* UIViewController+MJPopupViewController.m */,
 			);
 			path = PopupViewController;
+			sourceTree = "<group>";
+		};
+		7F0CCD0C2833395A00B79C08 /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				7F0CCD0D28333AF800B79C08 /* WKWebView+BFAdapter.h */,
+				7F0CCD0E28333AF800B79C08 /* WKWebView+BFAdapter.m */,
+			);
+			path = WKWebView;
 			sourceTree = "<group>";
 		};
 		7F6891BD27D84149009B480B /* Model */ = {
@@ -2508,6 +2521,7 @@
 				F00D5A6627350BE900B5273D /* UserViewModel.m in Sources */,
 				F089AA1027329622009A4BDD /* YBIBCopywriter.m in Sources */,
 				F0293D442745EF1E000286C4 /* CommonViewModel.m in Sources */,
+				7F0CCD0F28333AF800B79C08 /* WKWebView+BFAdapter.m in Sources */,
 				18F38D5921F55D930042CF26 /* UIView+BFConvenience.m in Sources */,
 				7F01D12727C7946B005A6709 /* NSArray+BFConversion.m in Sources */,
 				F089AA0A27329622009A4BDD /* YBIBImageData.m in Sources */,

@@ -78,4 +78,42 @@
     UIImage *photo = [UIImage imageWithData:imageData];
     return photo;
 }
+
+///适配网页图片
+- (NSString *)bf_autoHtmlImage {
+    NSString *htmls = [NSString stringWithFormat:@"<html> \n"
+                               "<head> \n"
+                               "<style type=\"text/css\"> \n"
+                               "p {width:100%%}\n"
+                               "img {width:100%%!important;height:auto!important}\n"
+                               "</style> \n"
+                               "</head> \n"
+                               "<body>"
+                               "%@"
+                               "</body>"
+                               "</html>",self];
+    return htmls;
+}
+
+///适配网页文本图片
+- (NSString *)autoHtmlFontAndImage {
+    NSString *htmls = [NSString stringWithFormat:@"<html> \n"
+                               "<head> \n"
+                               "<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'>\n"
+                               "<style type=\"text/css\"> \n"
+                               "p {width:100%%}\n"
+                               "img {width:100%%!important;height:auto!important}\n"
+                               "</style> \n"
+                               "</head> \n"
+                               "<body>"
+                               "%@"
+                               "</body>"
+                               "</html>",self];
+    return htmls;
+}
+
+
+
+
+
 @end

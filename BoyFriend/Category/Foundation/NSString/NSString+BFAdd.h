@@ -65,6 +65,7 @@
 - (NSComparisonResult)compareByCaseInsensitive:(NSString *)anotherCom;
 /** 区分大小写 */
 - (NSComparisonResult)compareByCaseSensitive:(NSString *)anotherCom;
+
 @end
 
 

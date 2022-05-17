@@ -23,6 +23,12 @@
 ///转换成data
 - (NSData *)bf_toData;
 
+
+///适配网页图片
+- (NSString *)bf_autoHtmlImage;
+///适配网页文本图片
+- (NSString *)autoHtmlFontAndImage;
+
 @end
 
 
