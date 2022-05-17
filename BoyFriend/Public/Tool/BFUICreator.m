@@ -484,7 +484,10 @@
 
 //For UIImageView
 + (UIImageView *)createImageViewWithName:(NSString *)imageName{
-    CGSize size = [UIImage bf_imageWithName:imageName].size;
+    CGSize size = CGSizeZero;
+    if ([imageName isNotBlank]) {
+        size = [UIImage bf_imageWithName:imageName].size;
+    }
     return [self createImageViewWithName:imageName size:size];
 }
 
