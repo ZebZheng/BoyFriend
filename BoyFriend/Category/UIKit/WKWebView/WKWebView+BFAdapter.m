@@ -10,7 +10,7 @@
 
 @implementation WKWebView (BFAdapter)
 
-///创建一个用于适配字体大小的WKWeb
+///创建一个用于适配字体大小的WKWebw
 + (WKWebView *)bf_createAutoFontWithFrame:(CGRect)frame {
     NSString *jScript = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
             

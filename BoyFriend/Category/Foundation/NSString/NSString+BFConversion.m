@@ -80,7 +80,7 @@
 }
 
 ///适配网页图片
-- (NSString *)bf_autoHtmlImage {
+- (NSString *)bf_autoHtmlImagew {
     NSString *htmls = [NSString stringWithFormat:@"<html> \n"
                                "<head> \n"
                                "<style type=\"text/css\"> \n"
