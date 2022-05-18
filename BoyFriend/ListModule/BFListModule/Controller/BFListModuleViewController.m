@@ -13,7 +13,8 @@
 
 #import "BFSDCycleScrollViewViewController.h"
 #import "BFJXCategorySegmentedViewController.h"
-
+#import "BFLinkageTTViewController.h"
+#import "BFLinkageTCViewController.h"
 
 @interface BFListModuleViewController ()
 
@@ -125,12 +126,16 @@
 
 ///二级联动-tableview-tableview
 - (void)action5:(BFListModuleInfoModel *)infoModel {
-
+    BFLinkageTTViewController * vc = [[BFLinkageTTViewController alloc]init];
+    vc.title = infoModel.name;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 ///二级联动-tableview-collectionview
 - (void)action6:(BFListModuleInfoModel *)infoModel {
-
+    BFLinkageTCViewController * vc = [[BFLinkageTCViewController alloc]init];
+    vc.title = infoModel.name;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 ///仿微信朋友圈
