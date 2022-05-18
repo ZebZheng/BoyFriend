@@ -33,9 +33,9 @@
 #pragma mark - init
 /**** 视图初始化 ****/
 -(void)initializeView {
-    UIView *v=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 300, 400)];
+    UIView *v=[[UIView alloc]initWithFrame:CGRectMake(kScreenWidth / 2, 0, kScreenWidth, 400)];
     [self.view addSubview:v];
-    v.backgroundColor=[UIColor bf_gradientFromColor:[UIColor greenColor] toColor:[UIColor redColor] isHorizontal:YES Length:300];
+    v.backgroundColor=[UIColor bf_gradientFromColor:[UIColor greenColor] toColor:[UIColor redColor] isHorizontal:YES Length:kScreenWidth / 2];
     NSString *s=@"12.5";
     NSLog(@"%@,%lu",s,(unsigned long)s.length);
     s=[s bf_numberUppercaseString];

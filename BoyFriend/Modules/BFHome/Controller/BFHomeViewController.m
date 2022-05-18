@@ -10,6 +10,7 @@
 #import "BFHomeSectionViewController.h"
 #import "BFHomeView.h"
 #import "BFHomeViewModel.h"
+#import "UIViewController+BFLateralSlide.h"
 
 @interface BFHomeViewController ()
 
@@ -54,8 +55,9 @@
 
 #pragma mark - function
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
     BFHomeSectionViewController * vc  =[[BFHomeSectionViewController alloc] init];
-    BFPushViewController(vc);
+    [self bf_showDefaultDrawerViewController:vc];
 }
 
 #pragma mark - logical processing（逻辑处理）

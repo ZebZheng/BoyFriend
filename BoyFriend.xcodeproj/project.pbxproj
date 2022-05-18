@@ -115,6 +115,11 @@
 		7FADDE2428324B1100DA47C8 /* NSString+BFMutableAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FADDE2328324B1100DA47C8 /* NSString+BFMutableAttributedString.m */; };
 		7FB0BD1E27CDB93A004ECB2D /* UIView+BFAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */; };
 		7FBE0CE427CF70EA004A457F /* BFGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */; };
+		7FCC94162834A23300A1C09E /* BFInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC940C2834A23300A1C09E /* BFInteractiveTransition.m */; };
+		7FCC94172834A23300A1C09E /* UIViewController+BFLateralSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC940F2834A23300A1C09E /* UIViewController+BFLateralSlide.m */; };
+		7FCC94182834A23300A1C09E /* BFLateralSlideAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC94122834A23300A1C09E /* BFLateralSlideAnimator.m */; };
+		7FCC94192834A23300A1C09E /* BFDrawerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC94132834A23300A1C09E /* BFDrawerTransition.m */; };
+		7FCC941A2834A23300A1C09E /* BFLateralSlideConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC94152834A23300A1C09E /* BFLateralSlideConfiguration.m */; };
 		7FD340E427E076BF004A4857 /* UITableView+BFRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD340E327E076BF004A4857 /* UITableView+BFRegister.m */; };
 		A8D6916A3697862307B049D4 /* libPods-BoyFriend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */; };
 		F00D5A6627350BE900B5273D /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F00D5A6527350BE900B5273D /* UserViewModel.m */; };
@@ -484,6 +489,16 @@
 		7FB0BD1D27CDB93A004ECB2D /* UIView+BFAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BFAnimation.m"; sourceTree = "<group>"; };
 		7FBE0CE227CF70EA004A457F /* BFGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGradientLabel.m; sourceTree = "<group>"; };
 		7FBE0CE327CF70EA004A457F /* BFGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFGradientLabel.h; sourceTree = "<group>"; };
+		7FCC940C2834A23300A1C09E /* BFInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFInteractiveTransition.m; sourceTree = "<group>"; };
+		7FCC940D2834A23300A1C09E /* BFDrawerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFDrawerTransition.h; sourceTree = "<group>"; };
+		7FCC940E2834A23300A1C09E /* BFLateralSlideAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLateralSlideAnimator.h; sourceTree = "<group>"; };
+		7FCC940F2834A23300A1C09E /* UIViewController+BFLateralSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BFLateralSlide.m"; sourceTree = "<group>"; };
+		7FCC94102834A23300A1C09E /* BFLateralSlideConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLateralSlideConfiguration.h; sourceTree = "<group>"; };
+		7FCC94112834A23300A1C09E /* BFInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFInteractiveTransition.h; sourceTree = "<group>"; };
+		7FCC94122834A23300A1C09E /* BFLateralSlideAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFLateralSlideAnimator.m; sourceTree = "<group>"; };
+		7FCC94132834A23300A1C09E /* BFDrawerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFDrawerTransition.m; sourceTree = "<group>"; };
+		7FCC94142834A23300A1C09E /* UIViewController+BFLateralSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BFLateralSlide.h"; sourceTree = "<group>"; };
+		7FCC94152834A23300A1C09E /* BFLateralSlideConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFLateralSlideConfiguration.m; sourceTree = "<group>"; };
 		7FD340E227E076BF004A4857 /* UITableView+BFRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+BFRegister.h"; sourceTree = "<group>"; };
 		7FD340E327E076BF004A4857 /* UITableView+BFRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BFRegister.m"; sourceTree = "<group>"; };
 		C4D1379DBA36C7CCEE84EA90 /* Pods-BoyFriend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoyFriend.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoyFriend/Pods-BoyFriend.release.xcconfig"; sourceTree = "<group>"; };
@@ -1513,6 +1528,23 @@
 			path = Label;
 			sourceTree = "<group>";
 		};
+		7FCC940B2834A23300A1C09E /* BFLateralSlide */ = {
+			isa = PBXGroup;
+			children = (
+				7FCC940D2834A23300A1C09E /* BFDrawerTransition.h */,
+				7FCC94132834A23300A1C09E /* BFDrawerTransition.m */,
+				7FCC94112834A23300A1C09E /* BFInteractiveTransition.h */,
+				7FCC940C2834A23300A1C09E /* BFInteractiveTransition.m */,
+				7FCC940E2834A23300A1C09E /* BFLateralSlideAnimator.h */,
+				7FCC94122834A23300A1C09E /* BFLateralSlideAnimator.m */,
+				7FCC94102834A23300A1C09E /* BFLateralSlideConfiguration.h */,
+				7FCC94152834A23300A1C09E /* BFLateralSlideConfiguration.m */,
+				7FCC94142834A23300A1C09E /* UIViewController+BFLateralSlide.h */,
+				7FCC940F2834A23300A1C09E /* UIViewController+BFLateralSlide.m */,
+			);
+			path = BFLateralSlide;
+			sourceTree = "<group>";
+		};
 		7FD340E127E07691004A4857 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2242,6 +2274,7 @@
 		F0D59A652818EF2B001B3F90 /* ListModule */ = {
 			isa = PBXGroup;
 			children = (
+				7FCC940B2834A23300A1C09E /* BFLateralSlide */,
 				F0D59A9528191246001B3F90 /* BFListModule */,
 				F0D59A822818F4E3001B3F90 /* BFJXCategory */,
 				F0D59A6F2818F2FE001B3F90 /* BFSDCycleScrollView */,
@@ -2549,6 +2582,7 @@
 				F048605527C8C13200C530E9 /* BFGradientButton.m in Sources */,
 				189909A525CFE92A00F82636 /* AppCacheUserSQliteModel.m in Sources */,
 				F048605627C8C13200C530E9 /* BFImageHelper.m in Sources */,
+				7FCC94192834A23300A1C09E /* BFDrawerTransition.m in Sources */,
 				1879522E2202D3660001C437 /* NSDictionary+BFURL.m in Sources */,
 				7FB0BD1E27CDB93A004ECB2D /* UIView+BFAnimation.m in Sources */,
 				7F01D11C27C79467005A6709 /* NSString+BFAdd.m in Sources */,
@@ -2648,6 +2682,7 @@
 				F0D59AAA28191246001B3F90 /* BFListModuleListModel.m in Sources */,
 				F089AA1327329622009A4BDD /* YBIBTopView.m in Sources */,
 				F0D59A7F2818F2FE001B3F90 /* BFSDCycleScrollViewView.m in Sources */,
+				7FCC94172834A23300A1C09E /* UIViewController+BFLateralSlide.m in Sources */,
 				7F01D0D227C79149005A6709 /* UIControl+BFActionBlocks.m in Sources */,
 				F0D59A8F2818F4E4001B3F90 /* BFJXCategoryViewModel.m in Sources */,
 				7F01D11F27C79467005A6709 /* NSString+BFConversion.m in Sources */,
@@ -2679,6 +2714,7 @@
 				F0B3B866281BBCE400498123 /* BFLinkageTTHeadView.m in Sources */,
 				F0D59AA928191246001B3F90 /* BFListModuleModel.m in Sources */,
 				187952282202D2200001C437 /* UINavigationController+SafeTransition.m in Sources */,
+				7FCC941A2834A23300A1C09E /* BFLateralSlideConfiguration.m in Sources */,
 				18B67FF321F6F4F8004D2638 /* BaseTabBarController.m in Sources */,
 				F089AA1827329622009A4BDD /* YBIBDataMediator.m in Sources */,
 				F0D59A7E2818F2FE001B3F90 /* BFSDCycleScrollViewModel.m in Sources */,
@@ -2695,6 +2731,7 @@
 				F089AA0C27329622009A4BDD /* YBIBLoadingView.m in Sources */,
 				1843C11821EECF5100A7540A /* AppDelegate.m in Sources */,
 				F048603C27C8854D00C530E9 /* YYAnimatedImageView+iOS14.m in Sources */,
+				7FCC94182834A23300A1C09E /* BFLateralSlideAnimator.m in Sources */,
 				F083B8432803FAA8009C7233 /* BFListModel.m in Sources */,
 				F0D59A912818F4E4001B3F90 /* BFJXCategoryModel.m in Sources */,
 				F0A3455B28339B1B00801EAA /* BFCollectionViewFlowLayout.m in Sources */,
@@ -2742,6 +2779,7 @@
 				F083B8312803FA27009C7233 /* BFHomeSectionViewController.m in Sources */,
 				187952042202C7220001C437 /* UIImage+BFAnimatedGIF.m in Sources */,
 				F089AA2027329622009A4BDD /* BRDatePickerView+BR.m in Sources */,
+				7FCC94162834A23300A1C09E /* BFInteractiveTransition.m in Sources */,
 				7F01D0CA27C7913F005A6709 /* UIViewController+BFAdd.m in Sources */,
 				F083B8572803FC7F009C7233 /* BFMessageViewModel.m in Sources */,
 				F0B3B867281BBCE400498123 /* BFLinkageTCViewModel.m in Sources */,
