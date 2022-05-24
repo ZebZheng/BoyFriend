@@ -17,6 +17,9 @@
 #import "BFLinkageTCViewController.h"
 #import "BFFriendCircleViewController.h"
 
+#import "BFLateralSlideViewController.h"
+#import "UIViewController+BFLateralSlide.h"
+
 @interface BFListModuleViewController ()
 
 @property (nonatomic,strong) BFListModuleView * productView;
@@ -85,6 +88,9 @@
             case 7://仿微信朋友圈
                 [self action7:infoModel];
                 break;
+            case 8://抽屉
+                [self action8:infoModel];
+                break;
                 
             default:
                 break;
@@ -144,6 +150,11 @@
     BFFriendCircleViewController * vc = [[BFFriendCircleViewController alloc]init];
     vc.title = infoModel.name;
     [self.navigationController pushViewController:vc animated:YES];
+}
+///抽屉
+- (void)action8:(BFListModuleInfoModel *)infoModel {
+    BFLateralSlideViewController * vc  =[[BFLateralSlideViewController alloc] init];
+    [self bf_showDefaultDrawerViewController:vc];
 }
 
 

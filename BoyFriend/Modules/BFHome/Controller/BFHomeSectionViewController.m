@@ -7,9 +7,9 @@
 //
 
 #import "BFHomeSectionViewController.h"
-
+#import "WMPlayer.h"
 @interface BFHomeSectionViewController ()
-
+@property(nonatomic, strong) WMPlayer * wmPlayer;
 @end
 
 @implementation BFHomeSectionViewController
@@ -33,25 +33,7 @@
 #pragma mark - init
 /**** 视图初始化 ****/
 -(void)initializeView {
-    UIView *v=[[UIView alloc]initWithFrame:CGRectMake(kScreenWidth / 2, 0, kScreenWidth, 400)];
-    [self.view addSubview:v];
-    v.backgroundColor=[UIColor bf_gradientFromColor:[UIColor greenColor] toColor:[UIColor redColor] isHorizontal:YES Length:kScreenWidth / 2];
-    NSString *s=@"12.5";
-    NSLog(@"%@,%lu",s,(unsigned long)s.length);
-    s=[s bf_numberUppercaseString];
-    NSLog(@"%@,%lu",s,(unsigned long)s.length);
-    
-    UIImage * image = [UIImage imageNamed:@"1234"];
-    UIImageView * imageView = [[UIImageView alloc] init];
-    imageView.center = v.center;
-    imageView.size = CGSizeMake(100, 100);
-    
-    [v addSubview:imageView];
-    imageView.image = [image bf_imageByRoundCornerRadius:100 corners:UIRectCornerAllCorners borderWidth:1 borderColor:UIColor.blueColor borderLineJoin:(kCGLineJoinRound)];
-    
-    
-//    imageView.image = [image bf_cornerImageWithConrner:(UIRectCornerAllCorners) radius:30 rectSize:CGSizeMake(100, 100) fillColor:UIColor.whiteColor];
-    
+
 }
 /**** 数据初始化 ****/
 -(void)initializeViewData {
@@ -72,7 +54,6 @@
 
 
 #pragma mark - Event Response / IBActions
-
 
 #pragma mark - Protocol / delegat
 

@@ -363,6 +363,8 @@ PODS:
     - SDWebImage/Core (~> 5.10)
   - TZImagePickerController (3.7.6)
   - WebViewJavascriptBridge (6.0.3)
+  - WMPlayer (5.0.0):
+    - Masonry
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -388,6 +390,7 @@ DEPENDENCIES:
   - SDWebImageWebPCoder (= 0.8.4)
   - TZImagePickerController (= 3.7.6)
   - WebViewJavascriptBridge (= 6.0.3)
+  - WMPlayer (= 5.0.0)
   - YYKit (= 1.0.9)
 
 SPEC REPOS:
@@ -414,6 +417,7 @@ SPEC REPOS:
     - SDWebImageWebPCoder
     - TZImagePickerController
     - WebViewJavascriptBridge
+    - WMPlayer
     - YYKit
 
 SPEC CHECKSUMS:
@@ -439,8 +443,9 @@ SPEC CHECKSUMS:
   SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
   TZImagePickerController: fb446ac06ae9c217bc849185646a68465bcd0dd4
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  WMPlayer: a914f80ed5dca7cd9e3a94ec07a2b02eec8c15c0
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: cfcba95864b25ab68f04dfd4f29c81981645163f
+PODFILE CHECKSUM: c3de5830fbbb43f88304bff99ff848b4a8c7927e
 
 COCOAPODS: 1.11.2

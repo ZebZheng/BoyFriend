@@ -121,6 +121,7 @@
 		7FCC94192834A23300A1C09E /* BFDrawerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC94132834A23300A1C09E /* BFDrawerTransition.m */; };
 		7FCC941A2834A23300A1C09E /* BFLateralSlideConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC94152834A23300A1C09E /* BFLateralSlideConfiguration.m */; };
 		7FD340E427E076BF004A4857 /* UITableView+BFRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD340E327E076BF004A4857 /* UITableView+BFRegister.m */; };
+		7FEF3C43283CD076000C1F38 /* BFLateralSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF3C42283CD076000C1F38 /* BFLateralSlideViewController.m */; };
 		A8D6916A3697862307B049D4 /* libPods-BoyFriend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */; };
 		F00D5A6627350BE900B5273D /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F00D5A6527350BE900B5273D /* UserViewModel.m */; };
 		F00D5A6927350BFF00B5273D /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F00D5A6827350BFF00B5273D /* UserInfoModel.m */; };
@@ -508,6 +509,8 @@
 		7FCC94152834A23300A1C09E /* BFLateralSlideConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFLateralSlideConfiguration.m; sourceTree = "<group>"; };
 		7FD340E227E076BF004A4857 /* UITableView+BFRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+BFRegister.h"; sourceTree = "<group>"; };
 		7FD340E327E076BF004A4857 /* UITableView+BFRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BFRegister.m"; sourceTree = "<group>"; };
+		7FEF3C41283CD076000C1F38 /* BFLateralSlideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFLateralSlideViewController.h; sourceTree = "<group>"; };
+		7FEF3C42283CD076000C1F38 /* BFLateralSlideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFLateralSlideViewController.m; sourceTree = "<group>"; };
 		C4D1379DBA36C7CCEE84EA90 /* Pods-BoyFriend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoyFriend.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoyFriend/Pods-BoyFriend.release.xcconfig"; sourceTree = "<group>"; };
 		F00D5A6427350BE900B5273D /* UserViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewModel.h; sourceTree = "<group>"; };
 		F00D5A6527350BE900B5273D /* UserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewModel.m; sourceTree = "<group>"; };
@@ -1576,6 +1579,15 @@
 			path = UITableView;
 			sourceTree = "<group>";
 		};
+		7FEF3C40283CD06B000C1F38 /* LateralSlide */ = {
+			isa = PBXGroup;
+			children = (
+				7FEF3C41283CD076000C1F38 /* BFLateralSlideViewController.h */,
+				7FEF3C42283CD076000C1F38 /* BFLateralSlideViewController.m */,
+			);
+			path = LateralSlide;
+			sourceTree = "<group>";
+		};
 		F00D5A5F27350BA100B5273D /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -2494,6 +2506,7 @@
 		F0D59A9928191246001B3F90 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7FEF3C40283CD06B000C1F38 /* LateralSlide */,
 				F0D59A9A28191246001B3F90 /* BFListModuleViewController.h */,
 				F0D59A9B28191246001B3F90 /* BFListModuleViewController.m */,
 			);
@@ -2661,6 +2674,7 @@
 				1843C15D21F1659A00A7540A /* BaseHUDView.m in Sources */,
 				7F01D09727C7901E005A6709 /* UIImage+BFCompress.m in Sources */,
 				F089AA2727329622009A4BDD /* BRAddressModel.m in Sources */,
+				7FEF3C43283CD076000C1F38 /* BFLateralSlideViewController.m in Sources */,
 				F089A9FB27329622009A4BDD /* BFPopShowView.m in Sources */,
 				7F01D0BC27C79083005A6709 /* UITextView+BFAdd.m in Sources */,
 				F0D59AA828191246001B3F90 /* BFListModuleViewController.m in Sources */,

@@ -26,6 +26,7 @@ target 'BoyFriend' do
     pod 'TZImagePickerController','3.7.6'#相册图片选择
     pod 'WebViewJavascriptBridge','6.0.3'#更快的支持JS调用OC,OC调用JS
     pod 'YYKit','1.0.9'
+    pod 'WMPlayer','5.0.0'
 #    pod 'JPush','4.4.0'#极光推送
 #    pod 'JCore', '3.1.0-noidfa'
 #    pod 'JLRoutes','2.1'#路由跳转

@@ -56,8 +56,6 @@
 #pragma mark - function
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    BFHomeSectionViewController * vc  =[[BFHomeSectionViewController alloc] init];
-    [self bf_showDefaultDrawerViewController:vc];
 }
 
 #pragma mark - logical processing（逻辑处理）

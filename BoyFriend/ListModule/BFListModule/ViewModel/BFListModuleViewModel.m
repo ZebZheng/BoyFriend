@@ -48,7 +48,11 @@
     model7.name = @"仿微信朋友圈";
     model7.indexInteger = 7;
     
-    NSArray * arrModel = @[model1,model2,model3,model4,model5,model6,model7];
+    BFListModuleInfoModel * model8 = [[BFListModuleInfoModel alloc]init];
+    model8.name = @"抽屉";
+    model8.indexInteger = 8;
+    
+    NSArray * arrModel = @[model1,model2,model3,model4,model5,model6,model7,model8];
     [self.dataSource addObject:arrModel];
     self.reloadTableView = YES;
     [self dataSetWithPageNow:1 Count:1];
