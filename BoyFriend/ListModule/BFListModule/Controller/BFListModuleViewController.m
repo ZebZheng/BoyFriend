@@ -15,6 +15,7 @@
 #import "BFJXCategorySegmentedViewController.h"
 #import "BFLinkageTTViewController.h"
 #import "BFLinkageTCViewController.h"
+#import "BFFriendCircleViewController.h"
 
 @interface BFListModuleViewController ()
 
@@ -140,7 +141,9 @@
 
 ///仿微信朋友圈
 - (void)action7:(BFListModuleInfoModel *)infoModel {
-
+    BFFriendCircleViewController * vc = [[BFFriendCircleViewController alloc]init];
+    vc.title = infoModel.name;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

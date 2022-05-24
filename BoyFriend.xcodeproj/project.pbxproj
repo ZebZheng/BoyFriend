@@ -144,6 +144,7 @@
 		F048605427C8C13200C530E9 /* BFGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = F048604E27C8C13100C530E9 /* BFGCDTimer.m */; };
 		F048605527C8C13200C530E9 /* BFGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F048605127C8C13200C530E9 /* BFGradientButton.m */; };
 		F048605627C8C13200C530E9 /* BFImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F048605327C8C13200C530E9 /* BFImageHelper.m */; };
+		F075488F283B73F8009820C5 /* PhotoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F075488E283B73F8009820C5 /* PhotoContainerView.m */; };
 		F083B8182803F8B2009C7233 /* BFLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F083B80E2803F8B2009C7233 /* BFLoginViewModel.m */; };
 		F083B8192803F8B2009C7233 /* BFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F083B8112803F8B2009C7233 /* BFLoginViewController.m */; };
 		F083B81A2803F8B2009C7233 /* BFLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F083B8142803F8B2009C7233 /* BFLoginModel.m */; };
@@ -232,6 +233,12 @@
 		F0B3B868281BBCE400498123 /* BFLinkageTCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B3B85C281BBCE400498123 /* BFLinkageTCViewController.m */; };
 		F0B3B869281BBCE400498123 /* BFLinkageTCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B3B85E281BBCE400498123 /* BFLinkageTCModel.m */; };
 		F0B3B86A281BBCE400498123 /* BFLinkageTCCollectionViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B3B862281BBCE400498123 /* BFLinkageTCCollectionViewHeaderView.m */; };
+		F0B8507D2834DCA800D9E65F /* BFFriendCircleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B8506D2834DCA800D9E65F /* BFFriendCircleViewModel.m */; };
+		F0B8507E2834DCA800D9E65F /* BFFriendCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B850702834DCA800D9E65F /* BFFriendCircleViewController.m */; };
+		F0B8507F2834DCA800D9E65F /* BFFriendCircleListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B850742834DCA800D9E65F /* BFFriendCircleListModel.m */; };
+		F0B850802834DCA800D9E65F /* BFFriendCircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B850752834DCA800D9E65F /* BFFriendCircleModel.m */; };
+		F0B850812834DCA800D9E65F /* BFFriendCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B8507B2834DCA800D9E65F /* BFFriendCircleCell.m */; };
+		F0B850822834DCA800D9E65F /* BFFriendCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B8507C2834DCA800D9E65F /* BFFriendCircleView.m */; };
 		F0D59A672818EF8D001B3F90 /* ListModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0D59A662818EF8D001B3F90 /* ListModule.xcassets */; };
 		F0D59A7C2818F2FE001B3F90 /* BFSDCycleScrollViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D59A722818F2FE001B3F90 /* BFSDCycleScrollViewViewModel.m */; };
 		F0D59A7D2818F2FE001B3F90 /* BFSDCycleScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D59A752818F2FE001B3F90 /* BFSDCycleScrollViewViewController.m */; };
@@ -550,6 +557,8 @@
 		F048605127C8C13200C530E9 /* BFGradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFGradientButton.m; sourceTree = "<group>"; };
 		F048605227C8C13200C530E9 /* BFImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFImageHelper.h; sourceTree = "<group>"; };
 		F048605327C8C13200C530E9 /* BFImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFImageHelper.m; sourceTree = "<group>"; };
+		F075488D283B73F8009820C5 /* PhotoContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoContainerView.h; sourceTree = "<group>"; };
+		F075488E283B73F8009820C5 /* PhotoContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoContainerView.m; sourceTree = "<group>"; };
 		F083B80D2803F8B2009C7233 /* BFLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLoginViewModel.h; sourceTree = "<group>"; };
 		F083B80E2803F8B2009C7233 /* BFLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFLoginViewModel.m; sourceTree = "<group>"; };
 		F083B8102803F8B2009C7233 /* BFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLoginViewController.h; sourceTree = "<group>"; };
@@ -736,6 +745,18 @@
 		F0B3B85F281BBCE400498123 /* BFLinkageTCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLinkageTCModel.h; sourceTree = "<group>"; };
 		F0B3B861281BBCE400498123 /* BFLinkageTCCollectionViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLinkageTCCollectionViewHeaderView.h; sourceTree = "<group>"; };
 		F0B3B862281BBCE400498123 /* BFLinkageTCCollectionViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFLinkageTCCollectionViewHeaderView.m; sourceTree = "<group>"; };
+		F0B8506D2834DCA800D9E65F /* BFFriendCircleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFriendCircleViewModel.m; sourceTree = "<group>"; };
+		F0B8506E2834DCA800D9E65F /* BFFriendCircleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFriendCircleViewModel.h; sourceTree = "<group>"; };
+		F0B850702834DCA800D9E65F /* BFFriendCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFriendCircleViewController.m; sourceTree = "<group>"; };
+		F0B850712834DCA800D9E65F /* BFFriendCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFriendCircleViewController.h; sourceTree = "<group>"; };
+		F0B850732834DCA800D9E65F /* BFFriendCircleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFriendCircleModel.h; sourceTree = "<group>"; };
+		F0B850742834DCA800D9E65F /* BFFriendCircleListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFriendCircleListModel.m; sourceTree = "<group>"; };
+		F0B850752834DCA800D9E65F /* BFFriendCircleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFriendCircleModel.m; sourceTree = "<group>"; };
+		F0B850762834DCA800D9E65F /* BFFriendCircleListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFriendCircleListModel.h; sourceTree = "<group>"; };
+		F0B850782834DCA800D9E65F /* BFFriendCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFriendCircleView.h; sourceTree = "<group>"; };
+		F0B8507A2834DCA800D9E65F /* BFFriendCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFriendCircleCell.h; sourceTree = "<group>"; };
+		F0B8507B2834DCA800D9E65F /* BFFriendCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFriendCircleCell.m; sourceTree = "<group>"; };
+		F0B8507C2834DCA800D9E65F /* BFFriendCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFriendCircleView.m; sourceTree = "<group>"; };
 		F0D59A662818EF8D001B3F90 /* ListModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ListModule.xcassets; sourceTree = "<group>"; };
 		F0D59A712818F2FE001B3F90 /* BFSDCycleScrollViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFSDCycleScrollViewViewModel.h; sourceTree = "<group>"; };
 		F0D59A722818F2FE001B3F90 /* BFSDCycleScrollViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFSDCycleScrollViewViewModel.m; sourceTree = "<group>"; };
@@ -902,6 +923,7 @@
 		1843C12E21F07C7F00A7540A /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				F0754889283B7365009820C5 /* PhotoContainerView */,
 				7F0A86A127E023BF000B14B7 /* PopupViewController */,
 				186DDA0421FECCB3000B6EDB /* AdvertiseHelper */,
 				F089A9DF27329622009A4BDD /* BRPickerView */,
@@ -1664,6 +1686,15 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		F0754889283B7365009820C5 /* PhotoContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				F075488D283B73F8009820C5 /* PhotoContainerView.h */,
+				F075488E283B73F8009820C5 /* PhotoContainerView.m */,
+			);
+			path = PhotoContainerView;
+			sourceTree = "<group>";
+		};
 		F083B80B2803F8B2009C7233 /* BFLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -2271,6 +2302,65 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F0B8506B2834DCA800D9E65F /* BFFriendCircle */ = {
+			isa = PBXGroup;
+			children = (
+				F0B8506C2834DCA800D9E65F /* ViewModel */,
+				F0B8506F2834DCA800D9E65F /* Controller */,
+				F0B850722834DCA800D9E65F /* Model */,
+				F0B850772834DCA800D9E65F /* View */,
+			);
+			path = BFFriendCircle;
+			sourceTree = "<group>";
+		};
+		F0B8506C2834DCA800D9E65F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F0B8506E2834DCA800D9E65F /* BFFriendCircleViewModel.h */,
+				F0B8506D2834DCA800D9E65F /* BFFriendCircleViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F0B8506F2834DCA800D9E65F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0B850712834DCA800D9E65F /* BFFriendCircleViewController.h */,
+				F0B850702834DCA800D9E65F /* BFFriendCircleViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0B850722834DCA800D9E65F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0B850762834DCA800D9E65F /* BFFriendCircleListModel.h */,
+				F0B850742834DCA800D9E65F /* BFFriendCircleListModel.m */,
+				F0B850732834DCA800D9E65F /* BFFriendCircleModel.h */,
+				F0B850752834DCA800D9E65F /* BFFriendCircleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0B850772834DCA800D9E65F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0B850782834DCA800D9E65F /* BFFriendCircleView.h */,
+				F0B8507C2834DCA800D9E65F /* BFFriendCircleView.m */,
+				F0B850792834DCA800D9E65F /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0B850792834DCA800D9E65F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0B8507A2834DCA800D9E65F /* BFFriendCircleCell.h */,
+				F0B8507B2834DCA800D9E65F /* BFFriendCircleCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F0D59A652818EF2B001B3F90 /* ListModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -2280,6 +2370,7 @@
 				F0D59A6F2818F2FE001B3F90 /* BFSDCycleScrollView */,
 				F0B3B856281BBCE400498123 /* BFLinkageTC */,
 				F0B3B849281BBCE400498123 /* BFLinkageTT */,
+				F0B8506B2834DCA800D9E65F /* BFFriendCircle */,
 			);
 			path = ListModule;
 			sourceTree = "<group>";
@@ -2609,6 +2700,8 @@
 				7F01D09B27C79030005A6709 /* UILabel+BFInit.m in Sources */,
 				F083B86C2803FD27009C7233 /* BFMineModel.m in Sources */,
 				F083B8582803FC7F009C7233 /* BFMessageViewController.m in Sources */,
+				F075488F283B73F8009820C5 /* PhotoContainerView.m in Sources */,
+				F0B8507F2834DCA800D9E65F /* BFFriendCircleListModel.m in Sources */,
 				18BB875A220041AA00EDAC2A /* BFAttributeStringUtil.m in Sources */,
 				F089AA2427329622009A4BDD /* BRPickerStyle.m in Sources */,
 				F083B8192803F8B2009C7233 /* BFLoginViewController.m in Sources */,
@@ -2643,6 +2736,7 @@
 				1868CE5B22017138002220BF /* BaseSQliteModel.m in Sources */,
 				F72C71D4281BE83800EBAF9C /* UILabel+BFAttributeTextTapAction.m in Sources */,
 				F089AA1627329622009A4BDD /* YBIBScreenRotationHandler.m in Sources */,
+				F0B8507D2834DCA800D9E65F /* BFFriendCircleViewModel.m in Sources */,
 				F0B3B865281BBCE400498123 /* BFLinkageTTModel.m in Sources */,
 				F089AA1F27329622009A4BDD /* BRStringPickerView.m in Sources */,
 				7F0A86A727E023CB000B14B7 /* UIViewController+DDPopUpViewController.m in Sources */,
@@ -2663,6 +2757,7 @@
 				7F01D0DE27C79153005A6709 /* UITextField+BFBlocks.m in Sources */,
 				F048605427C8C13200C530E9 /* BFGCDTimer.m in Sources */,
 				F089AA2127329622009A4BDD /* NSDate+BRPickerView.m in Sources */,
+				F0B8507E2834DCA800D9E65F /* BFFriendCircleViewController.m in Sources */,
 				7F01D0A727C79069005A6709 /* UIResponder+BFConfigure.m in Sources */,
 				F01C2D7E27D1F4E1005B5923 /* BaseCollectionViewController.m in Sources */,
 				F083B82C2803F9AB009C7233 /* BFHomeViewController.m in Sources */,
@@ -2701,10 +2796,12 @@
 				1899099825CFD1E900F82636 /* CommonsView.m in Sources */,
 				F089AA0027329622009A4BDD /* YBIBVideoActionBar.m in Sources */,
 				1843C12621EECFE800A7540A /* main.m in Sources */,
+				F0B850812834DCA800D9E65F /* BFFriendCircleCell.m in Sources */,
 				7F01D0DC27C79153005A6709 /* UITextField+BFAdd.m in Sources */,
 				1843C16521F167F500A7540A /* UIView+BFPlaceholderView.m in Sources */,
 				F730849427D84F7B00A12404 /* NSString+BFSafe.m in Sources */,
 				F089AA1727329622009A4BDD /* YBIBContainerView.m in Sources */,
+				F0B850822834DCA800D9E65F /* BFFriendCircleView.m in Sources */,
 				F048602127C8792200C530E9 /* BaseView.m in Sources */,
 				7F01D09627C7901E005A6709 /* UIImage+BFAdd.m in Sources */,
 				1899099B25CFD20000F82636 /* CommonWebViewController.m in Sources */,
@@ -2761,6 +2858,7 @@
 				F089AA0527329622009A4BDD /* YBImage.m in Sources */,
 				187952462202DE0D0001C437 /* NSString+BFJudge.m in Sources */,
 				F089AA1B27329622009A4BDD /* YBIBAnimatedTransition.m in Sources */,
+				F0B850802834DCA800D9E65F /* BFFriendCircleModel.m in Sources */,
 				7F01D0F727C793C3005A6709 /* UIView+BFEffects.m in Sources */,
 				18F38D5F21F592690042CF26 /* UIImage+BFName.m in Sources */,
 				7F01D0B127C79071005A6709 /* UIButton+BFCountDown.m in Sources */,
