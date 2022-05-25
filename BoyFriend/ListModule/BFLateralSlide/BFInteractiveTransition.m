@@ -29,7 +29,7 @@
 
 - (CADisplayLink *)link {
     if (!_link) {
-        _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(bf_update)];
+        _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(bfl_update)];
         [_link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     }
     return _link;
@@ -38,8 +38,8 @@
 - (instancetype)initWithTransitiontype:(BFDrawerTransitiontype)type {
     if (self = [super init]) {
         _type = type;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bf_singleTap) name:BFLateralSlideTapNoticationKey object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bf_handleHiddenPan:) name:BFLateralSlidePanNoticationKey object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bfl_singleTap) name:BFLateralSlideTapNoticationKey object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bfl_handleHiddenPan:) name:BFLateralSlidePanNoticationKey object:nil];
     }
     return self;
 }
@@ -53,18 +53,18 @@
     self.weakVC = viewController;
     if (self.openEdgeGesture) {
         // 因为edges设置为（UIRectEdgeLeft | UIRectEdgeLeft）或者 UIRectEdgeAll都无效，所以增加左右两个边缘手势
-        UIScreenEdgePanGestureRecognizer *edgePanFromLeft = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(bf_handleEdgePan:)];
+        UIScreenEdgePanGestureRecognizer *edgePanFromLeft = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(bfl_handleEdgePan:)];
         edgePanFromLeft.edges = UIRectEdgeLeft;
         edgePanFromLeft.delegate = self;
         [viewController.view addGestureRecognizer:edgePanFromLeft];
         
-        UIScreenEdgePanGestureRecognizer *edgePanFromRight = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(bf_handleEdgePan:)];
+        UIScreenEdgePanGestureRecognizer *edgePanFromRight = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(bfl_handleEdgePan:)];
         edgePanFromRight.edges = UIRectEdgeRight;
         edgePanFromRight.delegate = self;
         [viewController.view addGestureRecognizer:edgePanFromRight];
         
     }else {
-        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(bf_handleShowPan:)];
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(bfl_handleShowPan:)];
         pan.delegate = self;
         [viewController.view addGestureRecognizer:pan];
     }
@@ -81,19 +81,19 @@
 }
 
 #pragma mark -GestureRecognizer
-- (void)bf_singleTap {
+- (void)bfl_singleTap {
     if (_type == BFDrawerTransitiontypeShow) return;
     [self.weakVC dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)bf_handleHiddenPan:(NSNotification *)note {
+- (void)bfl_handleHiddenPan:(NSNotification *)note {
     
     if (_type == BFDrawerTransitiontypeShow) return;
     UIPanGestureRecognizer *pan = note.object;
     [self handleGesture:pan];
 }
 
-- (void)bf_handleShowPan:(UIPanGestureRecognizer *)pan {
+- (void)bfl_handleShowPan:(UIPanGestureRecognizer *)pan {
     
     if (_type == BFDrawerTransitiontypeHidden) return;
     [self handleGesture:pan];
@@ -120,12 +120,12 @@
     }
 }
 
-- (void)bf_updateInteractiveTransition {
+- (void)bfl_updateInteractiveTransition {
     _percent = fminf(fmaxf(_percent, 0.003), 0.97);
     [self updateInteractiveTransition:_percent];
 }
 
-- (void)bf_endInteractiveTransition {
+- (void)bfl_endInteractiveTransition {
     self.interacting = NO;
     [self startTimerAnimationWithFinishTransition:_percent > self.configuration.finishPercent];
 }
@@ -152,13 +152,13 @@
                     [self hiddenBeganTranslationX:x];
                 }
             }else {
-                [self bf_updateInteractiveTransition];
+                [self bfl_updateInteractiveTransition];
             }
             break;
         }
         case UIGestureRecognizerStateCancelled:
         case UIGestureRecognizerStateEnded:{
-            [self bf_endInteractiveTransition];
+            [self bfl_endInteractiveTransition];
             break;
         }
         default:
@@ -167,7 +167,7 @@
 }
 
 #pragma mark edge gesture
-- (void)bf_handleEdgePan:(UIScreenEdgePanGestureRecognizer *)edgePan {
+- (void)bfl_handleEdgePan:(UIScreenEdgePanGestureRecognizer *)edgePan {
     if (_type == BFDrawerTransitiontypeHidden) return;
     
     CGFloat x = [edgePan translationInView:edgePan.view].x;
@@ -186,12 +186,12 @@
             break;
         }
         case UIGestureRecognizerStateChanged: {
-            [self bf_updateInteractiveTransition];
+            [self bfl_updateInteractiveTransition];
             break;
         }
         case UIGestureRecognizerStateCancelled:
         case UIGestureRecognizerStateEnded:{
-            [self bf_endInteractiveTransition];
+            [self bfl_endInteractiveTransition];
             break;
         }
         default:
@@ -224,7 +224,7 @@
     self.link = nil;
 }
 
-- (void)bf_update {
+- (void)bfl_update {
     if (_percent >= 0.97 && _toFinish) {
         [self stopDisplayerLink];
         [self finishInteractiveTransition];

@@ -131,6 +131,9 @@
 		F01C2D7C27D1F4E1005B5923 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F01C2D7827D1F4E1005B5923 /* BaseCollectionViewCell.m */; };
 		F01C2D7D27D1F4E1005B5923 /* BaseCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F01C2D7927D1F4E1005B5923 /* BaseCollectionViewModel.m */; };
 		F01C2D7E27D1F4E1005B5923 /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F01C2D7A27D1F4E1005B5923 /* BaseCollectionViewController.m */; };
+		F02370FA283CDCD900F8D446 /* BFMineSettingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02370EA283CDCD900F8D446 /* BFMineSettingViewModel.m */; };
+		F02370FB283CDCD900F8D446 /* BFMineSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02370EE283CDCD900F8D446 /* BFMineSettingViewController.m */; };
+		F02370FE283CDCD900F8D446 /* BFMineSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F02370F5283CDCD900F8D446 /* BFMineSettingView.m */; };
 		F0293D3B2745EAEF000286C4 /* NetWorkEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = F0293D392745EAEF000286C4 /* NetWorkEnvironment.m */; };
 		F0293D402745EDB7000286C4 /* LanguageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0293D3F2745EDB7000286C4 /* LanguageModel.m */; };
 		F0293D442745EF1E000286C4 /* CommonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0293D432745EF1E000286C4 /* CommonViewModel.m */; };
@@ -224,6 +227,11 @@
 		F0A34556283398B700801EAA /* BFLinkageTCRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A34555283398B700801EAA /* BFLinkageTCRightCollectionViewCell.m */; };
 		F0A3455828339AEB00801EAA /* liwushuo.json in Resources */ = {isa = PBXBuildFile; fileRef = F0A3455728339AEB00801EAA /* liwushuo.json */; };
 		F0A3455B28339B1B00801EAA /* BFCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3455A28339B1B00801EAA /* BFCollectionViewFlowLayout.m */; };
+		F0A6CC01283E072B00BDE9D9 /* BFTableMenuGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A6CBFB283E072B00BDE9D9 /* BFTableMenuGroup.m */; };
+		F0A6CC02283E072B00BDE9D9 /* BFTableMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A6CBFC283E072B00BDE9D9 /* BFTableMenuCell.m */; };
+		F0A6CC03283E072B00BDE9D9 /* BFTableMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A6CBFD283E072B00BDE9D9 /* BFTableMenuItem.m */; };
+		F0A6CC06283E253600BDE9D9 /* BFMineSettingInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A6CC05283E253600BDE9D9 /* BFMineSettingInfoTableViewController.m */; };
+		F0A6CC0C283E2B8200BDE9D9 /* BFMineSettingInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A6CC0B283E2B8200BDE9D9 /* BFMineSettingInfoViewModel.m */; };
 		F0B0E4BA28179BB40076A5CF /* Model.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0B0E4B928179BB40076A5CF /* Model.xcassets */; };
 		F0B3B844281B85D000498123 /* BFJXCategorySegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B3B842281B85D000498123 /* BFJXCategorySegmentedViewController.m */; };
 		F0B3B863281BBCE400498123 /* BFLinkageTTViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B3B84C281BBCE400498123 /* BFLinkageTTViewModel.m */; };
@@ -532,6 +540,12 @@
 		F01EB02B27CC63680038386D /* BFFrameMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFFrameMacro.h; sourceTree = "<group>"; };
 		F01EB02C27CC63680038386D /* BFSystemMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFSystemMacro.h; sourceTree = "<group>"; };
 		F01EB02D27CC63680038386D /* BFEmptyMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFEmptyMacro.h; sourceTree = "<group>"; };
+		F02370EA283CDCD900F8D446 /* BFMineSettingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFMineSettingViewModel.m; sourceTree = "<group>"; };
+		F02370EB283CDCD900F8D446 /* BFMineSettingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFMineSettingViewModel.h; sourceTree = "<group>"; };
+		F02370ED283CDCD900F8D446 /* BFMineSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFMineSettingViewController.h; sourceTree = "<group>"; };
+		F02370EE283CDCD900F8D446 /* BFMineSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFMineSettingViewController.m; sourceTree = "<group>"; };
+		F02370F5283CDCD900F8D446 /* BFMineSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFMineSettingView.m; sourceTree = "<group>"; };
+		F02370F9283CDCD900F8D446 /* BFMineSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFMineSettingView.h; sourceTree = "<group>"; };
 		F0293D392745EAEF000286C4 /* NetWorkEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkEnvironment.m; sourceTree = "<group>"; };
 		F0293D3A2745EAEF000286C4 /* NetWorkEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkEnvironment.h; sourceTree = "<group>"; };
 		F0293D3E2745EDB7000286C4 /* LanguageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageModel.h; sourceTree = "<group>"; };
@@ -729,6 +743,16 @@
 		F0A3455728339AEB00801EAA /* liwushuo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = liwushuo.json; sourceTree = "<group>"; };
 		F0A3455928339B1B00801EAA /* BFCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		F0A3455A28339B1B00801EAA /* BFCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		F0A6CBFB283E072B00BDE9D9 /* BFTableMenuGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTableMenuGroup.m; sourceTree = "<group>"; };
+		F0A6CBFC283E072B00BDE9D9 /* BFTableMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTableMenuCell.m; sourceTree = "<group>"; };
+		F0A6CBFD283E072B00BDE9D9 /* BFTableMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTableMenuItem.m; sourceTree = "<group>"; };
+		F0A6CBFE283E072B00BDE9D9 /* BFTableMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTableMenuItem.h; sourceTree = "<group>"; };
+		F0A6CBFF283E072B00BDE9D9 /* BFTableMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTableMenuCell.h; sourceTree = "<group>"; };
+		F0A6CC00283E072B00BDE9D9 /* BFTableMenuGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTableMenuGroup.h; sourceTree = "<group>"; };
+		F0A6CC04283E253600BDE9D9 /* BFMineSettingInfoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFMineSettingInfoTableViewController.h; sourceTree = "<group>"; };
+		F0A6CC05283E253600BDE9D9 /* BFMineSettingInfoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFMineSettingInfoTableViewController.m; sourceTree = "<group>"; };
+		F0A6CC0A283E2B8200BDE9D9 /* BFMineSettingInfoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFMineSettingInfoViewModel.h; sourceTree = "<group>"; };
+		F0A6CC0B283E2B8200BDE9D9 /* BFMineSettingInfoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFMineSettingInfoViewModel.m; sourceTree = "<group>"; };
 		F0B0E4B928179BB40076A5CF /* Model.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Model.xcassets; sourceTree = "<group>"; };
 		F0B3B842281B85D000498123 /* BFJXCategorySegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFJXCategorySegmentedViewController.m; sourceTree = "<group>"; };
 		F0B3B843281B85D000498123 /* BFJXCategorySegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFJXCategorySegmentedViewController.h; sourceTree = "<group>"; };
@@ -939,6 +963,7 @@
 		1843C12F21F07E6300A7540A /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				F0A6CBFA283E072B00BDE9D9 /* TableMenu */,
 				18F38D2F21F1CE450042CF26 /* Commons */,
 				18F38D2E21F1CE340042CF26 /* Tool */,
 			);
@@ -1077,9 +1102,9 @@
 		1879520B2202C9CB0001C437 /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
+				1879520F2202C9EE0001C437 /* UILabelCategoryHeader.h */,
 				F72C71D2281BE83800EBAF9C /* UILabel+BFAttributeTextTapAction.h */,
 				F72C71D3281BE83800EBAF9C /* UILabel+BFAttributeTextTapAction.m */,
-				1879520F2202C9EE0001C437 /* UILabelCategoryHeader.h */,
 				7F01D09A27C79030005A6709 /* UILabel+BFInit.h */,
 				7F01D09927C79030005A6709 /* UILabel+BFInit.m */,
 			);
@@ -1630,6 +1655,55 @@
 				F01C2D7927D1F4E1005B5923 /* BaseCollectionViewModel.m */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		F02370E8283CDCD900F8D446 /* BFMineSetting */ = {
+			isa = PBXGroup;
+			children = (
+				F02370E9283CDCD900F8D446 /* ViewModel */,
+				F02370EC283CDCD900F8D446 /* Controller */,
+				F02370EF283CDCD900F8D446 /* Model */,
+				F02370F4283CDCD900F8D446 /* View */,
+			);
+			path = BFMineSetting;
+			sourceTree = "<group>";
+		};
+		F02370E9283CDCD900F8D446 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F02370EB283CDCD900F8D446 /* BFMineSettingViewModel.h */,
+				F02370EA283CDCD900F8D446 /* BFMineSettingViewModel.m */,
+				F0A6CC0A283E2B8200BDE9D9 /* BFMineSettingInfoViewModel.h */,
+				F0A6CC0B283E2B8200BDE9D9 /* BFMineSettingInfoViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F02370EC283CDCD900F8D446 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F02370ED283CDCD900F8D446 /* BFMineSettingViewController.h */,
+				F02370EE283CDCD900F8D446 /* BFMineSettingViewController.m */,
+				F0A6CC04283E253600BDE9D9 /* BFMineSettingInfoTableViewController.h */,
+				F0A6CC05283E253600BDE9D9 /* BFMineSettingInfoTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F02370EF283CDCD900F8D446 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F02370F4283CDCD900F8D446 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F02370F9283CDCD900F8D446 /* BFMineSettingView.h */,
+				F02370F5283CDCD900F8D446 /* BFMineSettingView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F0293D3D2745EDB7000286C4 /* Model */ = {
@@ -2208,6 +2282,19 @@
 			path = AddressPickerView;
 			sourceTree = "<group>";
 		};
+		F0A6CBFA283E072B00BDE9D9 /* TableMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F0A6CBFF283E072B00BDE9D9 /* BFTableMenuCell.h */,
+				F0A6CBFC283E072B00BDE9D9 /* BFTableMenuCell.m */,
+				F0A6CC00283E072B00BDE9D9 /* BFTableMenuGroup.h */,
+				F0A6CBFB283E072B00BDE9D9 /* BFTableMenuGroup.m */,
+				F0A6CBFE283E072B00BDE9D9 /* BFTableMenuItem.h */,
+				F0A6CBFD283E072B00BDE9D9 /* BFTableMenuItem.m */,
+			);
+			path = TableMenu;
+			sourceTree = "<group>";
+		};
 		F0B3B849281BBCE400498123 /* BFLinkageTT */ = {
 			isa = PBXGroup;
 			children = (
@@ -2376,13 +2463,14 @@
 		F0D59A652818EF2B001B3F90 /* ListModule */ = {
 			isa = PBXGroup;
 			children = (
-				7FCC940B2834A23300A1C09E /* BFLateralSlide */,
 				F0D59A9528191246001B3F90 /* BFListModule */,
+				7FCC940B2834A23300A1C09E /* BFLateralSlide */,
 				F0D59A822818F4E3001B3F90 /* BFJXCategory */,
 				F0D59A6F2818F2FE001B3F90 /* BFSDCycleScrollView */,
 				F0B3B856281BBCE400498123 /* BFLinkageTC */,
 				F0B3B849281BBCE400498123 /* BFLinkageTT */,
 				F0B8506B2834DCA800D9E65F /* BFFriendCircle */,
+				F02370E8283CDCD900F8D446 /* BFMineSetting */,
 			);
 			path = ListModule;
 			sourceTree = "<group>";
@@ -2699,6 +2787,7 @@
 				F089AA2527329622009A4BDD /* BRBaseView.m in Sources */,
 				F0B3B844281B85D000498123 /* BFJXCategorySegmentedViewController.m in Sources */,
 				187952072202C85E0001C437 /* UIImage+BFOrientation.m in Sources */,
+				F02370FE283CDCD900F8D446 /* BFMineSettingView.m in Sources */,
 				F089AA1E27329622009A4BDD /* BRResultModel.m in Sources */,
 				F089AA0B27329622009A4BDD /* YBIBToastView.m in Sources */,
 				F0A3454B28337B3300801EAA /* BFLinkageTTLeftTableViewCell.m in Sources */,
@@ -2737,6 +2826,7 @@
 				7F01D13227C7947B005A6709 /* NSDate+BFAdd.m in Sources */,
 				187952372202D4470001C437 /* NSObject+BFGCD.m in Sources */,
 				7FA78F712803DB3C00478A3D /* NSArray+BFSafe.m in Sources */,
+				F02370FA283CDCD900F8D446 /* BFMineSettingViewModel.m in Sources */,
 				1879524A2202E4930001C437 /* NSString+BFExtension.m in Sources */,
 				F089A97627328339009A4BDD /* UIDevice+BFUtils.m in Sources */,
 				1868CE762201A4C2002220BF /* BaseWebViewController.m in Sources */,
@@ -2745,6 +2835,7 @@
 				F089AA1227329622009A4BDD /* YBIBPhotoAlbumManager.m in Sources */,
 				F083B82E2803F9AB009C7233 /* BFHomeView.m in Sources */,
 				18B6800421F8646A004D2638 /* AppDelegate+TopSet.m in Sources */,
+				F0A6CC01283E072B00BDE9D9 /* BFTableMenuGroup.m in Sources */,
 				F089AA1527329622009A4BDD /* YBIBSheetView.m in Sources */,
 				F089AA0D27329622009A4BDD /* YBIBAuxiliaryViewHandler.m in Sources */,
 				1868CE5B22017138002220BF /* BaseSQliteModel.m in Sources */,
@@ -2785,6 +2876,7 @@
 				7FBE0CE427CF70EA004A457F /* BFGradientLabel.m in Sources */,
 				18B6800A21F86F6E004D2638 /* AppDelegate+Reachability.m in Sources */,
 				F01C2D7D27D1F4E1005B5923 /* BaseCollectionViewModel.m in Sources */,
+				F0A6CC0C283E2B8200BDE9D9 /* BFMineSettingInfoViewModel.m in Sources */,
 				F089AA0427329622009A4BDD /* YBIBImageLayout.m in Sources */,
 				F083B8182803F8B2009C7233 /* BFLoginViewModel.m in Sources */,
 				7F01D12127C79467005A6709 /* NSString+BFDate.m in Sources */,
@@ -2795,6 +2887,7 @@
 				7F01D0D227C79149005A6709 /* UIControl+BFActionBlocks.m in Sources */,
 				F0D59A8F2818F4E4001B3F90 /* BFJXCategoryViewModel.m in Sources */,
 				7F01D11F27C79467005A6709 /* NSString+BFConversion.m in Sources */,
+				F0A6CC02283E072B00BDE9D9 /* BFTableMenuCell.m in Sources */,
 				7F0A86A627E023CB000B14B7 /* UIViewController+MJPopupViewController.m in Sources */,
 				7F01D0F927C793C3005A6709 /* UIView+BFBlock.m in Sources */,
 				189909A225CFE8CC00F82636 /* AppCacheSQliteModel.m in Sources */,
@@ -2815,6 +2908,7 @@
 				1843C16521F167F500A7540A /* UIView+BFPlaceholderView.m in Sources */,
 				F730849427D84F7B00A12404 /* NSString+BFSafe.m in Sources */,
 				F089AA1727329622009A4BDD /* YBIBContainerView.m in Sources */,
+				F0A6CC06283E253600BDE9D9 /* BFMineSettingInfoTableViewController.m in Sources */,
 				F0B850822834DCA800D9E65F /* BFFriendCircleView.m in Sources */,
 				F048602127C8792200C530E9 /* BaseView.m in Sources */,
 				7F01D09627C7901E005A6709 /* UIImage+BFAdd.m in Sources */,
@@ -2822,6 +2916,7 @@
 				18F38D3721F1D1EE0042CF26 /* UIImage+BFColor.m in Sources */,
 				18FF49DB21FB0D5200220D48 /* UIImage+BFWechat.m in Sources */,
 				F723F61027CF5A53002287CB /* NSString+BFEncryption.m in Sources */,
+				F02370FB283CDCD900F8D446 /* BFMineSettingViewController.m in Sources */,
 				F0B3B866281BBCE400498123 /* BFLinkageTTHeadView.m in Sources */,
 				F0D59AA928191246001B3F90 /* BFListModuleModel.m in Sources */,
 				187952282202D2200001C437 /* UINavigationController+SafeTransition.m in Sources */,
@@ -2841,6 +2936,7 @@
 				F089AA0A27329622009A4BDD /* YBIBImageData.m in Sources */,
 				F089AA0C27329622009A4BDD /* YBIBLoadingView.m in Sources */,
 				1843C11821EECF5100A7540A /* AppDelegate.m in Sources */,
+				F0A6CC03283E072B00BDE9D9 /* BFTableMenuItem.m in Sources */,
 				F048603C27C8854D00C530E9 /* YYAnimatedImageView+iOS14.m in Sources */,
 				7FCC94182834A23300A1C09E /* BFLateralSlideAnimator.m in Sources */,
 				F083B8432803FAA8009C7233 /* BFListModel.m in Sources */,

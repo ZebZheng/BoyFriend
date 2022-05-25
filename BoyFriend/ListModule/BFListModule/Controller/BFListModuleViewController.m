@@ -16,6 +16,8 @@
 #import "BFLinkageTTViewController.h"
 #import "BFLinkageTCViewController.h"
 #import "BFFriendCircleViewController.h"
+#import "BFMineSettingViewController.h"
+#import "UIViewController+BFLateralSlide.h"
 
 #import "BFLateralSlideViewController.h"
 #import "UIViewController+BFLateralSlide.h"
@@ -88,10 +90,12 @@
             case 7://仿微信朋友圈
                 [self action7:infoModel];
                 break;
-            case 8://抽屉
+            case 8://我的-设置
                 [self action8:infoModel];
                 break;
-                
+            case 9://抽屉效果
+                [self action9:infoModel];
+                break;
             default:
                 break;
         }
@@ -157,7 +161,19 @@
     [self bf_showDefaultDrawerViewController:vc];
 }
 
+///我的-设置
+- (void)action8:(BFListModuleInfoModel *)infoModel {
+    BFMineSettingViewController * vc = [[BFMineSettingViewController alloc]init];
+    vc.title = infoModel.name;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+///抽屉效果
+- (void)action9:(BFListModuleInfoModel *)infoModel {
+    BFMineSettingViewController * vc = [[BFMineSettingViewController alloc]init];
+    vc.isLateralSlide = YES;
+    [self bfl_showDefaultDrawerViewController:vc];
 
+}
 #pragma mark - logical processing（逻辑处理）
 
 

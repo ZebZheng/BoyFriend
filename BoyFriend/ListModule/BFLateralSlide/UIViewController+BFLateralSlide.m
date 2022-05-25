@@ -14,12 +14,12 @@
 @implementation UIViewController (BFLateralSlide)
 
 // 显示默认抽屉
-- (void)bf_showDefaultDrawerViewController:(UIViewController *)viewController {
-    [self bf_showDrawerViewController:viewController animationType:BFDrawerAnimationTypeDefault configuration:nil];
+- (void)bfl_showDefaultDrawerViewController:(UIViewController *)viewController {
+    [self bfl_showDrawerViewController:viewController animationType:BFDrawerAnimationTypeDefault configuration:nil];
 }
 
 // 显示抽屉
-- (void)bf_showDrawerViewController:(UIViewController *)viewController animationType:(BFDrawerAnimationType)animationType configuration:(BFLateralSlideConfiguration *)configuration {
+- (void)bfl_showDrawerViewController:(UIViewController *)viewController animationType:(BFDrawerAnimationType)animationType configuration:(BFLateralSlideConfiguration *)configuration {
     
     if (viewController == nil) return;
     if (configuration == nil)
@@ -49,7 +49,7 @@
 }
 
 // 注册抽屉手势
-- (void)bf_registerShowIntractiveWithEdgeGesture:(BOOL)openEdgeGesture transitionDirectionAutoBlock:(void(^)(BFDrawerTransitionDirection direction))transitionDirectionAutoBlock {
+- (void)bfl_registerShowIntractiveWithEdgeGesture:(BOOL)openEdgeGesture transitionDirectionAutoBlock:(void(^)(BFDrawerTransitionDirection direction))transitionDirectionAutoBlock {
     
     BFLateralSlideAnimator *animator = [BFLateralSlideAnimator lateralSlideAnimatorWithConfiguration:nil];
     self.transitioningDelegate = animator;
@@ -65,11 +65,11 @@
 }
 
 // 抽屉内push界面
-- (void)bf_pushViewController:(UIViewController *)viewController{
-    [self bf_pushViewController:viewController drewerHiddenDuration:0];
+- (void)bfl_pushViewController:(UIViewController *)viewController{
+    [self bfl_pushViewController:viewController drewerHiddenDuration:0];
 }
 
-- (void)bf_pushViewController:(UIViewController *)vc drewerHiddenDuration:(NSTimeInterval)duration {
+- (void)bfl_pushViewController:(UIViewController *)vc drewerHiddenDuration:(NSTimeInterval)duration {
     
     BFLateralSlideAnimator *animator = (BFLateralSlideAnimator *)self.transitioningDelegate;
     animator.configuration.HiddenAnimDuration = duration > 0 ? duration : animator.configuration.HiddenAnimDuration;
@@ -103,11 +103,11 @@
 
 
 // 抽屉内present页面
-- (void)bf_presentViewController:(UIViewController *)viewController {
-    [self bf_presentViewController:viewController drewerHidden:NO];
+- (void)bfl_presentViewController:(UIViewController *)viewController {
+    [self bfl_presentViewController:viewController drewerHidden:NO];
 }
 
-- (void)bf_presentViewController:(UIViewController *)vc drewerHidden:(BOOL)hidden {
+- (void)bfl_presentViewController:(UIViewController *)vc drewerHidden:(BOOL)hidden {
     UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     vc.view.frame = CGRectMake(0, kCWSCREENHEIGHT, kCWSCREENWIDTH, kCWSCREENHEIGHT);
@@ -124,7 +124,7 @@
     }];
 }
 
-- (void)bf_dismissViewController {
+- (void)bfl_dismissViewController {
     if (self.view.tag != 5201314 && self.parentViewController.view.tag != 5201314) {
         NSLog(@"只有通过cw_presentViewController显示的控制器才能调用此方法...");
         return;

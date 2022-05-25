@@ -49,10 +49,14 @@
     model7.indexInteger = 7;
     
     BFListModuleInfoModel * model8 = [[BFListModuleInfoModel alloc]init];
-    model8.name = @"抽屉";
+    model8.name = @"我的-设置";
     model8.indexInteger = 8;
     
-    NSArray * arrModel = @[model1,model2,model3,model4,model5,model6,model7,model8];
+    BFListModuleInfoModel * model9 = [[BFListModuleInfoModel alloc]init];
+    model9.name = @"抽屉效果";
+    model9.indexInteger = 9;
+    
+    NSArray * arrModel = @[model1,model2,model3,model4,model5,model6,model7,model8,model9];
     [self.dataSource addObject:arrModel];
     self.reloadTableView = YES;
     [self dataSetWithPageNow:1 Count:1];

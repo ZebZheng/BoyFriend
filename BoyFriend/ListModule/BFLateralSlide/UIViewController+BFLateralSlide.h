@@ -17,7 +17,7 @@
  从左侧滑出类似QQ抽屉效果
  @param viewController 需要侧滑显示出来的控制器
  */
-- (void)bf_showDefaultDrawerViewController:(UIViewController *)viewController;
+- (void)bfl_showDefaultDrawerViewController:(UIViewController *)viewController;
 
 /**
  呼出侧滑控制器的方法（主要）
@@ -26,7 +26,7 @@
  @param animationType 侧滑时候的动画类型
  @param configuration 侧滑过程的一些参数配置，如果传nil会创建一个默认的配置参数
  */
-- (void)bf_showDrawerViewController:(UIViewController *)viewController
+- (void)bfl_showDrawerViewController:(UIViewController *)viewController
                       animationType:(BFDrawerAnimationType)animationType
                       configuration:(BFLateralSlideConfiguration *)configuration;
 
@@ -36,7 +36,7 @@
  @param openEdgeGesture 是否开启边缘手势,系统的边缘手势判断
  @param transitionDirectionAutoBlock 手势过程中执行的操作。根据参数direction传整个点击present的事件即可（看demo的使用）
  */
-- (void)bf_registerShowIntractiveWithEdgeGesture:(BOOL)openEdgeGesture
+- (void)bfl_registerShowIntractiveWithEdgeGesture:(BOOL)openEdgeGesture
                     transitionDirectionAutoBlock:(void(^)(BFDrawerTransitionDirection direction))transitionDirectionAutoBlock;
 
 /**
@@ -44,7 +44,7 @@
  push another viewController in the side slip out of the controller 在侧滑界面push另一个界面
  @param viewController Need to push of the controller
  */
-- (void)bf_pushViewController:(UIViewController *)viewController;
+- (void)bfl_pushViewController:(UIViewController *)viewController;
 
 /**
  Custom push method 自定义的push动画,比上面的API多了一个时间参数
@@ -52,7 +52,7 @@
  @param vc  Need to push of the controller
  @param duration  The Drewer Hidden Animation Duration When Push. push时抽屉隐藏动画的持续时间
  */
-- (void)bf_pushViewController:(UIViewController *)vc
+- (void)bfl_pushViewController:(UIViewController *)vc
          drewerHiddenDuration:(NSTimeInterval)duration;
 
 /**
@@ -60,7 +60,7 @@
  present another viewController in the side slip out of the controller 在侧滑界面present另一个界面
  @param viewController Need to present of the controller
  */
-- (void)bf_presentViewController:(UIViewController *)viewController;
+- (void)bfl_presentViewController:(UIViewController *)viewController;
 
 /**
  Custom present method 自定义的present动画
@@ -68,14 +68,14 @@
  @param vc Need to present of the controller
  @param hidden  The Drewer isHidden . present时抽屉是否隐藏
  */
-- (void)bf_presentViewController:(UIViewController *)vc
+- (void)bfl_presentViewController:(UIViewController *)vc
                     drewerHidden:(BOOL)hidden;
 
 /**
  Custom present method 自定义的dismiss动画
  必须要是通过cw_presentViewController的控制器才能使用这个方法dismiss
  */
-- (void)bf_dismissViewController;
+- (void)bfl_dismissViewController;
 
 
 

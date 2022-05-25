@@ -55,6 +55,10 @@
 }
 #pragma mark - UI
 
+///刷新表格
+- (void)reloadTableView {
+    [self.tableView reloadData];
+}
 
 #pragma mark - IBActions/Event Response
 -(void)bindControlEventViewModel:(BaseTableViewModel *)tableViewModel{
@@ -68,7 +72,7 @@
     [RACObserve(self.tableViewModel, reloadTableView) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if ([x boolValue]) {
-            [self.tableView reloadData];
+            [self reloadTableView];
         }
     }];
     [self.tableViewModel setRequestSuccessBlock:^(NSInteger pageNow, NSInteger count) {
@@ -129,21 +133,21 @@
     return [self.tableViewModel tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    return [self.tableViewModel tableView:tableView heightForHeaderInSection:section];
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-//    return [self.tableViewModel tableView:tableView heightForFooterInSection:section];
-//}
-//
-//-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-//    return [self.tableViewModel tableView:tableView viewForFooterInSection:section];
-//}
-//
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    return [self.tableViewModel tableView:tableView viewForHeaderInSection:section];
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return [self.tableViewModel tableView:tableView heightForHeaderInSection:section];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return [self.tableViewModel tableView:tableView heightForFooterInSection:section];
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return [self.tableViewModel tableView:tableView viewForFooterInSection:section];
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return [self.tableViewModel tableView:tableView viewForHeaderInSection:section];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [self.tableViewModel tableView:tableView cellForRowAtIndexPath:indexPath];
