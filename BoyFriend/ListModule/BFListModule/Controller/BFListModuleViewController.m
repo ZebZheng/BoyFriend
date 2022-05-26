@@ -155,11 +155,6 @@
     vc.title = infoModel.name;
     [self.navigationController pushViewController:vc animated:YES];
 }
-///抽屉
-- (void)action8:(BFListModuleInfoModel *)infoModel {
-    BFLateralSlideViewController * vc  =[[BFLateralSlideViewController alloc] init];
-    [self bf_showDefaultDrawerViewController:vc];
-}
 
 ///我的-设置
 - (void)action8:(BFListModuleInfoModel *)infoModel {
