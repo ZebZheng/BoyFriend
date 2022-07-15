@@ -13,8 +13,7 @@
 /// 构建->文本-文本颜色
 /// @param title 文本
 /// @param titleColor 文本颜色
-+ (UIButton *)bf_createWithFrame:(CGRect)frame
-                        title:(NSString *)title
++ (UIButton *)bf_createWithTitle:(NSString *)title
                    titleColor:(UIColor *)titleColor {
     return [self bf_createWithTitle:title titleColor:titleColor font:nil buttonType:UIButtonTypeCustom bgColor:nil corner:0 target:nil action:nil];
 }
@@ -74,7 +73,7 @@
                        corner:(float)cornerRadius
                        target:(id)target
                        action:(SEL)action {
-    UIButton * button = [self bf_createWithTitle:title titleColor:titleColor selectedTitle:nil selectedColor:nil image:nil selectedImage:nil font:font buttonType:UIButtonTypeCustom corner:0 target:nil action:nil];
+    UIButton * button = [self bf_createWithTitle:title titleColor:titleColor selectedTitle:nil selectedColor:nil image:nil selectedImage:nil font:font buttonType:buttonType corner:cornerRadius target:target action:action];
     if (bgColor) {
         button.backgroundColor = bgColor;
     }

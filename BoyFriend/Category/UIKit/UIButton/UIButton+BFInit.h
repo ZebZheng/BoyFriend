@@ -10,8 +10,7 @@
 /// 构建->文本-文本颜色
 /// @param title 文本
 /// @param titleColor 文本颜色
-+ (UIButton *)bf_createWithFrame:(CGRect)frame
-                        title:(NSString *)title
++ (UIButton *)bf_createWithTitle:(NSString *)title
                       titleColor:(UIColor *)titleColor;
 /// 构建->文本-文本颜色-字体
 /// @param title 文本
