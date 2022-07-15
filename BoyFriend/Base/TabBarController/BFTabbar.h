@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KBTabbar : UITabBar
+@interface BFTabbar : UITabBar
 
 @property (nonatomic, strong) UIButton *centerButton;// 中间按钮
 

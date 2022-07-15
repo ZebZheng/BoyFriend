@@ -13,7 +13,7 @@
 #import "BFMineViewController.h"
 #import "BFListModuleViewController.h"
 
-#import "KBTabbar.h"
+#import "BFTabbar.h"
 
 @interface BaseTabBarController ()
 
@@ -37,7 +37,7 @@
 
 - (void)setCustomtabbar{
     
-    KBTabbar *tabbar = [[KBTabbar alloc]init];
+    BFTabbar *tabbar = [[BFTabbar alloc]init];
     [self setValue:tabbar forKeyPath:@"tabBar"];
     [tabbar.centerButton addTarget:self action:@selector(centerBtnClick:) forControlEvents:UIControlEventTouchUpInside];
 }

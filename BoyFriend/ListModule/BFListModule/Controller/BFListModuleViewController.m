@@ -47,7 +47,7 @@
     [self initializeView];
     [self initializeViewData];
     [self bindControlEvent];
-    
+    [self.view bf_addSubviews:nil];
 }
 
 #pragma mark - init

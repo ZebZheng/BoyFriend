@@ -21,8 +21,9 @@
 #import "UITextView+BFAdd.h"//占位字
 #import "UIResponder+BFConfigure.h"//键盘
 #import "UITableView+BFRegister.h"//注册
-//#import "UIApplication+BFAdd.h"//沙河路径-项目信息
+#import "UIApplication+BFAdd.h"//沙河路径-项目信息
 #import "WKWebView+BFAdapter.h"
+#import "AppDelegateHeader.h"
 
 /* --------- Foundation ----------*/
 #import "NSStringCategoryHeader.h"
@@ -36,12 +37,13 @@
 #import "NSBundle+BFLanguage.h"//系统语言
 #import "NSObject+BFWindow.h"//控制器
 #import "NSDictionary+BFConvent.h"//转换
-//#import "NSDictionary+BFXML.h"//XML
-//#import "NSDictionary+BFURL.h"//URL
-//#import "NSUserDefaults+BFICloudSync.h"//iCloud
-//#import "NSURL+BFParam.h"//参数转字典
-//#import "NSNotificationCenter+BFMainThread.h"//主线程发通知
-//#import "NSObject+BFGCD.h"
+#import "NSDictionary+BFXML.h"//XML
+#import "NSDictionary+BFURL.h"//URL
+#import "NSUserDefaults+BFICloudSync.h"//iCloud
+#import "NSURL+BFParam.h"//参数转字典
+#import "NSNotificationCenter+BFMainThread.h"//主线程发通知
+#import "NSObject+BFGCD.h"
+
 /* --------- Other ----------*/
 #import "MBProgressHUD+BFExtension.h"
 

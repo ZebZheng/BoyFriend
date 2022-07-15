@@ -6,16 +6,16 @@
 //  Copyright © 2018年 BoyFriend. All rights reserved.
 //
 
-#import "KBTabbar.h"
+#import "BFTabbar.h"
 
-@interface KBTabbar ()
+@interface BFTabbar ()
 
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 @property (nonatomic, strong) UILabel *centerTitleLabel;
 
 @end
 
-@implementation KBTabbar
+@implementation BFTabbar
 
 - (instancetype)init {
     self = [super init];

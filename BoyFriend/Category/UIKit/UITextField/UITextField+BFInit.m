@@ -69,7 +69,7 @@
     if (returnKeyType) {
         textField.returnKeyType = returnKeyType;
     }
-    if (BFStringIsEmpty(placeholder)) {
+    if (placeholder) {
         textField.placeholder = placeholder;
     }
     if (placeholderColor) {
