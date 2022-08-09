@@ -59,19 +59,12 @@
     CGFloat itemW = [self itemWidthForPicPathArray:_resourceArray];
     __block CGFloat itemH = 0;
     if (_resourceArray.count == 1) {
-        __block UIImage *image;
+        UIImage *image;
         if ([_resourceArray.firstObject isKindOfClass:UIImage.class]) {
             image = _resourceArray.firstObject;
         }else if ([_resourceArray.firstObject hasPrefix:@"http"]){
-            dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
-            [[SDWebImageDownloader sharedDownloader]downloadImageWithURL:[NSURL URLWithString:_resourceArray.firstObject] completed:^(UIImage * _Nullable imaget, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
-                if (error == nil) {
-                    image = imaget;
-                }
-                dispatch_semaphore_signal(semaphore);
-            }];
-            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-
+            //网页图片 宽高可能不能等图片下载回来  可能需要提前约定好 看能否在地址上携带
+            itemH = itemW;
         }else{
             image = [UIImage imageNamed:_resourceArray.firstObject];
         }

@@ -121,7 +121,6 @@ CGFloat maxContentLabelHeight = 0; // 根据具体font而定
         make.top.mas_equalTo(self.moreButton.mas_bottom).offset(picContainerTopMargin);
         make.size.mas_equalTo(self.photoView.size);
     }];
-
 }
 
 ///全文
