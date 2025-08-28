@@ -8,6 +8,7 @@
 
 #import "LKDBHelper.h"
 #import <sqlite3.h>
+#import <pthread/pthread.h>
 
 #ifndef SQLITE_OPEN_FILEPROTECTION_NONE
 #define SQLITE_OPEN_FILEPROTECTION_NONE 0x00400000
@@ -65,6 +66,9 @@
 
 @property (nonatomic, assign) NSInteger autoCloseDBDelayTime;
 @property (nonatomic, assign) BOOL inAutoReleasePool;
+
+@property (atomic, assign) NSInteger latestAutoActionIndex;
+
 @end
 
 @implementation LKDBHelper
@@ -163,6 +167,8 @@ static BOOL LKDBNullIsEmptyString = NO;
                 self.lastExecuteDBTime = CFAbsoluteTimeGetCurrent();
                 self.autoCloseDBDelayTime = 15;
                 self.enableAutoVacuum = YES;
+                self.enableAutoAnalyze = YES;
+                self.latestAutoActionIndex = 0;
                 
                 [self setDBPath:filePath];
                 [LKDBHelper dbHelperWithPath:nil save:self];
@@ -205,17 +211,20 @@ static BOOL LKDBNullIsEmptyString = NO;
 }
 
 - (void)openDB {
-    /// 重置所有配置
+    // 重置所有配置
     [self.bindingQueue close];
     [self.createdTableNames removeAllObjects];
 
     NSString *filePath = self.dbPath;
-    BOOL hasCreated = [LKDBUtils createDirectoryWithFilePath:filePath];
+    BOOL const hasCreated = [LKDBUtils createDirectoryWithFilePath:filePath];
     if (!hasCreated) {
-        /// 数据库目录创建失败
+        // 数据库目录创建失败
         return;
     }
-
+    
+    // 如果DB不存在，则标记为首次创建，在 iOS侧 关闭文件保护：NSFileProtectionNone
+    BOOL const isCreateDB = ![[NSFileManager defaultManager] fileExistsAtPath:filePath];
+    
     self.bindingQueue = [[FMDatabaseQueue alloc] initWithPath:filePath
                                                         flags:LKDBOpenFlags];
     [self.bindingQueue inDatabase:^(FMDatabase *db) {
@@ -223,9 +232,8 @@ static BOOL LKDBNullIsEmptyString = NO;
     }];
 
 #ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if ([fileManager fileExistsAtPath:filePath]) {
-        [fileManager setAttributes:@{NSFileProtectionKey: NSFileProtectionNone} ofItemAtPath:filePath error:nil];
+    if (isCreateDB) {
+        [[NSFileManager defaultManager] setAttributes:@{NSFileProtectionKey: NSFileProtectionNone} ofItemAtPath:filePath error:nil];
     }
 #endif
 }
@@ -290,8 +298,20 @@ static BOOL LKDBNullIsEmptyString = NO;
     }
     self.runingAutoActionsTimer = YES;
     __weak LKDBHelper *wself = self;
+    
+    NSInteger const newAutoActionIndex = self.latestAutoActionIndex + 1;
+    self.latestAutoActionIndex = newAutoActionIndex;
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
         __strong LKDBHelper *self = wself;
+        if (!self) {
+            return;
+        }
+        if (self.latestAutoActionIndex != newAutoActionIndex) {
+            // 当前的操作 已经不是最新那条，可以过滤该Block的执行，避免多次加锁
+            return;
+        }
+        
         [self.threadLock lock];
         [self runAutoVacuumAction];
         [self runAutoCloseDBConnection];
@@ -322,13 +342,14 @@ static BOOL LKDBNullIsEmptyString = NO;
     [self closeDB];
 }
 
+/// 整个方法已经处于加锁状态
 - (void)runAutoVacuumAction {
     // 数据库链接已关闭
-    if (!self.bindingQueue) {
+    if (!self.bindingQueue || !self.dbPath) {
         return;
     }
     // 未开启自动压缩
-    if (!self.enableAutoVacuum) {
+    if (!self.enableAutoVacuum && !self.enableAutoAnalyze) {
         return;
     }
     // 判断阈值内是否有操作
@@ -339,38 +360,61 @@ static BOOL LKDBNullIsEmptyString = NO;
     // 读取全局缓存文件
     static NSMutableDictionary *dbAutoVaccumMap = nil;
     static NSString *dbAutoVaccumPath = nil;
-    static dispatch_semaphore_t dbLock = NULL;
+    static pthread_mutex_t dbVaccumLock;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSString *cacheDirectory = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-        dbAutoVaccumPath = [cacheDirectory stringByAppendingString:@"lkdb-auto-vacuum.plist"];
+        dbAutoVaccumPath = [cacheDirectory stringByAppendingPathComponent:@"lkdb-auto-vacuum.plist"];
         dbAutoVaccumMap = [NSMutableDictionary dictionaryWithContentsOfFile:dbAutoVaccumPath];
         if (!dbAutoVaccumMap) {
             dbAutoVaccumMap = [NSMutableDictionary dictionary];
         }
-        dbLock = dispatch_semaphore_create(1);
+        pthread_mutex_init(&dbVaccumLock, NULL);
     });
-    // 3天操作一次
-    NSString *dbKey = self.dbPath.lastPathComponent;
-    dispatch_semaphore_wait(dbLock, DISPATCH_TIME_FOREVER);
-    NSInteger lastTime = [[dbAutoVaccumMap objectForKey:dbKey] integerValue];
+    // 获取上次操作时间
+    NSString * const dbKey = self.dbPath.lastPathComponent;
+    NSString * const dbSizeKey = [NSString stringWithFormat:@"%@-size", dbKey];
+    pthread_mutex_lock(&dbVaccumLock);
+    NSInteger lastTime = [[dbAutoVaccumMap objectForKey:dbKey] longValue];
+    NSInteger lastSize = [[dbAutoVaccumMap objectForKey:dbSizeKey] longValue];
     if (0 == lastTime) {
         // 记录第一次运行的时间
         lastTime = nowTime;
         [dbAutoVaccumMap setObject:@(nowTime) forKey:dbKey];
+        [dbAutoVaccumMap setObject:@(0) forKey:dbSizeKey];
         [dbAutoVaccumMap writeToFile:dbAutoVaccumPath atomically:YES];
     }
-    dispatch_semaphore_signal(dbLock);
-    if (nowTime - lastTime < 259200) { // 60 * 60 * 24 * 3
+    pthread_mutex_unlock(&dbVaccumLock);
+    if (labs(nowTime - lastTime) < 259200) {
+        // 3天内只执行一次：60 * 60 * 24 * 3
         return;
     }
-    // 执行数据压缩
-    [self executeSQL:@"vacuum" arguments:nil];
+    NSDictionary *dbAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:self.dbPath error:nil];
+    NSInteger const dbSize = [[dbAttributes objectForKey:NSFileSize] longValue];
+    if (dbSize < 10) {
+        // 无法获取到DB文件大小
+        return;
+    }
+    // DB文件大小变化 > 20kb，才执行DB文件优化
+    BOOL const needDBAction = labs(dbSize - lastSize) > 1024 * 20;
+    if (needDBAction) {
+        // 执行数据分析，提高后续SQL执行效率
+        if (self.enableAutoAnalyze) {
+            [self executeSQL:@"ANALYZE" arguments:nil];
+        }
+        // 执行数据压缩
+        if (self.enableAutoVacuum) {
+            [self executeSQL:@"VACUUM" arguments:nil];
+        }
+    }
     // 记录执行时间
-    dispatch_semaphore_wait(dbLock, DISPATCH_TIME_FOREVER);
+    pthread_mutex_lock(&dbVaccumLock);
     [dbAutoVaccumMap setObject:@(nowTime) forKey:dbKey];
+    if (needDBAction) {
+        [dbAutoVaccumMap setObject:@(dbSize) forKey:dbSizeKey];
+    }
     [dbAutoVaccumMap writeToFile:dbAutoVaccumPath atomically:YES];
-    dispatch_semaphore_signal(dbLock);
+    pthread_mutex_unlock(&dbVaccumLock);
 }
 
 - (BOOL)executeSQL:(NSString *)sql arguments:(NSArray *)args {
@@ -465,7 +509,7 @@ static BOOL LKDBNullIsEmptyString = NO;
     if (dic.count == 0) {
         return @"";
     }
-    NSMutableString *wherekey = [NSMutableString stringWithCapacity:0];
+    NSMutableString *wherekey = [NSMutableString string];
     [dic enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
         if ([obj isKindOfClass:[NSArray class]]) {
             NSArray *vlist = obj;
@@ -542,7 +586,7 @@ static BOOL LKDBNullIsEmptyString = NO;
     __block BOOL success = NO;
     if (self.bindingQueue && _encryptionKey.length > 0) {
         [self executeDB:^(FMDatabase *db) {
-            success = [db setKey:_encryptionKey];
+            success = [db setKey:self->_encryptionKey];
         }];
     }
     [self.threadLock unlock];
@@ -554,7 +598,7 @@ static BOOL LKDBNullIsEmptyString = NO;
     __block BOOL success = NO;
     if (self.bindingQueue && _encryptionKey.length > 0) {
         [self executeDB:^(FMDatabase *db) {
-            success = [db rekey:_encryptionKey];
+            success = [db rekey:self->_encryptionKey];
         }];
     }
     [self.threadLock unlock];
@@ -594,7 +638,7 @@ static BOOL LKDBNullIsEmptyString = NO;
 - (void)dropAllTable {
     [self executeDB:^(FMDatabase *db) {
         FMResultSet *set = [db executeQuery:@"select name from sqlite_master where type='table'"];
-        NSMutableArray *dropTables = [NSMutableArray arrayWithCapacity:0];
+        NSMutableArray *dropTables = [NSMutableArray array];
 
         while ([set next]) {
             NSString *tableName = [set stringForColumnIndex:0];
@@ -853,7 +897,7 @@ static BOOL LKDBNullIsEmptyString = NO;
 }
 
 - (void)asyncBlock:(void (^)(void))block {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+    dispatch_async(dispatch_get_global_queue(0, 0), block);
 }
 
 #pragma mark - row count operation
@@ -966,15 +1010,14 @@ static BOOL LKDBNullIsEmptyString = NO;
     [self.threadLock unlock];
 
     NSString *columnsString = nil;
-    NSUInteger columnCount = 0;
+    BOOL isSingleColumn = NO;
 
     if (params.columnArray.count > 0) {
-        columnCount = params.columnArray.count;
-        columnsString = [params.columnArray componentsJoinedByString:@","];
+        isSingleColumn = (params.columnArray.count == 1);
+        columnsString = (isSingleColumn ? params.columnArray.firstObject : [params.columnArray componentsJoinedByString:@","]);
     } else if ([LKDBUtils checkStringIsEmpty:params.columns] == NO) {
         columnsString = params.columns;
-        NSArray *array = [params.columns componentsSeparatedByString:@","];
-        columnCount = array.count;
+        isSingleColumn = ([columnsString containsString:@","] == NO);
     } else {
         columnsString = @"*";
     }
@@ -1003,7 +1046,7 @@ static BOOL LKDBNullIsEmptyString = NO;
             set = [db executeQuery:executeQuery withArgumentsInArray:whereValues];
         }
         // Results to Models
-        if (columnCount == 1) {
+        if (isSingleColumn) {
             results = [self executeOneColumnResult:set];
         } else {
             results = [self executeResult:set Class:params.toClass tableName:db_tableName];
@@ -1053,7 +1096,9 @@ static BOOL LKDBNullIsEmptyString = NO;
 - (NSString *)replaceTableNameIfNeeded:(NSString *)sql withModelClass:(Class)modelClass {
     
     // 如果是单表查询情况下，给 query 追加 rowid column
-    if ([sql componentsSeparatedByString:@" from "].count == 2 && [sql rangeOfString:@" join "].length == 0) {
+    NSRange beginRange = [sql rangeOfString:@" from "];
+    NSRange endRange = [sql rangeOfString:@" from " options:NSBackwardsSearch];
+    if (beginRange.length != 0 && beginRange.location == endRange.location && [sql rangeOfString:@" join "].length == 0) {
         sql = [sql stringByReplacingOccurrencesOfString:@" from " withString:@",rowid from "];
     }
     
@@ -1139,7 +1184,7 @@ static BOOL LKDBNullIsEmptyString = NO;
 }
 
 - (NSMutableArray *)executeOneColumnResult:(FMResultSet *)set {
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *array = [NSMutableArray array];
 
     while ([set next]) {
         NSString *string = [set stringForColumnIndex:0];
@@ -1159,15 +1204,10 @@ static BOOL LKDBNullIsEmptyString = NO;
 }
 
 - (void)inAutoReleaseExecuteBlock:(void(^)(void))block {
-    if (self.inAutoReleasePool) {
-        // 已在 @autoreleasepool 范围内
+    // 不在用 autoreleasepool 包一层了
+    // 部分情况下 容易野指针
+    if (block) {
         block();
-    } else {
-        @autoreleasepool {
-            self.inAutoReleasePool = YES;
-            block();
-            self.inAutoReleasePool = NO;
-        }
     }
 }
 
@@ -1178,7 +1218,7 @@ static BOOL LKDBNullIsEmptyString = NO;
 }
 
 - (NSMutableArray *)executeResult:(FMResultSet *)set Class:(Class)modelClass tableName:(NSString *)tableName {
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *array = [NSMutableArray array];
     if (!modelClass) {
         // 防止内存释放太慢引起的 OOM，用 autorelease 包一层
         [self foreachResultSet:set block:^{
@@ -1636,7 +1676,7 @@ static BOOL LKDBNullIsEmptyString = NO;
 
 #define LKTestDirFilename @"LKTestDirFilename111"
 + (void)clearFileWithTable:(Class)modelClass columns:(NSArray *)columns type:(NSInteger)type {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSString *testpath = nil;
         switch (type) {
             case 1: {
@@ -1672,7 +1712,7 @@ static BOOL LKDBNullIsEmptyString = NO;
         NSString *querySql = [NSString stringWithFormat:@"select %@ from %@ where %@", seleteColumn, [modelClass getTableName], whereStr];
         __block NSArray *dbfiles;
         [[modelClass getUsingLKDBHelper] executeDB:^(FMDatabase *db) {
-            NSMutableArray *tempfiles = [NSMutableArray arrayWithCapacity:6];
+            NSMutableArray *tempfiles = [NSMutableArray array];
             FMResultSet *set = [db executeQuery:querySql];
 
             while ([set next]) {

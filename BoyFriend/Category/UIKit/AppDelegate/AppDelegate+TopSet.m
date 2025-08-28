@@ -75,7 +75,7 @@
     manager.shouldToolbarUsesTextFieldTintColor = YES;// 控制键盘上的工具条文字颜色是否用户自定义
     manager.keyboardDistanceFromTextField=60;// 输入框距离键盘的距离
     manager.enableAutoToolbar = NO;// 控制是否显示键盘上的工具条
-    manager.toolbarManageBehaviour = IQAutoToolbarBySubviews; // 有多个输入框时，可以通过点击Toolbar 上的“前一个”“后一个”按钮来实现移动到不同的输入框
+    manager.toolbarManageBehavior = IQAutoToolbarBySubviews; // 有多个输入框时，可以通过点击Toolbar 上的“前一个”“后一个”按钮来实现移动到不同的输入框
     manager.shouldShowToolbarPlaceholder = YES; // 是否显示占位文字
     manager.placeholderFont = [UIFont boldSystemFontOfSize:17]; // 设置占位文字的字体
 }
@@ -83,8 +83,8 @@
 #pragma mark - SDWebImage
 - (void)configSDWebImage {
     //硬盘存储最大空间(硬盘存储  最大时间 默认值是7天 -1 没有过期)
-    [SDImageCacheConfig defaultCacheConfig].maxDiskSize = 1024 * 1024 * 100; // 100M  // 0 不限制大小
-    [SDImageCacheConfig defaultCacheConfig].maxDiskAge = 7;//7天   // -1 没有过期
+    [SDImageCacheConfig defaultCacheConfig].maxDiskSize = 1024 * 1024 * 1000; // 1G  // 0 不限制大小
+    [SDImageCacheConfig defaultCacheConfig].maxDiskAge =  60 * 60 * 24 * 30;//30天   // -1 没有过期
     
     //SD支持webp格式 要添加一个附属库 pod 'SDWebImageWebPCoder'
     SDImageWebPCoder *webPCoder = [SDImageWebPCoder sharedCoder];

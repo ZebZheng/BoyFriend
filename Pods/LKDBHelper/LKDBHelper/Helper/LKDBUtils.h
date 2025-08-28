@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LKDateFormatter : NSDateFormatter
 
 ///由于 NSDateFormatter 相关API 并不是线程安全的
-@property (nonatomic, assign) dispatch_semaphore_t lock;
+@property (nonatomic, readonly) dispatch_semaphore_t lock;
 
 @end
 
@@ -123,13 +123,13 @@ extern NSString *LKSQLTypeFromObjcType(NSString *objcType);
 
 ///columns or array
 @property (nullable, nonatomic, copy) NSString *columns;
-@property (nullable, nonatomic, copy) NSArray *columnArray;
+@property (nullable, nonatomic, copy) NSArray<NSString *> *columnArray;
 
 @property (nullable, nonatomic, copy) NSString *tableName;
 
 ///where or dic
 @property (nullable, nonatomic, copy) NSString *where;
-@property (nullable, nonatomic, copy) NSDictionary *whereDic;
+@property (nullable, nonatomic, copy) NSDictionary<NSString *, id> *whereDic;
 
 @property (nullable, nonatomic, copy) NSString *groupBy;
 @property (nullable, nonatomic, copy) NSString *orderBy;
@@ -137,7 +137,7 @@ extern NSString *LKSQLTypeFromObjcType(NSString *objcType);
 @property (nonatomic, assign) NSInteger offset;
 @property (nonatomic, assign) NSInteger count;
 
-@property (nullable, nonatomic, assign) Class toClass;
+@property (nullable, nonatomic, strong) Class toClass;
 
 @property (nullable, nonatomic, copy) void (^callback)(NSMutableArray *_Nullable results);
 

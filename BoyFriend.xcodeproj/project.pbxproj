@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,10 +63,12 @@
 		18F38D5C21F55E240042CF26 /* BFUICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F38D5B21F55E240042CF26 /* BFUICreator.m */; };
 		18F38D5F21F592690042CF26 /* UIImage+BFName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F38D5E21F592690042CF26 /* UIImage+BFName.m */; };
 		18F38D6321F593760042CF26 /* UIButton+BFImagePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F38D6221F593760042CF26 /* UIButton+BFImagePosition.m */; };
+		18F9A9AB2E5FF3FA0019F7DB /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 18F9A9AA2E5FF3FA0019F7DB /* PrivacyInfo.xcprivacy */; };
 		18FF49D121FAE4B600220D48 /* BFKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF49D021FAE4B600220D48 /* BFKeyChain.m */; };
 		18FF49D721FB0AF300220D48 /* NetWorkURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF49D321FB0AF300220D48 /* NetWorkURL.m */; };
 		18FF49D821FB0AF300220D48 /* NetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF49D421FB0AF300220D48 /* NetWorkHelper.m */; };
 		18FF49DB21FB0D5200220D48 /* UIImage+BFWechat.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF49D921FB0D5200220D48 /* UIImage+BFWechat.m */; };
+		68ACFF52C26A00F8836398FB /* libPods-BoyFriend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CD73B0C3437B7186972981 /* libPods-BoyFriend.a */; };
 		7F01D09527C7901E005A6709 /* UIImage+BFInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D08F27C7901E005A6709 /* UIImage+BFInit.m */; };
 		7F01D09627C7901E005A6709 /* UIImage+BFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D09227C7901E005A6709 /* UIImage+BFAdd.m */; };
 		7F01D09727C7901E005A6709 /* UIImage+BFCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F01D09427C7901E005A6709 /* UIImage+BFCompress.m */; };
@@ -122,7 +124,6 @@
 		7FCC941A2834A23300A1C09E /* BFLateralSlideConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC94152834A23300A1C09E /* BFLateralSlideConfiguration.m */; };
 		7FD340E427E076BF004A4857 /* UITableView+BFRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD340E327E076BF004A4857 /* UITableView+BFRegister.m */; };
 		7FEF3C43283CD076000C1F38 /* BFLateralSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF3C42283CD076000C1F38 /* BFLateralSlideViewController.m */; };
-		A8D6916A3697862307B049D4 /* libPods-BoyFriend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */; };
 		F00D5A6627350BE900B5273D /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F00D5A6527350BE900B5273D /* UserViewModel.m */; };
 		F00D5A6927350BFF00B5273D /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F00D5A6827350BFF00B5273D /* UserInfoModel.m */; };
 		F00D5A6B27350E6400B5273D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00D5A6A27350E6400B5273D /* Launch Screen.storyboard */; };
@@ -398,6 +399,7 @@
 		18F38D6121F593760042CF26 /* UIButton+BFImagePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BFImagePosition.h"; sourceTree = "<group>"; };
 		18F38D6221F593760042CF26 /* UIButton+BFImagePosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BFImagePosition.m"; sourceTree = "<group>"; };
 		18F38D6421F5938E0042CF26 /* UIButtonCategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButtonCategoryHeader.h; sourceTree = "<group>"; };
+		18F9A9AA2E5FF3FA0019F7DB /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		18FF49CF21FAE4B600220D48 /* BFKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFKeyChain.h; sourceTree = "<group>"; };
 		18FF49D021FAE4B600220D48 /* BFKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFKeyChain.m; sourceTree = "<group>"; };
 		18FF49D321FB0AF300220D48 /* NetWorkURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkURL.m; sourceTree = "<group>"; };
@@ -406,7 +408,6 @@
 		18FF49D621FB0AF300220D48 /* NetWorkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkHelper.h; sourceTree = "<group>"; };
 		18FF49D921FB0D5200220D48 /* UIImage+BFWechat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BFWechat.m"; sourceTree = "<group>"; };
 		18FF49DA21FB0D5200220D48 /* UIImage+BFWechat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BFWechat.h"; sourceTree = "<group>"; };
-		4B98670D9035D5ECF7541F9E /* Pods-BoyFriend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoyFriend.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoyFriend/Pods-BoyFriend.debug.xcconfig"; sourceTree = "<group>"; };
 		7F01D08F27C7901E005A6709 /* UIImage+BFInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BFInit.m"; sourceTree = "<group>"; };
 		7F01D09027C7901E005A6709 /* UIImage+BFAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BFAdd.h"; sourceTree = "<group>"; };
 		7F01D09127C7901E005A6709 /* UIImage+BFCompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BFCompress.h"; sourceTree = "<group>"; };
@@ -520,7 +521,9 @@
 		7FD340E327E076BF004A4857 /* UITableView+BFRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BFRegister.m"; sourceTree = "<group>"; };
 		7FEF3C41283CD076000C1F38 /* BFLateralSlideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFLateralSlideViewController.h; sourceTree = "<group>"; };
 		7FEF3C42283CD076000C1F38 /* BFLateralSlideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFLateralSlideViewController.m; sourceTree = "<group>"; };
-		C4D1379DBA36C7CCEE84EA90 /* Pods-BoyFriend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoyFriend.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoyFriend/Pods-BoyFriend.release.xcconfig"; sourceTree = "<group>"; };
+		A2A2582AE999139E7B0F394C /* Pods-BoyFriend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoyFriend.release.xcconfig"; path = "Target Support Files/Pods-BoyFriend/Pods-BoyFriend.release.xcconfig"; sourceTree = "<group>"; };
+		B5CD73B0C3437B7186972981 /* libPods-BoyFriend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BoyFriend.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFB8C38DAA89B47D96B7608D /* Pods-BoyFriend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoyFriend.debug.xcconfig"; path = "Target Support Files/Pods-BoyFriend/Pods-BoyFriend.debug.xcconfig"; sourceTree = "<group>"; };
 		F00D5A6427350BE900B5273D /* UserViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewModel.h; sourceTree = "<group>"; };
 		F00D5A6527350BE900B5273D /* UserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewModel.m; sourceTree = "<group>"; };
 		F00D5A6727350BFF00B5273D /* UserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
@@ -820,7 +823,6 @@
 		F72C71D3281BE83800EBAF9C /* UILabel+BFAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BFAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		F730849227D84F7B00A12404 /* NSString+BFSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BFSafe.h"; sourceTree = "<group>"; };
 		F730849327D84F7B00A12404 /* NSString+BFSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BFSafe.m"; sourceTree = "<group>"; };
-		FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BoyFriend.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -828,7 +830,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8D6916A3697862307B049D4 /* libPods-BoyFriend.a in Frameworks */,
+				68ACFF52C26A00F8836398FB /* libPods-BoyFriend.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,7 +843,7 @@
 				1843C0FD21EECDBA00A7540A /* BoyFriend */,
 				1843C0FC21EECDBA00A7540A /* Products */,
 				F048605727C8C5D700C530E9 /* Frameworks */,
-				54344AFE9FAFBDB03172A91D /* Pods */,
+				936CA37E6FB002ADEAB15281 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -881,6 +883,7 @@
 		1843C11921EECF8F00A7540A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18F9A9AA2E5FF3FA0019F7DB /* PrivacyInfo.xcprivacy */,
 				1843C11B21EECFE700A7540A /* Assets.xcassets */,
 				18B6800021F70193004D2638 /* Public.xcassets */,
 				F0B0E4B928179BB40076A5CF /* Model.xcassets */,
@@ -1420,15 +1423,6 @@
 			path = NetWorkAPI;
 			sourceTree = "<group>";
 		};
-		54344AFE9FAFBDB03172A91D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4B98670D9035D5ECF7541F9E /* Pods-BoyFriend.debug.xcconfig */,
-				C4D1379DBA36C7CCEE84EA90 /* Pods-BoyFriend.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		7F01D09C27C79038005A6709 /* UIApplication */ = {
 			isa = PBXGroup;
 			children = (
@@ -1623,6 +1617,15 @@
 			path = LateralSlide;
 			sourceTree = "<group>";
 		};
+		936CA37E6FB002ADEAB15281 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFB8C38DAA89B47D96B7608D /* Pods-BoyFriend.debug.xcconfig */,
+				A2A2582AE999139E7B0F394C /* Pods-BoyFriend.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F00D5A5F27350BA100B5273D /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -1777,7 +1780,7 @@
 		F048605727C8C5D700C530E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE14808BBEDA090D363F5128 /* libPods-BoyFriend.a */,
+				B5CD73B0C3437B7186972981 /* libPods-BoyFriend.a */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -2648,11 +2651,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1843C11121EECDBC00A7540A /* Build configuration list for PBXNativeTarget "BoyFriend" */;
 			buildPhases = (
-				372594C48A285A639A37F759 /* [CP] Check Pods Manifest.lock */,
+				47913B0EE24A9AD0DB415E46 /* [CP] Check Pods Manifest.lock */,
 				1843C0F721EECDBA00A7540A /* Sources */,
 				1843C0F821EECDBA00A7540A /* Frameworks */,
 				1843C0F921EECDBA00A7540A /* Resources */,
-				07849C6EE003F20A1BFCD25A /* [CP] Copy Pods Resources */,
+				DF648EC69FCE5FA79C59D4A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2702,6 +2705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F00D5A6B27350E6400B5273D /* Launch Screen.storyboard in Resources */,
+				18F9A9AB2E5FF3FA0019F7DB /* PrivacyInfo.xcprivacy in Resources */,
 				F0A3455828339AEB00801EAA /* liwushuo.json in Resources */,
 				1843C12321EECFE800A7540A /* Assets.xcassets in Resources */,
 				F089AA0127329622009A4BDD /* YBImageBrowserVideo.bundle in Resources */,
@@ -2717,7 +2721,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07849C6EE003F20A1BFCD25A /* [CP] Copy Pods Resources */ = {
+		47913B0EE24A9AD0DB415E46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoyFriend-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF648EC69FCE5FA79C59D4A7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2732,24 +2758,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoyFriend/Pods-BoyFriend-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		372594C48A285A639A37F759 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BoyFriend-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3126,7 +3134,7 @@
 		};
 		1843C11221EECDBC00A7540A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B98670D9035D5ECF7541F9E /* Pods-BoyFriend.debug.xcconfig */;
+			baseConfigurationReference = DFB8C38DAA89B47D96B7608D /* Pods-BoyFriend.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -3228,7 +3236,7 @@
 		};
 		1843C11321EECDBC00A7540A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4D1379DBA36C7CCEE84EA90 /* Pods-BoyFriend.release.xcconfig */;
+			baseConfigurationReference = A2A2582AE999139E7B0F394C /* Pods-BoyFriend.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

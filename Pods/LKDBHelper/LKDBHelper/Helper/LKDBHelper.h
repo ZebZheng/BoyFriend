@@ -10,7 +10,25 @@
 #import "LKDBUtils.h"
 #import "NSObject+LKDBHelper.h"
 #import "NSObject+LKModel.h"
+
+#ifdef COCOAPODS
+
+#if __has_include(<fmdb/FMDB.h>)
+#import <fmdb/FMDB.h>
+#else
 #import <FMDB/FMDB.h>
+#endif
+
+#else
+
+#ifdef __has_feature(FMDB)
+@import FMDB;
+#else
+#import <FMDB/FMDB.h>
+#endif
+
+#endif
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -54,9 +72,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *    @brief  当数据库10秒未操作时，自动压缩数据库空间，3天只会执行一次
- *            如果需要比较及时，自行执行 vacuum 命令
+ *            如果需要比较及时，自行执行 VACUUM 命令
  */
 @property (nonatomic, assign) BOOL enableAutoVacuum;
+
+/**
+ *    @brief  当数据库10秒未操作时，自动分析SQL语句，提高后续SQL执行效率，3天只会执行一次
+ *            如果需要比较及时，自行执行 ANALYZE 命令
+ */
+@property (nonatomic, assign) BOOL enableAutoAnalyze;
 
 /**
  *  @brief current encryption key.
